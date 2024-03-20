@@ -191,122 +191,140 @@ fct.
 ```
 
 ## migrate_calc_tables_to_lakehouse
-#### Creates delta tables in your lakehouse based on the DAX expression of a calculated table in an import/DirectQuery semantic model. Sets model annotations in the new Direct Lake semantic model storing the calculated table names and their DAX expression.
+#### Creates delta tables in your lakehouse based on the DAX expression of a calculated table in an import/DirectQuery semantic model. The DAX expression encapsulating the calculated table logic is stored in the new Direct Lake semantic model as model annotations.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## migrate_calc_tables_to_semantic_model
-#### 
+#### Creates new tables in the Direct Lake semantic model based on the lakehouse tables created using the 'migrate_calc_tables_to_lakehouse' function.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## migrate_model_objects_to_semantic_model
+#### Adds the rest of the model objects (besides tables/columns) and their properties to a Direct Lake semantic model based on an import/DirectQuery semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## migrate_tables_columns_to_semantic_model
+#### Adds tables/columns to the new Direct Lake semantic model based on an import/DirectQuery semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## refresh_calc_tables
+#### Recreates the delta tables in the lakehouse based on the DAX expressions stored as model annotations in the Direct Lake semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## refresh_semantic_model
+#### Performs a refresh on a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## remove_column
+#### Removes a column (or multiple columns) in a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## remove_measure
+#### Removes a measure (or multiple measures) in a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## remove_table
+#### Removes a table (or multiple tables) in a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## report_rebind
+#### Rebinds a report to a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## report_rebind_all
+#### Rebinds all reports in a workspace which are bound to a specific semantic model to a new semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## resolve_lakehouse_name
+#### Returns the name of the lakehouse for a given lakehouse Id.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## resolve_lakehouse_id
+#### Returns the ID of a given lakehouse.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## resolve_dataset_id
+#### Returns the ID of a given semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## resolve_dataset_name
+#### Returns the name of a given semantic model ID.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## resolve_report_id
+#### Returns the ID of a given report.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## resolve_report_name
+#### Returns the name of a given report ID.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## show_unsupported_direct_lake_objects
+#### Returns a list of a semantic model's objects which are not supported by Direct Lake
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## update_direct_lake_model_lakehouse_connection
+#### Remaps a Direct Lake semantic model's SQL Endpoint connection to a new lakehouse.
 ```python
 import fabric_cat_tools as fct
 fct.
 ```
 
 ## update_direct_lake_partition_entity
+#### Remaps a table (or tables) in a Direct Lake semantic model to a table in a lakehouse.
 ```python
 import fabric_cat_tools as fct
 fct.
