@@ -5,7 +5,7 @@
 %pip install "https://raw.githubusercontent.com/m-kovalsky/Fabric/main/Direct%20Lake%20Migration/fabric_cat_tools-0.2.0-py3-none-any.whl"
 ```
 
-
+# Functions
 ## add_field_parameter
 #### Adds a field parameter to a semantic model.
 ```python
