@@ -146,21 +146,36 @@ fct.create_blank_semantic_model(
 #### Creates a report based on a report.json file (and an optional themes.json file).
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.create_report_from_reportjson(
+            reportName = 'MyReport'
+            ,datasetName = 'AdventureWorks'
+            ,reportJson = ''
+            #,themeJson = ''
+            #,workspaceName = ''
+            )
 ```
 
 ## create_semantic_model_from_bim
 #### Creates a new semantic model based on a Model.bim file.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.create_semantic_model_from_bim(
+            datasetName = 'AdventureWorks'
+            ,bimFile = ''
+            #,workspaceName = ''
+            )
 ```
 
 ## direct_lake_schema_compare
 #### Checks that all the tables in a Direct Lake semantic model map to tables in their corresponding lakehouse and that the columns in each table exist.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.direct_lake_schema_compare(
+            datasetName = 'AdventureWorks'
+            ,workspaceName = ''
+            #,lakehouseName = ''
+            #,lakehouseWorkspaceName = ''
+            )
 ```
 
 ## get_direct_lake_guardrails
@@ -224,7 +239,10 @@ fct.get_measure_dependencies(
 #### Extracts the Model.bim file for a given semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_semantic_model_bim(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## get_shared_expression
@@ -232,7 +250,7 @@ fct.
 ```python
 import fabric_cat_tools as fct
 fct.get_shared_expression(
-            lakehouseName = 'AdventureWorks'
+            lakehouseName = ''
             #,workspaceName = '' 
             )
 ```
@@ -250,7 +268,10 @@ fct.get_sku_size(
 #### Shows the calculated tables and their respective DAX expression for a Direct Lake model (which has been migrated from import/DirectQuery.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.list_direct_lake_model_calc_tables(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## measure_dependency_tree
@@ -279,21 +300,33 @@ fct.migrate_calc_tables_to_lakehouse(
 #### Creates new tables in the Direct Lake semantic model based on the lakehouse tables created using the 'migrate_calc_tables_to_lakehouse' function.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.migrate_calc_tables_to_semantic_model(
+            datasetName = 'AdventureWorks'
+            ,newDatasetName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## migrate_model_objects_to_semantic_model
 #### Adds the rest of the model objects (besides tables/columns) and their properties to a Direct Lake semantic model based on an import/DirectQuery semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.migrate_model_objects_to_semantic_model(
+            datasetName = 'AdventureWorks'
+            ,newDatasetName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## migrate_tables_columns_to_semantic_model
 #### Adds tables/columns to the new Direct Lake semantic model based on an import/DirectQuery semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.migrate_tables_columns_to_semantic_model(
+            datasetName = 'AdventureWorks'
+            ,newDatasetName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## refresh_calc_tables
@@ -437,19 +470,33 @@ fct.resolve_report_name(
 #### Returns a list of a semantic model's objects which are not supported by Direct Lake
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.show_unsupported_direct_lake_objects(
+        datasetName = 'AdventureWorks'
+        #,workspaceName = '' 
+        )
 ```
 
 ## update_direct_lake_model_lakehouse_connection
 #### Remaps a Direct Lake semantic model's SQL Endpoint connection to a new lakehouse.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.update_direct_lake_model_lakehouse_connection(
+            datasetName = ''
+            #,lakehouseName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## update_direct_lake_partition_entity
 #### Remaps a table (or tables) in a Direct Lake semantic model to a table in a lakehouse.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.update_direct_lake_partition_entity(
+            datasetName = 'AdventureWorks'
+            ,tableName = 'Internet Sales'
+            ,entityName = 'FACT_InternetSales'
+            #,workspaceName = ''
+            #,lakehouseName = ''
+            #,lakehouseWorkspaceName = ''            
+            )
 ```
