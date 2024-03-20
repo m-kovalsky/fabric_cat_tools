@@ -167,42 +167,57 @@ fct.
 #### Shows the guardrails for when Direct Lake semantic models will fallback to Direct Query based on Microsoft's online documentation.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_direct_lake_guardrails()
 ```
 
 ## get_directlake_guardrails_for_sku
 #### Shows the guardrails for Direct Lake based on the SKU used by your workspace's capacity.
+*Use the result of the 'get_sku_size' function as an input for this function's skuSize parameter.*
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_directlake_guardrails_for_sku(
+            skuSize = ''
+            )
 ```
 
 ## get_lakehouse_columns
 #### Shows the tables and columns of a lakehouse and their respective properties.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_lakehouse_columns(
+            lakehouseName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## get_lakehouse_details
 #### Shows the properties associated with a lakehouse.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_lakehouse_details(
+            lakehouseName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 #### Shows the tables of a lakehouse and their respective properties.
 ## get_lakehouse_tables
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_lakehouse_tables(
+            lakehouseName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## get_measure_dependencies
 #### Shows all dependencies for all measures in a semantic model
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_measure_dependencies(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## get_semantic_model_bim
@@ -216,14 +231,19 @@ fct.
 #### Dynamically generates the M expression used by a Direct Lake model for a given lakehouse.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_shared_expression(
+            lakehouseName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## get_sku_size
 #### Shows the SKU size for a workspace.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.get_sku_size(
+            workspaceName = '' 
+            )
 ```
 
 ## list_direct_lake_model_calc_tables
@@ -237,14 +257,22 @@ fct.
 #### Shows a measure dependency tree of all dependent objects for a measure in a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.measure_dependency_tree(
+            datasetName = 'AdventureWorks'
+            ,measureName = 'Sales Amount'
+            #,workspaceName = '' 
+            )
 ```
 
 ## migrate_calc_tables_to_lakehouse
 #### Creates delta tables in your lakehouse based on the DAX expression of a calculated table in an import/DirectQuery semantic model. The DAX expression encapsulating the calculated table logic is stored in the new Direct Lake semantic model as model annotations.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.migrate_calc_tables_to_lakehouse(
+            datasetName = 'AdventureWorks'
+            ,newDatasetName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## migrate_calc_tables_to_semantic_model
@@ -272,91 +300,137 @@ fct.
 #### Recreates the delta tables in the lakehouse based on the DAX expressions stored as model annotations in the Direct Lake semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.refresh_semantic_model(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## refresh_semantic_model
 #### Performs a refresh on a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.refresh_semantic_model(
+            datasetName = 'AdventureWorks'
+            ,refreshType = 'full
+            #,workspaceName = '' 
+            )
 ```
 
 ## remove_column
 #### Removes a column (or multiple columns) in a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.remove_column(
+            datasetName = 'AdventureWorks'
+            ,tableName = ['Internet Sales', 'Geography']
+            ,columnName = ['SalesAmount', 'GeographyKey']
+            #,workspaceName = '' 
+            )
 ```
 
 ## remove_measure
 #### Removes a measure (or multiple measures) in a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.remove_measure(
+            datasetName = 'AdventureWorks'
+            ,measureName = ['Sales Amount', 'Order Quantity']
+            #,workspaceName = '' 
+            )
 ```
 
 ## remove_table
 #### Removes a table (or multiple tables) in a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.remove_table(
+            datasetName = 'AdventureWorks'
+            ,tableName = ['Internet Sales', 'Geography']
+            #,workspaceName = '' 
+            )
 ```
 
 ## report_rebind
 #### Rebinds a report to a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.report_rebind(
+            reportName = ''
+            ,datasetName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## report_rebind_all
 #### Rebinds all reports in a workspace which are bound to a specific semantic model to a new semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.report_rebind_all(
+            datasetName = ''
+            ,newDatasetName = ''
+            #,workspaceName = '' 
+            )
 ```
 
 ## resolve_lakehouse_name
 #### Returns the name of the lakehouse for a given lakehouse Id.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.resolve_lakehouse_name(
+        lakehouseId = ''
+        #,workspaceName = '' 
+        )
 ```
 
 ## resolve_lakehouse_id
 #### Returns the ID of a given lakehouse.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.resolve_lakehouse_id(
+        lakehouseName = 'MyLakehouse'
+        #,workspaceName = '' 
+        )
 ```
 
 ## resolve_dataset_id
 #### Returns the ID of a given semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.resolve_dataset_id(
+        datasetName = 'MyReport'
+        #,workspaceName = '' 
+        )
 ```
 
 ## resolve_dataset_name
 #### Returns the name of a given semantic model ID.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.resolve_dataset_name(
+        datasetId = ''
+        #,workspaceName = '' 
+        )
 ```
 
 ## resolve_report_id
 #### Returns the ID of a given report.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.resolve_report_id(
+        reportName = 'MyReport'
+        #,workspaceName = '' 
+        )
 ```
 
 ## resolve_report_name
 #### Returns the name of a given report ID.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.resolve_report_name(
+        reportId = ''
+        #,workspaceName = '' 
+        )
 ```
 
 ## show_unsupported_direct_lake_objects
