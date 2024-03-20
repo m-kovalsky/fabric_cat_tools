@@ -22,7 +22,13 @@ fct.add_field_parameter(
 #### Adds a hierarchy to a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.add_hierarchy(
+            datasetName = 'AdventureWorks'
+            ,tableName = 'Geography'
+            ,hierarchyName = 'Geography Hierarchy'
+            ,levels = ['Continent', 'Country', 'City']
+            #,workspaceName = '' 
+            )
 ```
 
 ## add_measure
@@ -45,21 +51,41 @@ fct.add_measure(
 #### Adds a relationship to a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.add_relationship(
+            datasetName = 'AdventureWorks'
+            ,fromTable = 'Internet Sales'
+            ,fromColumn = 'ProductKey'
+            ,toTable = 'Product'
+            ,toColumn = 'ProductKey'
+            ,fromCardinality = 'Many'
+            ,toCardinality = 'One'
+            #,workspaceName = '' 
+            )
 ```
 
 ## add_role
 #### Adds a role to a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.add_role(
+            datasetName = 'AdventureWorks'
+            ,roleName = 'Reader'
+            ,roleDescription = 'This role is for...'
+            #,workspaceName = '' 
+            )
 ```
 
 ## add_rls
 #### Adds row level security to a table within a role to a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.add_rls(
+            datasetName = 'AdventureWorks'
+            ,roleName = 'Reader'
+            ,tableName = 'UserGeography'
+            ,filterExpression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
+            #,workspaceName = '' 
+            )
 ```
 
 
@@ -67,35 +93,53 @@ fct.
 #### Shows the reason a table in a Direct Lake semantic model would fallback to Direct Query.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.check_fallback_reason(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## clear_cache
 #### Clears the cache of a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.clear_cache(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
 ```
 
 ## control_fallback
 #### Set the DirectLakeBehavior for a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.control_fallback(
+            datasetName = 'AdventureWorks'
+            ,directLakeBehavior = 'DirectLakeOnly'            
+            #,workspaceName = '' 
+            )
 ```
 
 ## create_blank_semantic_model
 #### Creates a new blank semantic model (no tables/columns etc.).
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.create_blank_semantic_model(
+            datasetName = 'AdventureWorks'
+            #,compatibilityLevel = 1604
+            #,workspaceName = '' 
+            )
 ```
 
 ## create_pqt_file
 #### Dynamically generates a Power Query Template file based on the semantic model. The .pqt file is saved within the Files section of your lakehoues.
 ```python
 import fabric_cat_tools as fct
-fct.
+fct.create_blank_semantic_model(
+            datasetName = 'AdventureWorks'
+            #,fileName = 'PowerQueryTemplate'
+            #,workspaceName = '' 
+            )
 ```
 
 ## create_report_from_reportjson
