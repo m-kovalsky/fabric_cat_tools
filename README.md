@@ -137,6 +137,14 @@ fct.add_role(
             )
 ```
 ### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### roleName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the role.
+#### roleDescription [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Optional; Description of the role.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## add_rls
@@ -152,11 +160,22 @@ fct.add_rls(
             )
 ```
 ### Parameters
-
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### roleName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the role to apply row level security.
+#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the table to apply row level security.
+#### filterExpression [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; DAX expression for the row low level security.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## check_fallback_reason
 #### Shows the reason a table in a Direct Lake semantic model would fallback to Direct Query.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.check_fallback_reason(
@@ -165,6 +184,10 @@ fct.check_fallback_reason(
             )
 ```
 ### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## clear_cache
@@ -177,10 +200,16 @@ fct.clear_cache(
             )
 ```
 ### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## control_fallback
 #### Set the DirectLakeBehavior for a semantic model.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.control_fallback(
@@ -190,6 +219,12 @@ fct.control_fallback(
             )
 ```
 ### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### directLakeBehavior [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Setting for Direct Lake Behavior. Options: ('Automatic', 'DirectLakeOnly', 'DirectQueryOnly').
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## create_blank_semantic_model
@@ -203,7 +238,12 @@ fct.create_blank_semantic_model(
             )
 ```
 ### Parameters
-
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### compatibilityLevel [int](https://docs.python.org/3/library/functions.html#int) 
+###### Optional; Setting for the compatibility level of the semantic model. Default value: 1604.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 ---
 ## create_pqt_file
 #### Dynamically generates a Power Query Template file based on the semantic model. The .pqt file is saved within the Files section of your lakehoues.
@@ -248,6 +288,8 @@ fct.create_semantic_model_from_bim(
 ---
 ## direct_lake_schema_compare
 #### Checks that all the tables in a Direct Lake semantic model map to tables in their corresponding lakehouse and that the columns in each table exist.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.direct_lake_schema_compare(
@@ -366,6 +408,8 @@ fct.get_sku_size(
 ---
 ## list_direct_lake_model_calc_tables
 #### Shows the calculated tables and their respective DAX expression for a Direct Lake model (which has been migrated from import/DirectQuery.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.list_direct_lake_model_calc_tables(
@@ -443,6 +487,8 @@ fct.migrate_tables_columns_to_semantic_model(
 ---
 ## refresh_calc_tables
 #### Recreates the delta tables in the lakehouse based on the DAX expressions stored as model annotations in the Direct Lake semantic model.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.refresh_calc_tables(
@@ -618,6 +664,8 @@ fct.show_unsupported_direct_lake_objects(
 ---
 ## update_direct_lake_model_lakehouse_connection
 #### Remaps a Direct Lake semantic model's SQL Endpoint connection to a new lakehouse.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_model_lakehouse_connection(
@@ -631,6 +679,8 @@ fct.update_direct_lake_model_lakehouse_connection(
 ---
 ## update_direct_lake_partition_entity
 #### Remaps a table (or tables) in a Direct Lake semantic model to a table in a lakehouse.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_partition_entity(
