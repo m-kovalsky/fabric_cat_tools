@@ -535,7 +535,7 @@ fct.measure_dependency_tree(
 ---
 ## migrate_calc_tables_to_lakehouse
 #### Creates delta tables in your lakehouse based on the DAX expression of a calculated table in an import/DirectQuery semantic model. The DAX expression encapsulating the calculated table logic is stored in the new Direct Lake semantic model as model annotations.
-> [!IMPORTANT]
+> [!NOTE]
 > This function is specifically relevant for import/DirectQuery migration to Direct Lake
 ```python
 import fabric_cat_tools as fct
@@ -556,7 +556,7 @@ fct.migrate_calc_tables_to_lakehouse(
 ---
 ## migrate_calc_tables_to_semantic_model
 #### Creates new tables in the Direct Lake semantic model based on the lakehouse tables created using the 'migrate_calc_tables_to_lakehouse' function.
-> [!IMPORTANT]
+> [!NOTE]
 > This function is specifically relevant for import/DirectQuery migration to Direct Lake
 ```python
 import fabric_cat_tools as fct
@@ -577,7 +577,7 @@ fct.migrate_calc_tables_to_semantic_model(
 ---
 ## migrate_model_objects_to_semantic_model
 #### Adds the rest of the model objects (besides tables/columns) and their properties to a Direct Lake semantic model based on an import/DirectQuery semantic model.
-> [!IMPORTANT]
+> [!NOTE]
 > This function is specifically relevant for import/DirectQuery migration to Direct Lake
 ```python
 import fabric_cat_tools as fct
@@ -598,7 +598,7 @@ fct.migrate_model_objects_to_semantic_model(
 ---
 ## migrate_tables_columns_to_semantic_model
 #### Adds tables/columns to the new Direct Lake semantic model based on an import/DirectQuery semantic model.
-> [!IMPORTANT]
+> [!NOTE]
 > This function is specifically relevant for import/DirectQuery migration to Direct Lake
 ```python
 import fabric_cat_tools as fct
