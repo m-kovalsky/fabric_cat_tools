@@ -1203,3 +1203,8 @@ fct.update_direct_lake_partition_entity(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+
+## Version History
+
+
+
