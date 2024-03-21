@@ -100,9 +100,8 @@ fct.add_field_parameter(
 >
 >> Optional; The workspace where the semantic model resides.
 >
-> Returns
->
->> A printout stating the success/failure of the operation.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## add_hierarchy
@@ -118,18 +117,27 @@ fct.add_hierarchy(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table in which the hierarchy will reside.
-#### hierarchyName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the hierarchy.
-#### levels [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Required; List of columns to be included as levels in the hierarchy.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the semantic model.
+>
+> tableName [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the table in which the hierarchy will reside.
+>
+> hierarchyName [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the hierarchy.
+>
+> levels [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; List of columns to be included as levels in the hierarchy.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## add_measure
@@ -147,22 +155,35 @@ fct.add_measure(
         )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table in which the measure will reside.
-#### measureName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the measure.
-#### measureExpression [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; DAX expression for the measure.
-#### measureDisplayFolder [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Display folder for the measure.
-#### measureFormatString [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Format string for the measure.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> tableName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table in which the measure will reside.
+>
+> measureName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the measure.
+>
+> measureExpression [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; DAX expression for the measure.
+>
+> measureDisplayFolder [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Display folder for the measure.
+>
+> measureFormatString [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Format string for the measure.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## add_relationship
