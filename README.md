@@ -30,6 +30,8 @@ fct.add_field_parameter(
 ###### Required; List of columns/measures to be included in the field parameter. Columns are fully qualified 'TableName'[ColumnName] and measures are in square brackets [MeasureName].
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## add_hierarchy
@@ -55,6 +57,8 @@ fct.add_hierarchy(
 ###### Required; List of columns to be included as levels in the hierarchy.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## add_measure
@@ -86,6 +90,9 @@ fct.add_measure(
 ###### Optional; Format string for the measure.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
+
 ---
 ## add_relationship
 #### Adds a relationship to a semantic model.
@@ -127,6 +134,8 @@ fct.add_relationship(
 ###### Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## add_role
@@ -149,6 +158,8 @@ fct.add_role(
 ###### Optional; Description of the role.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## add_rls
@@ -174,6 +185,8 @@ fct.add_rls(
 ###### Required; DAX expression for the row low level security.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## check_fallback_reason
@@ -192,6 +205,8 @@ fct.check_fallback_reason(
 ###### Required; Name of the semantic model.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### Pandas dataframe showing the tables in the semantic model and their fallback reason.
 
 ---
 ## clear_cache
@@ -208,6 +223,8 @@ fct.clear_cache(
 ###### Required; Name of the semantic model.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## control_fallback
@@ -229,6 +246,8 @@ fct.control_fallback(
 ###### Required; Setting for Direct Lake Behavior. Options: ('Automatic', 'DirectLakeOnly', 'DirectQueryOnly').
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## create_blank_semantic_model
@@ -248,6 +267,9 @@ fct.create_blank_semantic_model(
 ###### Optional; Setting for the compatibility level of the semantic model. Default value: 1604.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
+
 ---
 ## create_pqt_file
 #### Dynamically generates a [Power Query Template](https://learn.microsoft.com/power-query/power-query-template) file based on the semantic model. The .pqt file is saved within the Files section of your lakehouse.
@@ -266,6 +288,8 @@ fct.create_pqt_file(
 ###### Optional; TName of the Power Query Template (.pqt) file to be created.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## create_report_from_reportjson
@@ -291,6 +315,8 @@ fct.create_report_from_reportjson(
 ###### Optional; The theme.json file to be used for the theme of the report.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
+### Returns
+###### A printout stating the success/failure of the operation.
 
 ---
 ## create_semantic_model_from_bim
@@ -310,8 +336,10 @@ fct.create_semantic_model_from_bim(
 ###### Required; The model.bim file to be used to create the semantic model.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
----
+### Returns
+###### A printout stating the success/failure of the operation.
 
+---
 ## direct_lake_schema_compare
 #### Checks that all the tables in a Direct Lake semantic model map to tables in their corresponding lakehouse and that the columns in each table exist.
 > [!NOTE]
