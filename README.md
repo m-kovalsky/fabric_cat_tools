@@ -429,14 +429,19 @@ fct.create_pqt_file(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the import/DirectQuery semantic model.
-#### fileName [str](https://docs.python.org/3/library/functions.html#str) 
-###### Optional; TName of the Power Query Template (.pqt) file to be created.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> fileName [str](https://docs.python.org/3/library/functions.html#str)
+> 
+>> Optional; TName of the Power Query Template (.pqt) file to be created.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## create_report_from_reportjson
@@ -452,18 +457,27 @@ fct.create_report_from_reportjson(
             )
 ```
 ### Parameters
-#### reportName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the report.
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model to connect to the report.
-#### reportJson [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; The report.json file to be used to create the report.
-#### themeJson [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; The theme.json file to be used for the theme of the report.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> reportName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the report.
+>
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model to connect to the report.
+>
+> reportJson [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The report.json file to be used to create the report.
+> 
+> themeJson [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The theme.json file to be used for the theme of the report.
+> 
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## create_semantic_model_from_bim
@@ -477,14 +491,19 @@ fct.create_semantic_model_from_bim(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### bimFile [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; The model.bim file to be used to create the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> bimFile [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The model.bim file to be used to create the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## direct_lake_schema_compare
@@ -501,14 +520,21 @@ fct.direct_lake_schema_compare(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The lakehouse used by the Direct Lake semantic model.
-#### lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace in which the lakehouse resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse used by the Direct Lake semantic model.
+>
+> lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace in which the lakehouse resides.
 
 ---
 ## get_direct_lake_guardrails
@@ -531,8 +557,9 @@ fct.get_directlake_guardrails_for_sku(
             )
 ```
 ### Parameters
-#### skuSize [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Sku size of a workspace/capacity
+> skuSize [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Sku size of a workspace/capacity
 
 ---
 ## get_lakehouse_columns
@@ -545,10 +572,13 @@ fct.get_lakehouse_columns(
             )
 ```
 ### Parameters
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The lakehouse name.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse name.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 ---
 ## get_lakehouse_details
 #### Shows the properties associated with a lakehouse.
@@ -560,10 +590,13 @@ fct.get_lakehouse_details(
             )
 ```
 ### Parameters
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The lakehouse name.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse name.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## get_lakehouse_tables
@@ -576,10 +609,13 @@ fct.get_lakehouse_tables(
             )
 ```
 ### Parameters
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The lakehouse name.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse name.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## get_measure_dependencies
@@ -592,10 +628,13 @@ fct.get_measure_dependencies(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## get_semantic_model_bim
@@ -608,10 +647,13 @@ fct.get_semantic_model_bim(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## get_shared_expression
@@ -624,10 +666,13 @@ fct.get_shared_expression(
             )
 ```
 ### Parameters
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The lakehouse name.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse name.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## get_sku_size
@@ -639,8 +684,9 @@ fct.get_sku_size(
             )
 ```
 ### Parameters
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## list_direct_lake_model_calc_tables
@@ -655,10 +701,13 @@ fct.list_direct_lake_model_calc_tables(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## measure_dependency_tree
@@ -672,12 +721,17 @@ fct.measure_dependency_tree(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### measureName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the measure to use for building a dependency tree.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> measureName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the measure to use for building a dependency tree.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## migrate_calc_tables_to_lakehouse
@@ -693,12 +747,17 @@ fct.migrate_calc_tables_to_lakehouse(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the import/DirectQuery semantic model.
-#### newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the Direct Lake semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the Direct Lake semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## migrate_calc_tables_to_semantic_model
@@ -714,12 +773,17 @@ fct.migrate_calc_tables_to_semantic_model(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the import/DirectQuery semantic model.
-#### newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the Direct Lake semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the Direct Lake semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## migrate_model_objects_to_semantic_model
@@ -735,12 +799,17 @@ fct.migrate_model_objects_to_semantic_model(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the import/DirectQuery semantic model.
-#### newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the Direct Lake semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the Direct Lake semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## migrate_tables_columns_to_semantic_model
@@ -756,12 +825,17 @@ fct.migrate_tables_columns_to_semantic_model(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the import/DirectQuery semantic model.
-#### newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the Direct Lake semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the Direct Lake semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## refresh_calc_tables
@@ -776,10 +850,13 @@ fct.refresh_calc_tables(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ---
 ## refresh_semantic_model
 #### Performs a refresh on a semantic model.
@@ -792,12 +869,17 @@ fct.refresh_semantic_model(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### refreshType [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Type of processing to perform. Options: ('full', 'automatic', 'dataOnly', 'calculate', 'clearValues', 'defragment'). Default value: 'full'.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> refreshType [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Type of processing to perform. Options: ('full', 'automatic', 'dataOnly', 'calculate', 'clearValues', 'defragment'). Default value: 'full'.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ---
 ## remove_column
 #### Removes a column (or multiple columns) in a semantic model.
@@ -811,14 +893,21 @@ fct.remove_column(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the column's table(s).
-#### columnName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the column(s).
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> tableName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the column's table(s).
+>
+> columnName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the column(s).
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ---
 ## remove_measure
 #### Removes a measure (or multiple measures) in a semantic model.
@@ -831,12 +920,17 @@ fct.remove_measure(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### measureName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the measure(s).
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> measureName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the measure(s).
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ---
 ## remove_table
 #### Removes a table (or multiple tables) in a semantic model.
@@ -849,12 +943,17 @@ fct.remove_table(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table(s).
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> tableName [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table(s).
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ---
 ## report_rebind
 #### Rebinds a report to a semantic model.
