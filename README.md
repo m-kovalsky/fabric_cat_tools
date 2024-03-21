@@ -68,7 +68,20 @@ fct.add_measure(
         )
 ```
 ### Parameters
-
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the table in which the measure will reside.
+#### measureName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the measure.
+#### measureExpression [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; DAX expression for the measure.
+#### measureDisplayFolder [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Optional; Display folder for the measure.
+#### measureFormatString [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Optional; Format string for the measure.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 ---
 ## add_relationship
 #### Adds a relationship to a semantic model.
@@ -86,6 +99,30 @@ fct.add_relationship(
             )
 ```
 ### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### fromTable [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the table on the 'from' side of the relationship
+#### toTable [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the table on the 'to' side of the relationship
+#### fromColumn [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the column on the 'from' side of the relationship
+#### toColumn [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the column on the 'to' side of the relationship
+#### fromCardinality [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
+#### toCardinality [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
+#### crossFilteringBehavior [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
+#### securityFilteringBehavior [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
+#### isActive [bool](https://docs.python.org/3/library/functions.html#bool)
+###### Optional; Setting for whether the relationship is active or not. Default value: True.
+#### relyOnReferentialIntegrity [bool](https://docs.python.org/3/library/functions.html#bool)
+###### Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## add_role
