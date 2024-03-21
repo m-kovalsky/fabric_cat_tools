@@ -5,6 +5,10 @@
 %pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.0-py3-none-any.whl"
 ```
 
+## Once installed, run this code to import the library into your notebook
+```python
+import fabric_cat_tools as fct
+```
 # Functions
 ## add_field_parameter
 #### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
