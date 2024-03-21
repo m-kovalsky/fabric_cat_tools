@@ -15,7 +15,7 @@ import fabric_cat_tools as fct
 
 
 ### Add/remove objects from semantic model
-* [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools#add_field_parameter)
+* [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter)
 * [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools#add_hierarchy)
 * [add_measure](https://github.com/m-kovalsky/fabric_cat_tools#add_measure)
 * [add_relationship](https://github.com/m-kovalsky/fabric_cat_tools#add_relationship)
