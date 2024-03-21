@@ -69,7 +69,7 @@ import fabric_cat_tools as fct
 * [resolve_lakehouse_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_lakehouse_id)
 * [resolve_lakehouse_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_lakehouse_name)
 * [resolve_report_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_report_id)
-* [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tool?tab=readme-ov-files#resolve_report_name)
+* [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-files#resolve_report_name)
 
 # Functions
 ## add_field_parameter
