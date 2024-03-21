@@ -26,10 +26,10 @@ import fabric_cat_tools as fct
 * [remove_table](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_table)
 
 ### General semantic model
-* clear_cache
-* refresh_semantic_model
-* report_rebind
-* report_rebind_all
+* [clear_cache](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clear_cache)
+* [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
+* [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
+* [report_rebind_all](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind_all)
 * get_measure_dependencies
 * measure_dependency_tree
 * get_semantic_model_bim
