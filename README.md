@@ -246,7 +246,7 @@ fct.create_blank_semantic_model(
 ###### Optional; The workspace where the semantic model resides.
 ---
 ## create_pqt_file
-#### Dynamically generates a Power Query Template file based on the semantic model. The .pqt file is saved within the Files section of your lakehoues.
+#### Dynamically generates a [Power Query Template](https://learn.microsoft.com/power-query/power-query-template) file based on the semantic model. The .pqt file is saved within the Files section of your lakehouse.
 ```python
 import fabric_cat_tools as fct
 fct.create_pqt_file(
