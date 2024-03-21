@@ -13,7 +13,7 @@ import fabric_cat_tools as fct
 
 # Function Categories
 
-### Add/remove objects from semantic model
+### Add/remove objects from a semantic model
 * [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
 * [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter)
 * [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_hierarchy)
