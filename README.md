@@ -7,7 +7,7 @@
 
 # Functions
 ## add_field_parameter
-#### Adds a field parameter to a semantic model.
+#### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.add_field_parameter(
@@ -840,7 +840,7 @@ fct.update_direct_lake_model_lakehouse_connection(
 ### Parameters
 #### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
 ###### Required; Name of the semantic model.
-#### lakehouesName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str) 
 ###### Optional; Name of the lakehouse.
 #### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
 ###### Optional; The workspace where the semantic model resides.
@@ -864,6 +864,18 @@ fct.update_direct_lake_partition_entity(
             )
 ```
 ### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the table in the semantic model.
+#### entityName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the lakehouse table to be mapped to the semantic model table.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
+#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Optional; Name of the lakehouse.
+#### lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the lakehouse resides.
 
 
 
