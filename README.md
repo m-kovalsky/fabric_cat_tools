@@ -135,7 +135,7 @@ fct.create_blank_semantic_model(
 #### Dynamically generates a Power Query Template file based on the semantic model. The .pqt file is saved within the Files section of your lakehoues.
 ```python
 import fabric_cat_tools as fct
-fct.create_blank_semantic_model(
+fct.create_pqt_file(
             datasetName = 'AdventureWorks'
             #,fileName = 'PowerQueryTemplate'
             #,workspaceName = '' 
@@ -333,7 +333,7 @@ fct.migrate_tables_columns_to_semantic_model(
 #### Recreates the delta tables in the lakehouse based on the DAX expressions stored as model annotations in the Direct Lake semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.refresh_semantic_model(
+fct.refresh_calc_tables(
             datasetName = 'AdventureWorks'
             #,workspaceName = '' 
             )
@@ -345,7 +345,7 @@ fct.refresh_semantic_model(
 import fabric_cat_tools as fct
 fct.refresh_semantic_model(
             datasetName = 'AdventureWorks'
-            ,refreshType = 'full
+            ,refreshType = 'full'
             #,workspaceName = '' 
             )
 ```
