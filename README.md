@@ -810,7 +810,7 @@ fct.resolve_report_name(
 
 ---
 ## show_unsupported_direct_lake_objects
-#### Returns a list of a semantic model's objects which are not supported by Direct Lake
+#### Returns a list of a semantic model's objects which are not supported by Direct Lake based on [official documentation](https://learn.microsoft.com/power-bi/enterprise/directlake-overview#known-issues-and-limitations).
 ```python
 import fabric_cat_tools as fct
 fct.show_unsupported_direct_lake_objects(
