@@ -18,6 +18,17 @@ fct.add_field_parameter(
             )
 ```
 
+### Parameters
+#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the semantic model.
+#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the field parameter table.
+#### objects [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Required; List of columns/measures to be included in the field parameter. Columns are fully qualified 'TableName'[ColumnName] and measures are in square brackets [MeasureName].
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
+
+---
 ## add_hierarchy
 #### Adds a hierarchy to a semantic model.
 ```python
@@ -44,7 +55,6 @@ fct.add_measure(
         #,measureFormatString = ''
         #,workspaceName = '' 
         )
-
 ```
 
 ## add_relationship
