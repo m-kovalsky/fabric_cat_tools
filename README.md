@@ -14,6 +14,7 @@ import fabric_cat_tools as fct
 # Function Categories
 
 ### Add/remove objects from semantic model
+* [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
 * [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter)
 * [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_hierarchy)
 * [add_measure](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_measure)
@@ -72,6 +73,62 @@ import fabric_cat_tools as fct
 * [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-files#resolve_report_name)
 
 # Functions
+## add_data_column
+#### Adds a data column to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_data_column(
+        datasetName = 'AdventureWorks'
+        ,tableName = 'Internet Sales'
+        ,columnName = 'SalesAmount'
+        ,sourceColumn = 'SalesAmount'
+        ,dataType =  'Int64'
+        #,formatString = ''
+        #,displayFolder = ''
+        #,workspaceName = '' 
+        )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>
+>> Required; Name of the semantic model.
+> 
+> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>
+>> Required; Name of the table in which the column will reside.
+>
+> **columnName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the column.
+>
+> **sourceColumn** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the column in the source system.
+>
+> **dataType** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Data type of the column. Options: 'Int64', 'String', 'Double', 'Decimal', 'DateTime', 'Boolean'.
+>
+> **formatString** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Format string of the column.
+>
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Description of the column.
+>
+> **displayFolder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Display folder of the column.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The workspace where the semantic model resides.
+>
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
 ## add_field_parameter
 #### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
 ```python
@@ -148,9 +205,9 @@ fct.add_measure(
         datasetName = 'AdventureWorks'
         ,tableName = 'Internet Sales'
         ,measureName = 'Sales Amount'
-        ,measureExpression =  "SUM( 'Internet Sales'[SalesAmount] )"
-        #,measureDisplayFolder = ''
-        #,measureFormatString = ''
+        ,expression =  "SUM( 'Internet Sales'[SalesAmount] )"
+        #,displayFolder = ''
+        #,formatString = ''
         #,workspaceName = '' 
         )
 ```
@@ -167,15 +224,15 @@ fct.add_measure(
 > 
 >> Required; Name of the measure.
 >
-> **measureExpression** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; DAX expression for the measure.
 >
-> **measureDisplayFolder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **displayFolder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Display folder for the measure.
 >
-> **measureFormatString** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **formatString** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Format string for the measure.
 >
