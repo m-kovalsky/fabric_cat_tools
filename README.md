@@ -481,8 +481,8 @@ fct.get_lakehouse_details(
 ###### Optional; The workspace where the lakehouse resides.
 
 ---
-#### Shows the tables of a lakehouse and their respective properties.
 ## get_lakehouse_tables
+#### Shows the tables of a lakehouse and their respective properties.
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_tables(
