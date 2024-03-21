@@ -1,4 +1,5 @@
 # fabric_cat_tools
+This is a python library intended to be used in Microsoft Fabric notebooks. This library contains various functions for automating tasks related to semantic models and reports.
 
 ## Install the .whl file in a Fabric notebook
 ```python
