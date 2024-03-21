@@ -25,7 +25,7 @@ import fabric_cat_tools as fct
 * remove_measure
 * remove_table
 
-### General semantic model/report
+### General semantic model
 * clear_cache
 * refresh_semantic_model
 * report_rebind
@@ -64,15 +64,15 @@ import fabric_cat_tools as fct
 * get_lakehouse_columns
 * get_lakehouse_details
 
-* Helper Functions
-create_daxfullobjectname
-create_relationship_name
-resolve_dataset_id
-resolve_dataset_name
-resolve_lakehouse_id
-resolve_lakehouse_name
-resolve_report_id
-resolve_report_name
+### Helper Functions
+* create_daxfullobjectname
+* create_relationship_name
+* resolve_dataset_id
+* resolve_dataset_name
+* resolve_lakehouse_id
+* resolve_lakehouse_name
+* resolve_report_id
+* resolve_report_name
 
 # Functions
 ## add_field_parameter
