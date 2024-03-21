@@ -13,7 +13,6 @@ import fabric_cat_tools as fct
 
 # Function Categories
 
-
 ### Add/remove objects from semantic model
 * [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter)
 * [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_hierarchy)
@@ -30,49 +29,47 @@ import fabric_cat_tools as fct
 * [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
 * [report_rebind_all](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind_all)
-* get_measure_dependencies
-* measure_dependency_tree
-* get_semantic_model_bim
-* create_semantic_model_from_bim
-* create_report_from_reportjson
+* [get_measure_dependencies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_measure_dependencies)
+* [measure_dependency_tree](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#measure_dependency_tree)
+* [get_semantic_model_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_semantic_model_bim)
+* [create_semantic_model_from_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_semantic_model_from_bim)
+* [create_report_from_reportjson](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_report_from_reportjson)
 
 ### Direct Lake Migration
-* create_pqt_file
-* create_blank_semantic_model
-* migrate_tables_columns_to_semantic_model
-* migrate_calc_tables_to_semantic_model
-* migrate_model_objects_to_semantic_model
-* migrate_calc_tables_to_lakehouse
-* refresh_calc_tables
-* direct_lake_schema_compare
-* show_unsupported_direct_lake_objects
-* update_direct_Lake_partition_entity
-* update_direct_lake_model_lakehouse_connection
+* [create_pqt_file](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_pqt_file)
+* [create_blank_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_blank_semantic_model)
+* [migrate_tables_columns_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_tables_columns_to_semantic_model)
+* [migrate_calc_tables_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_calc_tables_to_semantic_model)
+* [migrate_model_objects_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_model_objects_to_semantic_model)
+* [migrate_calc_tables_to_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_calc_tables_to_lakehouse)
+* [refresh_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_calc_tables)
+* [direct_lake_schema_compare](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct_lake_schema_compare)
+* [show_unsupported_direct_lake_objects](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#show_unsupported_direct_lake_objects)
+* [update_direct_Lake_partition_entity](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_Lake_partition_entity)
+* [update_direct_lake_model_lakehouse_connection](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_model_lakehouse_connection)
 
 ### Direct Lake
 * [check_fallback_reason](https://github.com/m-kovalsky/fabric_cat_tools#check_fallback_reason)
-* control_fallback
-* get_direct_lake_lakehouse
-* get_directlake_guardrails_for_sku
-* get_direct_lake_guardrails
-* get_shared_expression
-* get_sku_size
-* list_direct_lake_model_calc_tables
+* [control_fallback](https://github.com/m-kovalsky/fabric_cat_tools#control_fallback)
+* [get_direct_lake_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools#get_direct_lake_lakehouse)
+* [get_directlake_guardrails_for_sku](https://github.com/m-kovalsky/fabric_cat_tools#get_directlake_guardrails_for_sku)
+* [get_direct_lake_guardrails](https://github.com/m-kovalsky/fabric_cat_tools#get_direct_lake_guardrails)
+* [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools#get_shared_expression)
+* [get_sku_size](https://github.com/m-kovalsky/fabric_cat_tools#get_sku_size)
+* [list_direct_lake_model_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools#list_direct_lake_model_calc_tables)
 
 ### Lakehouse
-* get_lakehouse_tables
-* get_lakehouse_columns
-* get_lakehouse_details
+* [get_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools#get_lakehouse_tables)
+* [get_lakehouse_columns](https://github.com/m-kovalsky/fabric_cat_tools#get_lakehouse_columns)
+* [get_lakehouse_details](https://github.com/m-kovalsky/fabric_cat_tools#get_lakehouse_details)
 
 ### Helper Functions
-* create_daxfullobjectname
-* create_relationship_name
-* resolve_dataset_id
-* resolve_dataset_name
-* resolve_lakehouse_id
-* resolve_lakehouse_name
-* resolve_report_id
-* resolve_report_name
+* [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools#resolve_dataset_id)
+* [resolve_dataset_name](https://github.com/m-kovalsky/fabric_cat_tools#resolve_dataset_name)
+* [resolve_lakehouse_id](https://github.com/m-kovalsky/fabric_cat_tools#resolve_lakehouse_id)
+* [resolve_lakehouse_name](https://github.com/m-kovalsky/fabric_cat_tools#resolve_lakehouse_name)
+* [resolve_report_id](https://github.com/m-kovalsky/fabric_cat_tools#resolve_report_id)
+* [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tools#resolve_report_name)
 
 # Functions
 ## add_field_parameter
