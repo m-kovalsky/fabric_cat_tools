@@ -966,12 +966,17 @@ fct.report_rebind(
             )
 ```
 ### Parameters
-#### reportName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the report.
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model to rebind to the report.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model and report reside.
+> reportName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the report.
+>
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model to rebind to the report.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model and report reside.
 
 ---
 ## report_rebind_all
@@ -985,12 +990,17 @@ fct.report_rebind_all(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model currently binded to the reports.
-#### newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model to rebind to the reports.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic models and reports reside.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model currently binded to the reports.
+>
+> newDatasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model to rebind to the reports.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic models and reports reside.
 ---
 ## resolve_lakehouse_name
 #### Returns the name of the lakehouse for a given lakehouse Id.
@@ -1002,10 +1012,13 @@ fct.resolve_lakehouse_name(
         )
 ```
 ### Parameters
-#### lakehouseId [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
-###### Required; UUID object representing a lakehouse.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> lakehouseId [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+> 
+>> Required; UUID object representing a lakehouse.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## resolve_lakehouse_id
@@ -1018,10 +1031,13 @@ fct.resolve_lakehouse_id(
         )
 ```
 ### Parameters
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Required; Name of the lakehouse.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the lakehouse.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## resolve_dataset_id
@@ -1034,10 +1050,13 @@ fct.resolve_dataset_id(
         )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ---
 ## resolve_dataset_name
 #### Returns the name of a given semantic model ID.
@@ -1049,10 +1068,13 @@ fct.resolve_dataset_name(
         )
 ```
 ### Parameters
-#### datasetId [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
-###### Required; UUID object representing a semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetId [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+> 
+>> Required; UUID object representing a semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## resolve_report_id
@@ -1065,10 +1087,13 @@ fct.resolve_report_id(
         )
 ```
 ### Parameters
-#### reportName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Required; Name of the report.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the report resides.
+> reportName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the report.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the report resides.
 
 ---
 ## resolve_report_name
@@ -1081,10 +1106,13 @@ fct.resolve_report_name(
         )
 ```
 ### Parameters
-#### reportId [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
-###### Required; UUID object representing a report.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the report resides.
+> reportId [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+> 
+>> Required; UUID object representing a report.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the report resides.
 
 ---
 ## show_unsupported_direct_lake_objects
@@ -1097,10 +1125,13 @@ fct.show_unsupported_direct_lake_objects(
         )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## update_direct_lake_model_lakehouse_connection
@@ -1116,14 +1147,21 @@ fct.update_direct_lake_model_lakehouse_connection(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Name of the lakehouse.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
-#### lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Name of the lakehouse.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## update_direct_lake_partition_entity
@@ -1142,18 +1180,29 @@ fct.update_direct_lake_partition_entity(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table in the semantic model.
-#### entityName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the lakehouse table to be mapped to the semantic model table.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
-#### lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Name of the lakehouse.
-#### lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the lakehouse resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> tableName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table in the semantic model.
+>
+> entityName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the lakehouse table to be mapped to the semantic model table.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> lakehouseName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Name of the lakehouse.
+>
+> lakehouseWorkspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 
 
