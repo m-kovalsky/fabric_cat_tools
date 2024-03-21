@@ -10,6 +10,70 @@ This is a python library intended to be used in Microsoft Fabric notebooks. This
 ```python
 import fabric_cat_tools as fct
 ```
+
+# Function Categories
+
+
+### Add/remove objects from semantic model
+* add_field_parameter
+* add_hierarchy
+* add_measure
+* add_relationship
+* add_rls
+* add_role
+* remove_column
+* remove_measure
+* remove_table
+
+### General semantic model/report
+* clear_cache
+* refresh_semantic_model
+* report_rebind
+* report_rebind_all
+* get_measure_dependencies
+* measure_dependency_tree
+* get_semantic_model_bim
+* create_semantic_model_from_bim
+* create_report_from_reportjson
+
+### Direct Lake Migration
+* create_pqt_file
+* create_blank_semantic_model
+* migrate_tables_columns_to_semantic_model
+* migrate_calc_tables_to_semantic_model
+* migrate_model_objects_to_semantic_model
+* migrate_calc_tables_to_lakehouse
+* refresh_calc_tables
+* direct_lake_schema_compare
+* show_unsupported_direct_lake_objects
+* update_direct_Lake_partition_entity
+* update_direct_lake_model_lakehouse_connection
+
+### Direct Lake
+* check_fallback_reason
+* control_fallback
+* get_direct_lake_lakehouse
+* get_directlake_guardrails_for_sku
+* get_direct_lake_guardrails
+* get_shared_expression
+* get_sku_size
+* list_direct_lake_model_calc_tables
+
+### Lakehouse
+* get_lakehouse_tables
+* get_lakehouse_columns
+* get_lakehouse_details
+
+* Helper Functions
+create_daxfullobjectname
+create_relationship_name
+resolve_dataset_id
+resolve_dataset_name
+resolve_lakehouse_id
+resolve_lakehouse_name
+resolve_report_id
+resolve_report_name
+
 # Functions
 ## add_field_parameter
 #### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
