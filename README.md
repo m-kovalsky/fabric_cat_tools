@@ -17,7 +17,6 @@ fct.add_field_parameter(
             #,workspaceName = '' 
             )
 ```
-
 ### Parameters
 #### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
 ###### Required; Name of the semantic model.
@@ -60,6 +59,7 @@ fct.add_measure(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## add_relationship
@@ -77,6 +77,7 @@ fct.add_relationship(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## add_role
@@ -90,6 +91,7 @@ fct.add_role(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## add_rls
@@ -104,6 +106,7 @@ fct.add_rls(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 
 ---
@@ -116,6 +119,7 @@ fct.check_fallback_reason(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## clear_cache
@@ -127,6 +131,7 @@ fct.clear_cache(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## control_fallback
@@ -139,6 +144,7 @@ fct.control_fallback(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## create_blank_semantic_model
@@ -151,6 +157,7 @@ fct.create_blank_semantic_model(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## create_pqt_file
@@ -163,6 +170,7 @@ fct.create_pqt_file(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## create_report_from_reportjson
@@ -177,6 +185,7 @@ fct.create_report_from_reportjson(
             #,workspaceName = ''
             )
 ```
+### Parameters
 
 ---
 ## create_semantic_model_from_bim
@@ -189,6 +198,7 @@ fct.create_semantic_model_from_bim(
             #,workspaceName = ''
             )
 ```
+### Parameters
 
 ---
 ## direct_lake_schema_compare
@@ -202,6 +212,7 @@ fct.direct_lake_schema_compare(
             #,lakehouseWorkspaceName = ''
             )
 ```
+### Parameters
 
 ---
 ## get_direct_lake_guardrails
@@ -210,6 +221,7 @@ fct.direct_lake_schema_compare(
 import fabric_cat_tools as fct
 fct.get_direct_lake_guardrails()
 ```
+### Parameters
 
 ---
 ## get_directlake_guardrails_for_sku
@@ -221,6 +233,7 @@ fct.get_directlake_guardrails_for_sku(
             skuSize = ''
             )
 ```
+### Parameters
 
 ---
 ## get_lakehouse_columns
@@ -232,6 +245,7 @@ fct.get_lakehouse_columns(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## get_lakehouse_details
@@ -243,6 +257,7 @@ fct.get_lakehouse_details(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 #### Shows the tables of a lakehouse and their respective properties.
@@ -254,6 +269,7 @@ fct.get_lakehouse_tables(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## get_measure_dependencies
@@ -265,6 +281,7 @@ fct.get_measure_dependencies(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## get_semantic_model_bim
@@ -276,6 +293,7 @@ fct.get_semantic_model_bim(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## get_shared_expression
@@ -287,6 +305,7 @@ fct.get_shared_expression(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## get_sku_size
@@ -297,6 +316,7 @@ fct.get_sku_size(
             workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## list_direct_lake_model_calc_tables
@@ -308,6 +328,7 @@ fct.list_direct_lake_model_calc_tables(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## measure_dependency_tree
@@ -320,6 +341,7 @@ fct.measure_dependency_tree(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## migrate_calc_tables_to_lakehouse
@@ -332,6 +354,7 @@ fct.migrate_calc_tables_to_lakehouse(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## migrate_calc_tables_to_semantic_model
@@ -344,6 +367,7 @@ fct.migrate_calc_tables_to_semantic_model(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## migrate_model_objects_to_semantic_model
@@ -356,6 +380,7 @@ fct.migrate_model_objects_to_semantic_model(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## migrate_tables_columns_to_semantic_model
@@ -368,6 +393,7 @@ fct.migrate_tables_columns_to_semantic_model(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## refresh_calc_tables
@@ -379,6 +405,7 @@ fct.refresh_calc_tables(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## refresh_semantic_model
@@ -391,6 +418,7 @@ fct.refresh_semantic_model(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## remove_column
@@ -404,6 +432,7 @@ fct.remove_column(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## remove_measure
@@ -416,6 +445,7 @@ fct.remove_measure(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## remove_table
@@ -428,6 +458,7 @@ fct.remove_table(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## report_rebind
@@ -440,6 +471,7 @@ fct.report_rebind(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## report_rebind_all
@@ -452,6 +484,7 @@ fct.report_rebind_all(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## resolve_lakehouse_name
@@ -463,6 +496,7 @@ fct.resolve_lakehouse_name(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## resolve_lakehouse_id
@@ -474,6 +508,7 @@ fct.resolve_lakehouse_id(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## resolve_dataset_id
@@ -485,6 +520,7 @@ fct.resolve_dataset_id(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## resolve_dataset_name
@@ -496,6 +532,7 @@ fct.resolve_dataset_name(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## resolve_report_id
@@ -507,6 +544,7 @@ fct.resolve_report_id(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## resolve_report_name
@@ -518,6 +556,7 @@ fct.resolve_report_name(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## show_unsupported_direct_lake_objects
@@ -529,6 +568,7 @@ fct.show_unsupported_direct_lake_objects(
         #,workspaceName = '' 
         )
 ```
+### Parameters
 
 ---
 ## update_direct_lake_model_lakehouse_connection
@@ -541,6 +581,7 @@ fct.update_direct_lake_model_lakehouse_connection(
             #,workspaceName = '' 
             )
 ```
+### Parameters
 
 ---
 ## update_direct_lake_partition_entity
@@ -556,3 +597,7 @@ fct.update_direct_lake_partition_entity(
             #,lakehouseWorkspaceName = ''            
             )
 ```
+### Parameters
+
+
+
