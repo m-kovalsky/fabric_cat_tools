@@ -15,15 +15,15 @@ import fabric_cat_tools as fct
 
 
 ### Add/remove objects from semantic model
-* add_field_parameter
+* [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools#add_field_parameter)
 * [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools#add_hierarchy)
-* add_measure
-* add_relationship
-* add_rls
-* add_role
-* remove_column
-* remove_measure
-* remove_table
+* [add_measure](https://github.com/m-kovalsky/fabric_cat_tools#add_measure)
+* [add_relationship](https://github.com/m-kovalsky/fabric_cat_tools#add_relationship)
+* [add_rls](https://github.com/m-kovalsky/fabric_cat_tools#add_rls)
+* [add_role](https://github.com/m-kovalsky/fabric_cat_tools#add_role)
+* [remove_column]
+* [remove_measure]
+* [remove_table]
 
 ### General semantic model
 * clear_cache
@@ -50,7 +50,7 @@ import fabric_cat_tools as fct
 * update_direct_lake_model_lakehouse_connection
 
 ### Direct Lake
-* check_fallback_reason
+* [check_fallback_reason](https://github.com/m-kovalsky/fabric_cat_tools#check_fallback_reason)
 * control_fallback
 * get_direct_lake_lakehouse
 * get_directlake_guardrails_for_sku
