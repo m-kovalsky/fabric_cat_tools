@@ -202,32 +202,55 @@ fct.add_relationship(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### fromTable [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table on the 'from' side of the relationship
-#### toTable [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table on the 'to' side of the relationship
-#### fromColumn [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the column on the 'from' side of the relationship
-#### toColumn [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the column on the 'to' side of the relationship
-#### fromCardinality [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
-#### toCardinality [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
-#### crossFilteringBehavior [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
-#### securityFilteringBehavior [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
-#### isActive [bool](https://docs.python.org/3/library/functions.html#bool)
-###### Optional; Setting for whether the relationship is active or not. Default value: True.
-#### relyOnReferentialIntegrity [bool](https://docs.python.org/3/library/functions.html#bool)
-###### Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> fromTable [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table on the 'from' side of the relationship
+>
+> toTable [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table on the 'to' side of the relationship
+>
+> fromColumn [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the column on the 'from' side of the relationship
+>
+> toColumn [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the column on the 'to' side of the relationship
+>
+> fromCardinality [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
+>
+> toCardinality [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
+>
+> crossFilteringBehavior [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
+>
+> securityFilteringBehavior [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
+>
+> isActive [bool](https://docs.python.org/3/library/functions.html#bool)
+> 
+>> Optional; Setting for whether the relationship is active or not. Default value: True.
+>
+> relyOnReferentialIntegrity [bool](https://docs.python.org/3/library/functions.html#bool)
+> 
+>> Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## add_role
@@ -242,16 +265,23 @@ fct.add_role(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### roleName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the role.
-#### roleDescription [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Optional; Description of the role.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> roleName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the role.
+>
+> roleDescription [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Description of the role.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## add_rls
@@ -267,18 +297,27 @@ fct.add_rls(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### roleName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the role to apply row level security.
-#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the table to apply row level security.
-#### filterExpression [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; DAX expression for the row low level security.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> roleName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the role to apply row level security.
+>
+> tableName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table to apply row level security.
+>
+> filterExpression [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; DAX expression for the row low level security.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## check_fallback_reason
@@ -293,12 +332,15 @@ fct.check_fallback_reason(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### Pandas dataframe showing the tables in the semantic model and their fallback reason.
+> Pandas dataframe showing the tables in the semantic model and their fallback reason.
 
 ---
 ## clear_cache
@@ -311,12 +353,15 @@ fct.clear_cache(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## control_fallback
@@ -332,14 +377,19 @@ fct.control_fallback(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### directLakeBehavior [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Setting for Direct Lake Behavior. Options: ('Automatic', 'DirectLakeOnly', 'DirectQueryOnly').
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> directLakeBehavior [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Setting for Direct Lake Behavior. Options: ('Automatic', 'DirectLakeOnly', 'DirectQueryOnly').
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## create_blank_semantic_model
@@ -353,14 +403,19 @@ fct.create_blank_semantic_model(
             )
 ```
 ### Parameters
-#### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
-###### Required; Name of the semantic model.
-#### compatibilityLevel [int](https://docs.python.org/3/library/functions.html#int) 
-###### Optional; Setting for the compatibility level of the semantic model. Default value: 1604.
-#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
-###### Optional; The workspace where the semantic model resides.
+> datasetName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> compatibilityLevel [int](https://docs.python.org/3/library/functions.html#int)
+> 
+>> Optional; Setting for the compatibility level of the semantic model. Default value: 1604.
+>
+> workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
-###### A printout stating the success/failure of the operation.
+> A printout stating the success/failure of the operation.
 
 ---
 ## create_pqt_file
