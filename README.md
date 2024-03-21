@@ -43,6 +43,14 @@ fct.add_hierarchy(
 ### Parameters
 #### datasetName [str](https://docs.python.org/3/library/stdtypes.html#str) 
 ###### Required; Name of the semantic model.
+#### tableName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the table in which the hierarchy will reside.
+#### hierarchyName [str](https://docs.python.org/3/library/stdtypes.html#str) 
+###### Required; Name of the hierarchy.
+#### levels [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Required; List of columns to be included as levels in the hierarchy.
+#### workspaceName [str](https://docs.python.org/3/library/stdtypes.html#str)
+###### Optional; The workspace where the semantic model resides.
 
 ---
 ## add_measure
