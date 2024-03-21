@@ -49,27 +49,27 @@ import fabric_cat_tools as fct
 * [update_direct_lake_model_lakehouse_connection](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_model_lakehouse_connection)
 
 ### Direct Lake
-* [check_fallback_reason](https://github.com/m-kovalsky/fabric_cat_tools#check_fallback_reason)
-* [control_fallback](https://github.com/m-kovalsky/fabric_cat_tools#control_fallback)
-* [get_direct_lake_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools#get_direct_lake_lakehouse)
-* [get_directlake_guardrails_for_sku](https://github.com/m-kovalsky/fabric_cat_tools#get_directlake_guardrails_for_sku)
-* [get_direct_lake_guardrails](https://github.com/m-kovalsky/fabric_cat_tools#get_direct_lake_guardrails)
-* [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools#get_shared_expression)
-* [get_sku_size](https://github.com/m-kovalsky/fabric_cat_tools#get_sku_size)
-* [list_direct_lake_model_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools#list_direct_lake_model_calc_tables)
+* [check_fallback_reason](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#check_fallback_reason)
+* [control_fallback](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#control_fallback)
+* [get_direct_lake_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_direct_lake_lakehouse)
+* [get_directlake_guardrails_for_sku](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_directlake_guardrails_for_sku)
+* [get_direct_lake_guardrails](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_direct_lake_guardrails)
+* [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_shared_expression)
+* [get_sku_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_sku_size)
+* [list_direct_lake_model_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_direct_lake_model_calc_tables)
 
 ### Lakehouse
-* [get_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools#get_lakehouse_tables)
-* [get_lakehouse_columns](https://github.com/m-kovalsky/fabric_cat_tools#get_lakehouse_columns)
-* [get_lakehouse_details](https://github.com/m-kovalsky/fabric_cat_tools#get_lakehouse_details)
+* [get_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_tables)
+* [get_lakehouse_columns](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_columns)
+* [get_lakehouse_details](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_details)
 
 ### Helper Functions
-* [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools#resolve_dataset_id)
-* [resolve_dataset_name](https://github.com/m-kovalsky/fabric_cat_tools#resolve_dataset_name)
-* [resolve_lakehouse_id](https://github.com/m-kovalsky/fabric_cat_tools#resolve_lakehouse_id)
-* [resolve_lakehouse_name](https://github.com/m-kovalsky/fabric_cat_tools#resolve_lakehouse_name)
-* [resolve_report_id](https://github.com/m-kovalsky/fabric_cat_tools#resolve_report_id)
-* [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tools#resolve_report_name)
+* [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_dataset_id)
+* [resolve_dataset_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_dataset_name)
+* [resolve_lakehouse_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_lakehouse_id)
+* [resolve_lakehouse_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_lakehouse_name)
+* [resolve_report_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_report_id)
+* [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tool?tab=readme-ov-files#resolve_report_name)
 
 # Functions
 ## add_field_parameter
