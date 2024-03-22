@@ -58,6 +58,8 @@ import fabric_cat_tools as fct
 * [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_shared_expression)
 * [get_sku_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_sku_size)
 * [list_direct_lake_model_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_direct_lake_model_calc_tables)
+* [warm_direct_lake_cache_perspective](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#warm_direct_lake_cache_perspective)
+* [warm_direct_lake_cache_isresident](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#warm_direct_lake_cache_isresident)
 
 ### Lakehouse
 * [get_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_tables)
@@ -1261,7 +1263,56 @@ fct.update_direct_lake_partition_entity(
 > 
 >> Optional; The workspace where the lakehouse resides.
 
+---
+## warm_direct_lake_cache_perspective
+#### Warms the cache of a Direct Lake semantic model by running a simple DAX query against the columns in a perspective
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
+```python
+import fabric_cat_tools as fct
+fct.warm_direct_lake_cache_perspective(
+        datasetName = 'AdventureWorks'
+        ,perspective = 'WarmCache'
+        ,addDependencies = True
+        #,workspaceName = '' 
+        )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **perspective** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the perspective which contains objects to be used for warming the cache.
+>
+> **addDependencies** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Includes object dependencies in the cache warming process.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+
+---
+## warm_direct_lake_cache_isresident
+#### Performs a refresh on the semantic model and puts the columns which were in memory prior to the refresh back into memory.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
+```python
+import fabric_cat_tools as fct
+fct.warm_direct_lake_cache_isresident(
+        datasetName = 'AdventureWorks'
+        #,workspaceName = '' 
+        )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+
 ## Version History
-
-
-
