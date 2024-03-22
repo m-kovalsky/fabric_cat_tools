@@ -621,6 +621,37 @@ fct.get_directlake_guardrails_for_sku(
 >> Required; Sku size of a workspace/capacity
 
 ---
+## get_direct_lake_lakehouse
+#### Identifies the lakehouse used by a Direct Lake semantic model.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
+```python
+import fabric_cat_tools as fct
+fct.get_direct_lake_lakehouse(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = ''
+            #,lakehouseName = ''
+            #,lakehouseWorkspaceName = ''            
+            )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Name of the lakehouse used by the semantic model.
+>
+> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
+
+---
 ## get_lakehouse_columns
 #### Shows the tables and columns of a lakehouse and their respective properties.
 ```python
