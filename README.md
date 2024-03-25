@@ -43,6 +43,7 @@ import fabric_cat_tools as fct
 ### Direct Lake Migration
 * [create_pqt_file](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_pqt_file)
 * [create_blank_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_blank_semantic_model)
+* [migrate_field_parameters](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_field_parameters)
 * [migrate_tables_columns_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_tables_columns_to_semantic_model)
 * [migrate_calc_tables_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_calc_tables_to_semantic_model)
 * [migrate_model_objects_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_model_objects_to_semantic_model)
@@ -880,6 +881,32 @@ fct.migrate_calc_tables_to_lakehouse(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_semantic_model(
+            datasetName = 'AdventureWorks'
+            ,newDatasetName = ''
+            #,workspaceName = '' 
+            )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the Direct Lake semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+
+---
+## migrate_field_parameters
+#### Migrates field parameters from one semantic model to another.
+> [!NOTE]
+> This function is specifically relevant for import/DirectQuery migration to Direct Lake
+```python
+import fabric_cat_tools as fct
+fct.migrate_field_parameters(
             datasetName = 'AdventureWorks'
             ,newDatasetName = ''
             #,workspaceName = '' 
