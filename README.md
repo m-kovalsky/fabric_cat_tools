@@ -49,7 +49,6 @@ import fabric_cat_tools as fct
 * [migrate_model_objects_to_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_model_objects_to_semantic_model)
 * [migrate_calc_tables_to_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_calc_tables_to_lakehouse)
 * [refresh_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_calc_tables)
-* [direct_lake_schema_compare](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct_lake_schema_compare)
 * [show_unsupported_direct_lake_objects](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#show_unsupported_direct_lake_objects)
 * [update_direct_Lake_partition_entity](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_Lake_partition_entity)
 * [update_direct_lake_model_lakehouse_connection](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_model_lakehouse_connection)
@@ -57,6 +56,8 @@ import fabric_cat_tools as fct
 ### Direct Lake
 * [check_fallback_reason](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#check_fallback_reason)
 * [control_fallback](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#control_fallback)
+* [direct_lake_schema_compare](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct_lake_schema_compare)
+* [direct_lake_schema_sync](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct_lake_schema_sync)
 * [get_direct_lake_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_direct_lake_lakehouse)
 * [get_directlake_guardrails_for_sku](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_directlake_guardrails_for_sku)
 * [get_direct_lake_guardrails](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_direct_lake_guardrails)
@@ -587,6 +588,42 @@ fct.direct_lake_schema_compare(
 > **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse used by the Direct Lake semantic model.
+>
+> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace in which the lakehouse resides.
+
+---
+## direct_lake_schema_sync
+#### Shows/adds columns which exist in the lakehouse but do not exist in the semantic model (only for tables in the semantic model).
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
+```python
+import fabric_cat_tools as fct
+fct.direct_lake_schema_sync(
+     datasetName = 'AdvWorks'
+    ,addToModel = True
+    #,workspaceName = ''
+    #,lakehouseName = ''
+    #,lakehouseWorkspaceName = ''
+    )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **addToTmodel** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Adds columns which exist in the lakehouse but do not exist in the semantic model. No new tables are added. Default value: False.
 >
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
