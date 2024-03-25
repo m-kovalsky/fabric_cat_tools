@@ -36,6 +36,10 @@ import fabric_cat_tools as fct
 * [create_semantic_model_from_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_semantic_model_from_bim)
 * [create_report_from_reportjson](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_report_from_reportjson)
 
+### Vertipaq Analyzer
+* [vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer)
+* [import_vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#import_vertipaq_analyzer)
+
 ### Direct Lake Migration
 * [create_pqt_file](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_pqt_file)
 * [create_blank_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_blank_semantic_model)
@@ -779,6 +783,25 @@ fct.get_sku_size(
 >> Optional; The workspace where the semantic model resides.
 
 ---
+## import_vertipaq_analyzer
+#### Imports and visualizes the vertipaq analyzer info from a saved .zip file in your lakehouse.
+```python
+import fabric_cat_tools as fct
+fct.import_vertipaq_analyzer(
+          folderPath = '/lakehouse/default/Files/VertipaqAnalyzer'
+          ,fileName = 'Workspace Name-DatasetName.zip'
+          )
+```
+### Parameters
+> **folderPath** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Folder within your lakehouse in which the .zip file containing the vertipaq analyzer info has been saved.
+>
+> **fileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; File name of the file which contains the vertipaq analyzer info.
+
+---
 ## list_direct_lake_model_calc_tables
 #### Shows the calculated tables and their respective DAX expression for a Direct Lake model (which has been migrated from import/DirectQuery.
 > [!NOTE]
@@ -1293,6 +1316,30 @@ fct.update_direct_lake_partition_entity(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+
+---
+## vertipaq_analyzer
+#### Extracts the vertipaq analyzer statistics from a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.vertipaq_analyzer(
+        datasetName = 'AdventureWorks'
+        #,workspaceName = ''
+        ,export = True
+        )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **export** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Indicates whether to export the vertipaq analyzer data to a .zip file in your lakehouse. Default value: False.
 
 ---
 ## warm_direct_lake_cache_perspective
