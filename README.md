@@ -753,7 +753,7 @@ fct.get_lakehouse_tables(
 >
 > **extended** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
->> Optional; Adds additional table properties relevant to Direct Lake guardrails. Default value: False.
+>> Optional; Adds the following additional table properties \['Files', 'Row Groups', 'Table Size', 'Parquet File Guardrail', 'Row Group Guardrail', 'Row Count Guardrail'\]. Also indicates the SKU for the workspace and whether guardrails are hit. Default value: False.
 >
 > **countRows** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
