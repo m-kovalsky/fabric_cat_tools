@@ -1,7 +1,10 @@
 # fabric_cat_tools
-This is a python library intended to be used in [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-engineering/how-to-use-notebook). This library was originally intended to contain functions used for migrating import/DirectQuery semantic models to Direct Lake mode. However, it quickly became apparent that functions within such a library could support many other useful activities in the realm of semantic models, reports, lakehouses and really anything Fabric-related.
+This is a python library intended to be used in [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-engineering/how-to-use-notebook). This library was originally intended to contain functions used for [migrating import/DirectQuery semantic models to Direct Lake mode](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct-lake-migration-1). However, it quickly became apparent that functions within such a library could support many other useful activities in the realm of semantic models, reports, lakehouses and really anything Fabric-related. As such, this library contains a variety of functions ranging from running [Vertipaq Analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer) or the [Best Practice Analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) against a semantic model to seeing if any [lakehouse tables hit Direct Lake guardrails](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_tables).
 
 Instructions for migrating import/DirectQuery semantic models to Direct Lake mode can be found [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct-lake-migration-1).
+
+If you encounter any issues, please [raise a bug](https://github.com/m-kovalsky/fabric_cat_tools/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=).
+If you have ideas for new features/functions, please [request a feature](https://github.com/m-kovalsky/fabric_cat_tools/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=).
 
 ## Install the .whl file in a Fabric notebook
 ```python
