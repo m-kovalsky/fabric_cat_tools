@@ -622,7 +622,7 @@ fct.direct_lake_schema_sync(
 > 
 >> Required; Name of the semantic model.
 >
-> **addToTmodel** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> **addToModel** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Adds columns which exist in the lakehouse but do not exist in the semantic model. No new tables are added. Default value: False.
 >
