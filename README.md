@@ -733,13 +733,14 @@ fct.get_lakehouse_details(
 
 ---
 ## get_lakehouse_tables
-#### Shows the tables of a lakehouse and their respective properties.
+#### Shows the tables of a lakehouse and their respective properties. Option to include additional properties relevant to Direct Lake guardrails.
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_tables(
-            lakehouseName = 'AdventureWorks'
-            #,workspaceName = '' 
-            )
+        #lakehouseName = ''
+        #,workspaceName = ''
+        ,extended = True
+        ,countRows = True)
 ```
 ### Parameters
 > **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -749,6 +750,14 @@ fct.get_lakehouse_tables(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+>
+> **extended** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Adds additional table properties relevant to Direct Lake guardrails. Default value: False.
+>
+> **countRows** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Adds an additional column showing the row count of each table. Default value: False.
 
 ---
 ## get_measure_dependencies
