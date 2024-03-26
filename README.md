@@ -36,9 +36,10 @@ import fabric_cat_tools as fct
 * [create_semantic_model_from_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_semantic_model_from_bim)
 * [create_report_from_reportjson](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_report_from_reportjson)
 
-### Vertipaq Analyzer
+### Model Optimization
 * [vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer)
 * [import_vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#import_vertipaq_analyzer)
+* [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa)
 
 ### Direct Lake Migration
 * [create_pqt_file](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_pqt_file)
@@ -1108,6 +1109,7 @@ fct.remove_measure(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+
 ---
 ## remove_table
 #### Removes a table (or multiple tables) in a semantic model.
@@ -1131,6 +1133,7 @@ fct.remove_table(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+
 ---
 ## report_rebind
 #### Rebinds a report to a semantic model.
@@ -1290,6 +1293,34 @@ fct.resolve_report_name(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
+
+---
+## run_model_bpa
+#### Runs the Best Practice Rules against a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.run_model_bpa(
+        datasetName = 'AdventureWorks'
+        #,workspaceName = ''
+        ,extend = True
+        )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **rulesDataFrame**
+> 
+>> Optional; A pandas dataframe including rules to be analyzed.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **extend** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Extends the best practice rules to run advanced rules which leverage DMVs.
 
 ---
 ## show_unsupported_direct_lake_objects
