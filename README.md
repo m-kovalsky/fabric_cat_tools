@@ -1,7 +1,7 @@
 # fabric_cat_tools
 This is a python library intended to be used in [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-engineering/how-to-use-notebook). This library was originally intended to contain functions used for migrating import/DirectQuery semantic models to Direct Lake mode. However, it quickly became apparent that functions within such a library could support many other useful activities in the realm of semantic models, reports, lakehouses and really anything Fabric-related.
 
-Instructions for migrating import/DirectQuery semantic models to Direct Lake mode can be found [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#Direct_Lake_migration).
+Instructions for migrating import/DirectQuery semantic models to Direct Lake mode can be found [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct-lake-migration-1).
 
 ## Install the .whl file in a Fabric notebook
 ```python
