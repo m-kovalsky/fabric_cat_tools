@@ -1342,7 +1342,7 @@ fct.show_unsupported_direct_lake_objects(
         )
 ```
 ### Parameters
-> **datasetName **[str](https://docs.python.org/3/library/stdtypes.html#str)
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
