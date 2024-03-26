@@ -4,6 +4,7 @@ This is a python library intended to be used in [Microsoft Fabric notebooks](htt
 Instructions for migrating import/DirectQuery semantic models to Direct Lake mode can be found [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct-lake-migration-1).
 
 If you encounter any issues, please [raise a bug](https://github.com/m-kovalsky/fabric_cat_tools/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=).
+
 If you have ideas for new features/functions, please [request a feature](https://github.com/m-kovalsky/fabric_cat_tools/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=).
 
 ## Install the .whl file in a Fabric notebook
