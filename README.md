@@ -1467,7 +1467,7 @@ fct.vertipaq_analyzer(
 >
 > **export** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Optional; Specifying 'zip' will export the results to a zip file in your lakehouse (which can be imported using the import_vertipaq_analyzer function. Specifying 'table' will export the results to delta tables in your lakehouse. Default value: None.
+>> Optional; Specifying 'zip' will export the results to a zip file in your lakehouse (which can be imported using the import_vertipaq_analyzer function. Specifying 'table' will export the results to delta tables (appended) in your lakehouse. Default value: None.
 
 ---
 ## warm_direct_lake_cache_perspective
