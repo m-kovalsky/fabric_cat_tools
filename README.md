@@ -1560,7 +1560,9 @@ The following process automates the migration of an import/DirectQuery model to 
 * Offload your Power Query logic to Dataflows Gen2 inside of Fabric (where it can be maintained and development can continue).
 * Dataflows Gen2 will create delta tables in your Fabric lakehouse. These tables can then be used for your Direct Lake model.
 * Create a new semantic model in Direct Lake mode containing all the standard tables and columns, calculation groups, measures, relationships, hierarchies, roles, row level security, perspectives, and translations from your original semantic model.
-* Non-supported objects are not transferred (i.e. calculated columns, calculated tables, relationships using columns with unsupported data types etc.).
+* Viable calculated tables are migrated to the new semantic model as data tables. Delta tables are dynamically generated in the lakehouse to support the Direct Lake model. The calculated table DAX logic is stored as model annotations in the new semantic model.
+* Field parameters are migrated to the new semantic model as they were in the original semantic model (as calculated tables). Any calculated columns used in field parameters are automatically removed in the new semantic model's field parameter(s).
+* Non-supported objects are not transferred (i.e. calculated columns, relationships using columns with unsupported data types etc.).
 * Reports used by your original semantic model will be rebinded to your new semantic model.
 
 ## Version History
