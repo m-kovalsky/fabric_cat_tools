@@ -1547,7 +1547,8 @@ The following process automates the migration of an import/DirectQuery model to 
 2. After the .pqt file is created, sync files from your [OneLake file explorer](https://www.microsoft.com/download/details.aspx?id=105222), create a new Dataflows Gen2, and import the Power Query Template file.
 3. Manually map each table to its destination (your lakehouse).
 4. Publish the Dataflow Gen2 and wait for it to finish creating the delta lake tables in your lakehouse.
-5. Back in the notebook, the next step will create your new Direct Lake semantic model with the name of your choice, taking all the valuable properties from the orignal semantic model and refreshing/framing your new semantic model.
+5. Back in the notebook, the next step will create your new Direct Lake semantic model with the name of your choice, taking all the relevant properties from the orignal semantic model and refreshing/framing your new semantic model.
+*As of version 0.2.1, calculated tables are also migrated to Direct Lake (as data tables with their DAX expression stored as model annotations in the new semantic model). Additionally, Field Parameters are migrated as they were in the original semantic model (as a calculated table).*
 6. Finally, you can easily rebind your all reports which use the import/DQ semantic model to the new Direct Lake semantic model in one click.
 
 ### Completing these steps will do the following:
