@@ -1435,7 +1435,25 @@ import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
         datasetName = 'AdventureWorks'
         #,workspaceName = ''
-        ,export = True
+        ,export = None
+        )
+```
+
+```python
+import fabric_cat_tools as fct
+fct.vertipaq_analyzer(
+        datasetName = 'AdventureWorks'
+        #,workspaceName = ''
+        ,export = 'zip'
+        )
+```
+
+```python
+import fabric_cat_tools as fct
+fct.vertipaq_analyzer(
+        datasetName = 'AdventureWorks'
+        #,workspaceName = ''
+        ,export = 'table'
         )
 ```
 ### Parameters
@@ -1447,9 +1465,9 @@ fct.vertipaq_analyzer(
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **export** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> **export** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Optional; Indicates whether to export the vertipaq analyzer data to a .zip file in your lakehouse. Default value: False.
+>> Optional; Specifying 'zip' will export the results to a zip file in your lakehouse (which can be imported using the import_vertipaq_analyzer function. Specifying 'table' will export the results to delta tables in your lakehouse. Default value: None.
 
 ---
 ## warm_direct_lake_cache_perspective
