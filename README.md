@@ -57,6 +57,7 @@ import fabric_cat_tools as fct
 * [get_directlake_guardrails_for_sku](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_directlake_guardrails_for_sku)
 * [get_direct_lake_guardrails](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_direct_lake_guardrails)
 * [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_shared_expression)
+* [get_direct_lake_sql_endpoint](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_direct_lake_sql_endpoint)
 * [get_sku_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_sku_size)
 * [list_direct_lake_model_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_direct_lake_model_calc_tables)
 * [warm_direct_lake_cache_perspective](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#warm_direct_lake_cache_perspective)
@@ -699,6 +700,27 @@ fct.get_direct_lake_lakehouse(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+
+---
+## get_direct_lake_sql_endpoint
+#### Identifies the lakehouse used by a Direct Lake semantic model.
+> [!NOTE]
+> This function is only relevant to semantic models in Direct Lake mode.
+```python
+import fabric_cat_tools as fct
+fct.get_direct_lake_sql_endpoint(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = ''       
+            )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 
 ---
 ## get_lakehouse_columns
