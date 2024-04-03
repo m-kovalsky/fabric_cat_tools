@@ -1588,3 +1588,7 @@ The following process automates the migration of an import/DirectQuery model to 
 * Reports used by your original semantic model will be rebinded to your new semantic model.
 
 ## Version History
+
+- Version 0.2.2 (Apr 3, 2024)
+    - Fixed bug regarding how Field Parameters are created (add_field_parameter, migrate_field_parameters)
+    - Added escape clause for get_shared_expression if the SQL Endpoint has not yet been provisioned
