@@ -9,7 +9,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 
 ## Install the .whl file in a Fabric notebook
 ```python
-%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.1-py3-none-any.whl"
+%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.2-py3-none-any.whl"
 ```
 
 ## Once installed, run this code to import the library into your notebook
