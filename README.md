@@ -1589,6 +1589,7 @@ The following process automates the migration of an import/DirectQuery model to 
 
 ## Version History
 
-- Version 0.2.2 (Apr 3, 2024)
+- Version 0.2.2 (Apr 4, 2024)
     - Fixed bug regarding how Field Parameters are created (add_field_parameter, migrate_field_parameters)
     - Added escape clause for get_shared_expression if the SQL Endpoint has not yet been provisioned
+    - Added functionality to vertipaq_analzyer so that the column cardinality for Direct Lake semantic models is obtained by querying the lakehouse
