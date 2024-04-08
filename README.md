@@ -1706,6 +1706,10 @@ The following process automates the migration of an import/DirectQuery model to 
 
 ## Version History
 
+- Version 0.2.3 (Apr 8, 2024)
+    - Added [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report) function
+    - Added [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report) function
+    - Added [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json) function
 - Version 0.2.2 (Apr 4, 2024)
     - Fixed bug regarding how Field Parameters are created (add_field_parameter, migrate_field_parameters)
     - Added escape clause for get_shared_expression if the SQL Endpoint has not yet been provisioned
