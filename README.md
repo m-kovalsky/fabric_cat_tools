@@ -19,16 +19,22 @@ import fabric_cat_tools as fct
 
 # Function Categories
 
-### General semantic model
+### Semantic Model
 * [clear_cache](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clear_cache)
-* [create_report_from_reportjson](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_report_from_reportjson)
 * [create_semantic_model_from_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_semantic_model_from_bim)
 * [get_semantic_model_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_semantic_model_bim)
 * [get_measure_dependencies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_measure_dependencies)
 * [measure_dependency_tree](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#measure_dependency_tree)
 * [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
+
+
+### Report
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
 * [report_rebind_all](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind_all)
+* [create_report_from_reportjson](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_report_from_reportjson)
+* [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json)
+* [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report)
+* [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report)
 
 ### Model Optimization
 * [vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer)
@@ -437,6 +443,42 @@ fct.clear_cache(
 > A printout stating the success/failure of the operation.
 
 ---
+## clone_report
+#### Makes a clone of a Power BI report
+```python
+import fabric_cat_tools as fct
+fct.clone_report(
+            reportName = 'MyReport'
+            ,clonedReportName = 'MyNewReport'
+            #,workspaceName = None
+            #,targetWorkspace = None
+            #,targetDatasetName = None
+            )
+```
+### Parameters
+> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the report to be cloned.
+>
+> **clonedReportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the new report.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the original report resides.
+>
+> **targetWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the new report will reside. Defaults to using the workspace in which the original report resides.
+>
+> **targetDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The semantic model from which the new report will be connected. Defaults to using the semantic model used by the original report.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
 ## control_fallback
 #### Set the DirectLakeBehavior for a semantic model.
 > [!NOTE]
@@ -646,6 +688,62 @@ fct.direct_lake_schema_sync(
 >> Optional; The workspace in which the lakehouse resides.
 
 ---
+## export_report
+#### Exports a Power BI report to a file in your lakehouse.
+```python
+import fabric_cat_tools as fct
+fct.export_report(
+            reportName = 'AdventureWorks'
+            ,exportFormat = 'PDF'
+            #,fileName = None
+            #,bookmarkName = None
+            #,pageName = None
+            #,visualName = None
+            #,workspaceName = None
+            )
+```
+```python
+import fabric_cat_tools as fct
+fct.export_report(
+            reportName = 'AdventureWorks'
+            ,exportFormat = 'PDF'
+            #,fileName = 'Exports\MyReport'
+            #,bookmarkName = None
+            #,pageName = 'ReportSection293847182375'
+            #,visualName = None
+            #,workspaceName = None
+            )
+```
+### Parameters
+> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **exportFormat** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The format in which to export the report. See this link for valid formats: https://learn.microsoft.com/rest/api/power-bi/reports/export-to-file-in-group#fileformat. For image formats, enter the file extension in this parameter, not 'IMAGE'.
+>
+> **fileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The name of the file to be saved within the lakehouse. Do **not** include the file extension. Defaults ot the reportName parameter value.
+>
+> **bookmarkName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The name (GUID) of a bookmark within the report.
+>
+> **pageName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The name (GUID) of the report page.
+>
+> **visualName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The name (GUID) of a visual. If you specify this parameter you must also specify the pageName parameter.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the report resides.
+
+---
 ## get_direct_lake_guardrails
 #### Shows the guardrails for when Direct Lake semantic models will fallback to Direct Query based on Microsoft's online documentation.
 ```python
@@ -805,6 +903,25 @@ fct.get_measure_dependencies(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+
+---
+## get_report_json
+#### Gets the report.json file content of a Power BI report
+```python
+import fabric_cat_tools as fct
+fct.get_report_json(
+            reportName = 'MyReport'
+            #,workspaceName = None
+            )
+```
+### Parameters
+> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the report.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the report resides.
 
 ---
 ## get_semantic_model_bim
