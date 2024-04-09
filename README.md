@@ -624,7 +624,7 @@ fct.create_semantic_model_from_bim(
 
 ---
 ## create_shortcut_onelake
-#### Creates a shortcut..
+#### Creates a [shortcut](https://learn.microsoft.com/fabric/onelake/onelake-shortcuts) to a delta table in OneLake.
 ```python
 import fabric_cat_tools as fct
 fct.create_shortcut_onelake(
