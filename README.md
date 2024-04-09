@@ -51,7 +51,7 @@ import fabric_cat_tools as fct
 * [migrate_calc_tables_to_lakehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_calc_tables_to_lakehouse)
 * [refresh_calc_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_calc_tables)
 * [show_unsupported_direct_lake_objects](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#show_unsupported_direct_lake_objects)
-* [update_direct_Lake_partition_entity](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_Lake_partition_entity)
+* [update_direct_lake_partition_entity](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_partition_entity)
 * [update_direct_lake_model_lakehouse_connection](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_model_lakehouse_connection)
 
 ### Direct Lake
@@ -73,6 +73,8 @@ import fabric_cat_tools as fct
 * [get_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_tables)
 * [get_lakehouse_columns](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_columns)
 * [get_lakehouse_details](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_details)
+* [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake)
+* [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake)
 
 ### Add/remove objects from a semantic model
 * [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
@@ -621,6 +623,45 @@ fct.create_semantic_model_from_bim(
 > A printout stating the success/failure of the operation.
 
 ---
+## create_shortcut_onelake
+#### Creates a shortcut..
+```python
+import fabric_cat_tools as fct
+fct.create_shortcut_onelake(
+            tableName = 'DimCalendar'
+            ,sourceLakehouseName = 'Lakehouse1'
+            ,sourceWorkspaceName = 'Workspace1'
+            ,destinationLakehouseName = 'Lakehouse2'
+            #,destinationWorkspaceName = ''
+            ,shortcutName = 'Calendar'
+            )
+```
+### Parameters
+> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The table name for which a shortcut will be created.
+>
+> **sourceLakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The lakehouse in which the table resides.
+>
+> **sourceWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The workspace where the source lakehouse resides.
+>
+> **destinationLakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The lakehouse where the shortcut will be created.
+>
+> **destinationWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace in which the shortcut will be created. Defaults to the 'sourceWorkspaceName' parameter value.
+>
+> **shortcutName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The name of the shortcut 'table' to be created. This defaults to the 'tableName' parameter value.
+
+---
 ## direct_lake_schema_compare
 #### Checks that all the tables in a Direct Lake semantic model map to tables in their corresponding lakehouse and that the columns in each table exist.
 > [!NOTE]
@@ -684,6 +725,37 @@ fct.direct_lake_schema_sync(
 >> Optional; The lakehouse used by the Direct Lake semantic model.
 >
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace in which the lakehouse resides.
+
+---
+## export_model_to_onelake
+#### Exports a semantic model's tables to delta tables in the lakehouse. Creates shortcuts to the tables if a lakehouse is specified.
+> [!NOTE]
+> This function requires [XMLA read/write](https://learn.microsoft.com/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) to be enabled on the capacity. Additionally, this function requires the [OneLake Integration](https://learn.microsoft.com/power-bi/enterprise/onelake-integration-overview#enable-onelake-integration) feature to be enabled within the semantic model settings.
+```python
+import fabric_cat_tools as fct
+fct.export_model_to_onelake(
+            datasetName = 'AdventureWorks'
+            ,workspaceName = None
+            ,destinationLakehouseName = 'Lakehouse2'            
+            ,destinationWorkspaceName = 'Workspace2'
+            )
+```
+### Parameters
+> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **destinationLakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse where shortcuts will be created to access the delta tables created by the export. If the lakehouse specified does not exist, one will be created with that name. If no lakehouse is specified, shortcuts will not be created.
+>
+> **destinationWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
 
@@ -1706,6 +1778,10 @@ The following process automates the migration of an import/DirectQuery model to 
 
 ## Version History
 
+- Version 0.2.4 (Apr 8, 2024)
+    - Added [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake) function
+    - Added [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake) function
+    - Removed 'extend' paramter from the [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) function
 - Version 0.2.3 (Apr 8, 2024)
     - Added [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report) function
     - Added [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report) function
