@@ -17,7 +17,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 import fabric_cat_tools as fct
 ```
 
-## Load fabric_cat_tools into a custom Fabric environment
+## Load fabric_cat_tools into a custom [Fabric environment](https://learn.microsoft.com/fabric/data-engineering/create-and-use-environment)
 An even better way to ensure the fabric_cat_tools library is available in your workspace/notebooks is to load it as a library in a custom Fabric environment. If you do this, you will not have to run the above '%pip install' code every time in your notebook. Please follow the steps below.
 
 #### Create a custom environment
