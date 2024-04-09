@@ -17,6 +17,27 @@ If you have ideas for new features/functions, please [request a feature](https:/
 import fabric_cat_tools as fct
 ```
 
+## Load fabric_cat_tools into a custom Fabric environment
+An even better way to ensure the fabric_cat_tools library is available in your workspace/notebooks is to load it as a library in a custom Fabric environment. If you do this, you will not have to run the above '%pip install' code every time in your notebook. Please follow the steps below.
+
+#### Create a custom environment
+1. Navigate to your Fabric workspace
+2. Click 'New' -> More options
+3. Within 'Data Science', click 'Environment'
+4. Name your environment, click 'Create'
+
+#### Add fabric_cat_tools as a library to the environment
+1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.2.3-py3-none-any.whl) fabric_cat_tools library
+2. Within 'Custom Libraries', click 'upload'
+3. Upload the .whl file which was downloaded in step 1
+4. Click 'Save' at the top right of the screen
+5. Click 'Publish' at the top right of the screen
+6. Click 'Publish All'
+
+#### Update your notebook to use the new environment (*must wait for the environment to finish publishing*)
+1. Navigate to your Notebook
+2. Select your newly created environment within the 'Environment' drop down in the navigation bar at the top of the notebook
+
 # Function Categories
 
 ### Semantic Model
