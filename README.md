@@ -734,7 +734,7 @@ fct.direct_lake_schema_sync(
 > [!IMPORTANT]
 > This function requires:
 > 
-> [XMLA read/write](https://learn.microsoft.com/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) to be enabled on the capacity.
+> [XMLA read/write](https://learn.microsoft.com/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) to be enabled on the Fabric capacity.
 > 
 > [OneLake Integration](https://learn.microsoft.com/power-bi/enterprise/onelake-integration-overview#enable-onelake-integration) feature to be enabled within the semantic model settings.
 ```python
