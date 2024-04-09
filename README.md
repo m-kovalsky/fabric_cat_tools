@@ -96,6 +96,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [get_lakehouse_details](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_details)
 * [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake)
 * [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake)
+* [delete_shortcut](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#delete_shortcut)
 
 ### Add/remove objects from a semantic model
 * [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
@@ -681,6 +682,30 @@ fct.create_shortcut_onelake(
 > **shortcutName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name of the shortcut 'table' to be created. This defaults to the 'tableName' parameter value.
+
+---
+## delete_shortcut
+#### Deletes a [OneLake shortcut](https://learn.microsoft.com/fabric/onelake/onelake-shortcuts).
+```python
+import fabric_cat_tools as fct
+fct.delete_shortcut(
+            shortcutName = 'DimCalendar'
+            ,lakehouseName = 'Lakehouse1'
+            ,workspaceName = 'Workspace1'
+            )
+```
+### Parameters
+> **shortcutName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The name of the OneLake shortcut to delete.
+>
+> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse in which the shortcut resides.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## direct_lake_schema_compare
@@ -1806,7 +1831,9 @@ The following process automates the migration of an import/DirectQuery model to 
 - Version 0.2.4 (Apr 8, 2024)
     - Added [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake) function
     - Added [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake) function
+    - Added [delete_shortcut](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#delete_shortcut) function
     - Removed 'extend' paramter from the [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) function
+    - Fixed bug in [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) function which duplicated violations on hierarchy objects
 - Version 0.2.3 (Apr 8, 2024)
     - Added [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report) function
     - Added [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report) function
