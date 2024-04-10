@@ -966,7 +966,7 @@ fct.get_lakehouse_columns(
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_details(
-            lakehouseName = 'AdventureWorks'
+            lakehouseName = 'MyLakehouse'
             #,workspaceName = '' 
             )
 ```
@@ -985,7 +985,7 @@ fct.get_lakehouse_details(
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_tables(
-        #lakehouseName = ''
+        lakehouseName = 'MyLakehouse'
         #,workspaceName = ''
         ,extended = True
         ,countRows = True)
