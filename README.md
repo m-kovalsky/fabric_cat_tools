@@ -9,7 +9,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 
 ## Install the .whl file in a Fabric notebook
 ```python
-%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.4-py3-none-any.whl"
+%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.5-py3-none-any.whl"
 ```
 
 ## Once installed, run this code to import the library into your notebook
@@ -27,7 +27,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 4. Name your environment, click 'Create'
 
 #### Add fabric_cat_tools as a library to the environment
-1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.2.4-py3-none-any.whl) fabric_cat_tools library
+1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.2.5-py3-none-any.whl) fabric_cat_tools library
 2. Within 'Custom Libraries', click 'upload'
 3. Upload the .whl file which was downloaded in step 1
 4. Click 'Save' at the top right of the screen
@@ -56,6 +56,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json)
 * [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report)
 * [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report)
+* [list_dashboards](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dashboards)
 
 ### Model Optimization
 * [vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer)
@@ -97,6 +98,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake)
 * [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake)
 * [delete_shortcut](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#delete_shortcut)
+* [list_shortcuts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_shortcuts)
 
 ### Add/remove objects from a semantic model
 * [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
@@ -1036,6 +1038,14 @@ fct.get_report_json(
             #,workspaceName = None
             )
 ```
+```python
+import fabric_cat_tools as fct
+fct.get_report_json(
+            reportName = 'MyReport'
+            #,workspaceName = None
+            ,saveToFileName = 'MyFileName'
+            )
+```
 ### Parameters
 > **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -1044,6 +1054,10 @@ fct.get_report_json(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
+>
+> **saveToFileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Specifying this parameter will save the report.json file to your lakehouse with the file name of this parameter.
 
 ---
 ## get_semantic_model_bim
@@ -1052,7 +1066,15 @@ fct.get_report_json(
 import fabric_cat_tools as fct
 fct.get_semantic_model_bim(
             datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            #,workspaceName = None
+            )
+```
+```python
+import fabric_cat_tools as fct
+fct.get_semantic_model_bim(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = None
+            ,saveToFileName = 'MyFileName'
             )
 ```
 ### Parameters
@@ -1063,6 +1085,10 @@ fct.get_semantic_model_bim(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **saveToFileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Specifying this parameter will save the model.bim file to your lakehouse with the file name of this parameter.
 
 ---
 ## get_shared_expression
@@ -1117,6 +1143,20 @@ fct.import_vertipaq_analyzer(
 >> Required; File name of the file which contains the vertipaq analyzer info.
 
 ---
+## list_dashboards
+#### Shows the dashboards within the workspace.
+```python
+import fabric_cat_tools as fct
+fct.list_dashboards(
+            #workspaceName = '' 
+            )
+```
+### Parameters
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace name.
+
+---
 ## list_direct_lake_model_calc_tables
 #### Shows the calculated tables and their respective DAX expression for a Direct Lake model (which has been migrated from import/DirectQuery.
 > [!NOTE]
@@ -1136,6 +1176,25 @@ fct.list_direct_lake_model_calc_tables(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+
+---
+## list_shortcuts
+#### Shows the shortcuts within a lakehouse
+```python
+import fabric_cat_tools as fct
+fct.list_direct_lake_model_calc_tables(
+            datasetName = 'AdventureWorks'
+            #,workspaceName = '' 
+            )
+```
+### Parameters
+> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Name of the lakehouse.
+>
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 
 ---
 ## measure_dependency_tree
@@ -1832,6 +1891,13 @@ Check out my [blog post](https://www.elegantbi.com/post/direct-lake-migration) o
 
 ## Version History
 
+- Version 0.2.5 (Apr 11, 2024)
+    - Fixed [bug](https://github.com/m-kovalsky/fabric_cat_tools/issues/1) in [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) regarding models with no hierarchies
+    - Added [list_shortcuts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_shortcuts) function
+    - Added [list_dashboards](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dashboards) function
+    - Added new rule to [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa): 'Set dimensions tables to dual mode instead of import when using DirectQuery on fact tables'
+    - Added 'saveToFileName' parameter to [get_semantic_model_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_semantic_model_bim)
+    - Added 'saveToFileName' parameter to [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json)
 - Version 0.2.4 (Apr 8, 2024)
     - Added [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake) function
     - Added [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake) function
@@ -1843,6 +1909,6 @@ Check out my [blog post](https://www.elegantbi.com/post/direct-lake-migration) o
     - Added [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report) function
     - Added [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json) function
 - Version 0.2.2 (Apr 4, 2024)
-    - Fixed bug regarding how Field Parameters are created (add_field_parameter, migrate_field_parameters)
-    - Added escape clause for get_shared_expression if the SQL Endpoint has not yet been provisioned
-    - Added functionality to vertipaq_analzyer so that the column cardinality for Direct Lake semantic models is obtained by querying the lakehouse
+    - Fixed bug regarding how Field Parameters are created ([add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter), [migrate_field_parameters](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_field_parameters))
+    - Added escape clause for [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_shared_expression) if the SQL Endpoint has not yet been provisioned
+    - Added functionality to [vertipaq_analzyer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analzyer) so that the column cardinality for Direct Lake semantic models is obtained by querying the lakehouse
