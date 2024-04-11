@@ -7,6 +7,10 @@ If you encounter any issues, please [raise a bug](https://github.com/m-kovalsky/
 
 If you have ideas for new features/functions, please [request a feature](https://github.com/m-kovalsky/fabric_cat_tools/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=).
 
+## Click [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#version-history) to see a version history
+
+
+
 ## Install the .whl file in a Fabric notebook
 ```python
 %pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.5-py3-none-any.whl"
