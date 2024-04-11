@@ -1787,6 +1787,10 @@ fct.warm_direct_lake_cache_isresident(
 
 The following process automates the migration of an import/DirectQuery model to a new Direct Lake model. The first step is specifically applicable to models which use Power Query to perform data transformations. If your model does not use Power Query, you must migrate the base tables used in your semantic model to a Fabric lakehouse.
 
+Check out [Nikola Ilic](https://twitter.com/DataMozart)'s terrific [blog post](https://data-mozart.com/migrate-existing-power-bi-semantic-models-to-direct-lake-a-step-by-step-guide/) on this topic!
+
+Check out my [blog post](https://www.elegantbi.com/post/direct-lake-migration) on this topic!
+
 ### Prerequisites
 
 * Make sure you [enable XMLA Read/Write](https://learn.microsoft.com/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) for your capacity
