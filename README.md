@@ -688,6 +688,9 @@ fct.create_shortcut_onelake(
 > **shortcutName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name of the shortcut 'table' to be created. This defaults to the 'tableName' parameter value.
+>
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## delete_shortcut
@@ -712,6 +715,9 @@ fct.delete_shortcut(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+>
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## direct_lake_schema_compare
@@ -743,6 +749,9 @@ fct.direct_lake_schema_compare(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
+>
+### Returns
+> Shows tables/columns which exist in the semantic model but do not exist in the corresponding lakehouse.
 
 ---
 ## direct_lake_schema_sync
@@ -779,6 +788,9 @@ fct.direct_lake_schema_sync(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
+>
+### Returns
+> A list of columns which exist in the lakehouse but not in the Direct Lake semantic model. If lakehouseName is specified, a printout stating the success/failure of the operation is returned.
 
 ---
 ## export_model_to_onelake
@@ -814,6 +826,9 @@ fct.export_model_to_onelake(
 > **destinationWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
+>
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## export_report
@@ -870,6 +885,9 @@ fct.export_report(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
+>
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## get_direct_lake_guardrails
@@ -880,6 +898,8 @@ fct.get_direct_lake_guardrails()
 ```
 ### Parameters
 None
+### Returns
+> A table showing the Direct Lake guardrails by SKU.
 
 ---
 ## get_directlake_guardrails_for_sku
@@ -895,6 +915,8 @@ fct.get_directlake_guardrails_for_sku(
 > **skuSize** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Sku size of a workspace/capacity
+### Returns
+> A table showing the Direct Lake guardrails for the given SKU.
 
 ---
 ## get_direct_lake_lakehouse
