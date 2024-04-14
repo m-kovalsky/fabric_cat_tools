@@ -968,6 +968,8 @@ fct.get_direct_lake_sql_endpoint(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A string containing the SQL Endpoint ID for a Direct Lake semantic model.
 
 ---
 ## get_lakehouse_columns
@@ -987,6 +989,9 @@ fct.get_lakehouse_columns(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A pandas dataframe showing the tables/columns within a lakehouse and their properties.
+
 ---
 ## get_lakehouse_details
 #### Shows the properties associated with a lakehouse.
@@ -1005,6 +1010,8 @@ fct.get_lakehouse_details(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A pandas dataframe showing the properties of a given lakehouse.
 
 ---
 ## get_lakehouse_tables
@@ -1033,6 +1040,8 @@ fct.get_lakehouse_tables(
 > **countRows** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Adds an additional column showing the row count of each table. Default value: False.
+### Returns
+> A pandas dataframe showing the delta tables within a lakehouse and their properties.
 
 ---
 ## get_measure_dependencies
@@ -1052,6 +1061,8 @@ fct.get_measure_dependencies(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A pandas dataframe showing all dependencies for all measures in the semantic model.
 
 ---
 ## get_report_json
@@ -1083,6 +1094,8 @@ fct.get_report_json(
 > **saveToFileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Specifying this parameter will save the report.json file to your lakehouse with the file name of this parameter.
+### Returns
+> The report.json file for a given Power BI report.
 
 ---
 ## get_semantic_model_bim
@@ -1114,6 +1127,8 @@ fct.get_semantic_model_bim(
 > **saveToFileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Specifying this parameter will save the model.bim file to your lakehouse with the file name of this parameter.
+### Returns
+> The model.bim file for a given semantic model.
 
 ---
 ## get_shared_expression
@@ -1133,6 +1148,8 @@ fct.get_shared_expression(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A string showing the expression which can be used to connect a Direct Lake semantic model to its SQL Endpoint.
 
 ---
 ## get_sku_size
@@ -1147,6 +1164,8 @@ fct.get_sku_size(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A string containing the SKU size for a workspace.
 
 ---
 ## import_vertipaq_analyzer
@@ -1180,6 +1199,8 @@ fct.list_dashboards(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace name.
+### Returns
+> A pandas dataframe showing the dashboards which exist in the workspace.
 
 ---
 ## list_direct_lake_model_calc_tables
@@ -1201,6 +1222,8 @@ fct.list_direct_lake_model_calc_tables(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A pandas dataframe showing the calculated tables which were migrated to Direct Lake and whose DAX expressions are stored as model annotations.
 
 ---
 ## list_shortcuts
@@ -1220,6 +1243,8 @@ fct.list_direct_lake_model_calc_tables(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A pandas dataframe showing the shortcuts which exist in a given lakehouse and their properties.
 
 ---
 ## measure_dependency_tree
@@ -1244,6 +1269,8 @@ fct.measure_dependency_tree(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A tree view showing the dependencies for a given measure within the semantic model.
 
 ---
 ## migrate_calc_tables_to_lakehouse
@@ -1270,6 +1297,8 @@ fct.migrate_calc_tables_to_lakehouse(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## migrate_calc_tables_to_semantic_model
@@ -1296,6 +1325,8 @@ fct.migrate_calc_tables_to_semantic_model(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## migrate_field_parameters
@@ -1322,6 +1353,8 @@ fct.migrate_field_parameters(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## migrate_model_objects_to_semantic_model
@@ -1348,6 +1381,8 @@ fct.migrate_model_objects_to_semantic_model(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## migrate_tables_columns_to_semantic_model
@@ -1374,6 +1409,8 @@ fct.migrate_tables_columns_to_semantic_model(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## refresh_calc_tables
@@ -1395,6 +1432,9 @@ fct.refresh_calc_tables(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
 ---
 ## refresh_semantic_model
 #### Performs a refresh on a semantic model.
@@ -1418,6 +1458,9 @@ fct.refresh_semantic_model(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
 ---
 ## remove_column
 #### Removes a column (or multiple columns) in a semantic model.
@@ -1446,6 +1489,9 @@ fct.remove_column(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
 ---
 ## remove_measure
 #### Removes a measure (or multiple measures) in a semantic model.
@@ -1469,6 +1515,8 @@ fct.remove_measure(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## remove_table
@@ -1493,6 +1541,8 @@ fct.remove_table(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## report_rebind
@@ -1517,6 +1567,8 @@ fct.report_rebind(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model and report reside.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## report_rebind_all
@@ -1541,6 +1593,9 @@ fct.report_rebind_all(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic models and reports reside.
+### Returns
+> A printout stating the success/failure of the operation.
+
 ---
 ## resolve_lakehouse_name
 #### Returns the name of the lakehouse for a given lakehouse Id.
@@ -1559,6 +1614,8 @@ fct.resolve_lakehouse_name(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A string containing the lakehouse name.
 
 ---
 ## resolve_lakehouse_id
@@ -1578,6 +1635,8 @@ fct.resolve_lakehouse_id(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A string conaining the lakehouse ID.
 
 ---
 ## resolve_dataset_id
@@ -1597,6 +1656,9 @@ fct.resolve_dataset_id(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A string containing the semantic model ID.
+
 ---
 ## resolve_dataset_name
 #### Returns the name of a given semantic model ID.
@@ -1615,6 +1677,8 @@ fct.resolve_dataset_name(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A string containing the semantic model name.
 
 ---
 ## resolve_report_id
@@ -1634,6 +1698,8 @@ fct.resolve_report_id(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
+### Returns
+> A string containing the report ID.
 
 ---
 ## resolve_report_name
@@ -1653,6 +1719,8 @@ fct.resolve_report_name(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
+### Returns
+> A string containing the report name.
 
 ---
 ## run_model_bpa
