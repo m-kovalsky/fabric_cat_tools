@@ -176,7 +176,6 @@ fct.add_data_column(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional; The workspace where the semantic model resides.
->
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1682,6 +1681,8 @@ fct.run_model_bpa(
 > **extend** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Extends the best practice rules to run advanced rules which leverage DMVs.
+### Returns
+> A visualization showing objects which violate each [Best Practice Rule](https://github.com/microsoft/Analysis-Services/tree/master/BestPracticeRules) by rule category.
 
 ---
 ## show_unsupported_direct_lake_objects
@@ -1701,6 +1702,8 @@ fct.show_unsupported_direct_lake_objects(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A list of objects (tables/columns/relationships) within the semantic model which are currently not supported by Direct Lake mode.
 
 ---
 ## update_direct_lake_model_lakehouse_connection
@@ -1731,6 +1734,8 @@ fct.update_direct_lake_model_lakehouse_connection(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## update_direct_lake_partition_entity
@@ -1772,6 +1777,8 @@ fct.update_direct_lake_partition_entity(
 > **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## vertipaq_analyzer
@@ -1814,6 +1821,8 @@ fct.vertipaq_analyzer(
 > **export** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Specifying 'zip' will export the results to a zip file in your lakehouse (which can be imported using the [import_vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#import_vertipaq_analyzer) function. Specifying 'table' will export the results to delta tables (appended) in your lakehouse. Default value: None.
+### Returns
+> A visualization of the Vertipaq Analyzer statistics.
 
 ---
 ## warm_direct_lake_cache_perspective
@@ -1845,6 +1854,8 @@ fct.warm_direct_lake_cache_perspective(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## warm_direct_lake_cache_isresident
@@ -1866,6 +1877,8 @@ fct.warm_direct_lake_cache_isresident(
 > **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 ---
 ---
 ## Direct Lake migration
