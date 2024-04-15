@@ -7,10 +7,6 @@ If you encounter any issues, please [raise a bug](https://github.com/m-kovalsky/
 
 If you have ideas for new features/functions, please [request a feature](https://github.com/m-kovalsky/fabric_cat_tools/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=).
 
-## Click [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#version-history) to see a version history
-
-
-
 ## Install the .whl file in a Fabric notebook
 ```python
 %pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.5-py3-none-any.whl"
@@ -1995,27 +1991,3 @@ Check out my [blog post](https://www.elegantbi.com/post/direct-lake-migration) o
 * Field parameters are migrated to the new semantic model as they were in the original semantic model (as calculated tables). Any calculated columns used in field parameters are automatically removed in the new semantic model's field parameter(s).
 * Non-supported objects are not transferred (i.e. calculated columns, relationships using columns with unsupported data types etc.).
 * Reports used by your original semantic model will be rebinded to your new semantic model.
-
-## Version History
-
-- Version 0.2.5 (Apr 11, 2024)
-    - Fixed [bug](https://github.com/m-kovalsky/fabric_cat_tools/issues/1) in [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) regarding models with no hierarchies
-    - Added [list_shortcuts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_shortcuts) function
-    - Added [list_dashboards](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dashboards) function
-    - Added new rule to [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa): 'Set dimensions tables to dual mode instead of import when using DirectQuery on fact tables'
-    - Added 'saveToFileName' parameter to [get_semantic_model_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_semantic_model_bim)
-    - Added 'saveToFileName' parameter to [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json)
-- Version 0.2.4 (Apr 8, 2024)
-    - Added [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake) function
-    - Added [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake) function
-    - Added [delete_shortcut](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#delete_shortcut) function
-    - Removed 'extend' paramter from the [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) function
-    - Fixed bug in [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) function which duplicated violations on hierarchy objects
-- Version 0.2.3 (Apr 8, 2024)
-    - Added [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report) function
-    - Added [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report) function
-    - Added [get_report_json](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_report_json) function
-- Version 0.2.2 (Apr 4, 2024)
-    - Fixed bug regarding how Field Parameters are created ([add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter), [migrate_field_parameters](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migrate_field_parameters))
-    - Added escape clause for [get_shared_expression](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_shared_expression) if the SQL Endpoint has not yet been provisioned
-    - Added functionality to [vertipaq_analzyer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analzyer) so that the column cardinality for Direct Lake semantic models is obtained by querying the lakehouse
