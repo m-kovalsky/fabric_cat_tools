@@ -1321,8 +1321,11 @@ fct.measure_dependency_tree(
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_lakehouse(
             dataset = 'AdventureWorks'
-            ,new_dataset = ''
-            #,workspace = '' 
+            ,new_dataset = 'AdventureWorksDL'
+            #,workspace = ''
+            #,new_dataset_workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -1337,6 +1340,18 @@ fct.migrate_calc_tables_to_lakehouse(
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace to be used by the Direct Lake semantic model.
+>
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse to be used by the Direct Lake semantic model.
+>
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1349,8 +1364,11 @@ fct.migrate_calc_tables_to_lakehouse(
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_semantic_model(
             dataset = 'AdventureWorks'
-            ,new_dataset = ''
-            #,workspace = '' 
+            ,new_dataset = 'AdventureWorksDL'
+            #,workspace = ''
+            #,new_dataset_workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -1365,6 +1383,18 @@ fct.migrate_calc_tables_to_semantic_model(
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace to be used by the Direct Lake semantic model.
+>
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse to be used by the Direct Lake semantic model.
+>
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1378,7 +1408,8 @@ import fabric_cat_tools as fct
 fct.migrate_field_parameters(
             dataset = 'AdventureWorks'
             ,new_dataset = ''
-            #,workspace = '' 
+            #,workspace = ''
+            #,new_dataset_workspace = ''
             )
 ```
 ### Parameters
@@ -1393,6 +1424,10 @@ fct.migrate_field_parameters(
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace to be used by the Direct Lake semantic model.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1406,7 +1441,8 @@ import fabric_cat_tools as fct
 fct.migrate_model_objects_to_semantic_model(
             dataset = 'AdventureWorks'
             ,new_dataset = ''
-            #,workspace = '' 
+            #,workspace = ''
+            #,new_dataset_workspace = ''
             )
 ```
 ### Parameters
@@ -1421,6 +1457,10 @@ fct.migrate_model_objects_to_semantic_model(
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace to be used by the Direct Lake semantic model.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1433,8 +1473,11 @@ fct.migrate_model_objects_to_semantic_model(
 import fabric_cat_tools as fct
 fct.migrate_tables_columns_to_semantic_model(
             dataset = 'AdventureWorks'
-            ,new_dataset = ''
-            #,workspace = '' 
+            ,new_dataset = 'AdventureWorksDL'
+            #,workspace = ''
+            #,new_dataset_workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -1449,6 +1492,18 @@ fct.migrate_tables_columns_to_semantic_model(
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace to be used by the Direct Lake semantic model.
+>
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The lakehouse to be used by the Direct Lake semantic model.
+>
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A printout stating the success/failure of the operation.
 
