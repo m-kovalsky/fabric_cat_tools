@@ -1197,7 +1197,7 @@ fct.import_vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.launch_report(
-          report = 'MyReport
+          report = 'MyReport'
           #,workspace = None
           )
 ```
