@@ -1519,7 +1519,7 @@ fct.model_bpa_rules()
 
 ---
 ## optimize_lakehouse_tables
-#### Runs the OPTIMIZE function over the specified lakehouse tables.
+#### Runs the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) function over the specified lakehouse tables.
 ```python
 import fabric_cat_tools as fct
 fct.optimize_lakehouse_tables(
