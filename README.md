@@ -1691,7 +1691,8 @@ import fabric_cat_tools as fct
 fct.report_rebind(
             report = ''
             ,dataset = ''
-            #,workspace = ''
+            #,report_workspace = ''
+            #,dataset_workspace = ''
             )
 ```
 ### Parameters
@@ -1703,9 +1704,13 @@ fct.report_rebind(
 > 
 >> Required; Name of the semantic model to rebind to the report.
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Optional; The workspace where the semantic model and report reside.
+>> Optional; The workspace where the report resides.
+>
+> **dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1717,7 +1722,9 @@ import fabric_cat_tools as fct
 fct.report_rebind_all(
             dataset = ''
             ,new_dataset = ''
-            #,workspace = '' 
+            #,dataset_workspace = '' 
+            #,new_dataset_workspace = '' 
+            #,report_workspace = '' 
             )
 ```
 ### Parameters
@@ -1729,9 +1736,17 @@ fct.report_rebind_all(
 > 
 >> Required; Name of the semantic model to rebind to the reports.
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Optional; The workspace where the semantic models and reports reside.
+>> Optional; The workspace where the original semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the new semantic model resides.
+>
+> **report_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the reports reside.
 ### Returns
 > A printout stating the success/failure of the operation.
 
