@@ -9,7 +9,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 
 ## Install the .whl file in a Fabric notebook
 ```python
-%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.2.5-py3-none-any.whl"
+%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.3.0-py3-none-any.whl"
 ```
 
 ## Once installed, run this code to import the library into your notebook
@@ -47,7 +47,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [get_measure_dependencies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_measure_dependencies)
 * [measure_dependency_tree](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#measure_dependency_tree)
 * [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
-
+* [cancel_dataset_refresh](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#cancel_dataset_refresh)
 
 ### Report
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
@@ -57,11 +57,14 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [export_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_report)
 * [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report)
 * [list_dashboards](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dashboards)
+* [launch_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#launch_report)
 
 ### Model Optimization
 * [vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer)
 * [import_vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#import_vertipaq_analyzer)
 * [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa)
+* [model_bpa_rules](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#model_bpa_rules)
+
 
 ### Direct Lake Migration
 * [create_pqt_file](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_pqt_file)
@@ -94,11 +97,12 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 ### Lakehouse
 * [get_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_tables)
 * [get_lakehouse_columns](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_columns)
-* [get_lakehouse_details](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_details)
+* [list_lakehouses](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_lakehouses)
 * [export_model_to_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#export_model_to_onelake)
 * [create_shortcut_onelake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_shortcut_onelake)
 * [delete_shortcut](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#delete_shortcut)
 * [list_shortcuts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_shortcuts)
+* [optimize_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#optimize_lakehouse_tables)
 
 ### Add/remove objects from a semantic model
 * [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
@@ -126,38 +130,38 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 ```python
 import fabric_cat_tools as fct
 fct.add_data_column(
-        datasetName = 'AdventureWorks'
-        ,tableName = 'Internet Sales'
-        ,columnName = 'SalesAmount'
-        ,sourceColumn = 'SalesAmount'
-        ,dataType =  'Int64'
-        #,formatString = ''
-        #,displayFolder = ''
-        #,workspaceName = '' 
+        dataset = 'AdventureWorks'
+        ,table_name = 'Internet Sales'
+        ,column_name = 'SalesAmount'
+        ,source_column = 'SalesAmount'
+        ,data_type =  'Int64'
+        #,format_string = ''
+        #,display_folder = ''
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
 >
 >> Required; Name of the semantic model.
 > 
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
 >
 >> Required; Name of the table in which the column will reside.
 >
-> **columnName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Name of the column.
 >
-> **sourceColumn** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Name of the column in the source system.
 >
-> **dataType** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Data type of the column. Options: 'Int64', 'String', 'Double', 'Decimal', 'DateTime', 'Boolean'.
 >
-> **formatString** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional; Format string of the column.
 >
@@ -165,11 +169,11 @@ fct.add_data_column(
 >
 >> Optional; Description of the column.
 >
-> **displayFolder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional; Display folder of the column.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -181,18 +185,18 @@ fct.add_data_column(
 ```python
 import fabric_cat_tools as fct
 fct.add_field_parameter(
-            datasetName = 'AdventureWorks'
-            ,tableName = 'Parameter'
+            dataset = 'AdventureWorks'
+            ,table_name = 'Parameter'
             ,objects = ["[Sales Amount]", "[Order Qty]", "'Internet Sales'[Color]"]
-            #,workspaceName = '' 
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
 >
 >> Required; Name of the semantic model.
 > 
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
 >
 >> Required; Name of the field parameter table.
 >
@@ -200,7 +204,7 @@ fct.add_field_parameter(
 >
 >> Required; List of columns/measures to be included in the field parameter. Columns are fully qualified 'TableName'[ColumnName] and measures are in square brackets [MeasureName].
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional; The workspace where the semantic model resides.
 >
@@ -213,23 +217,23 @@ fct.add_field_parameter(
 ```python
 import fabric_cat_tools as fct
 fct.add_hierarchy(
-            datasetName = 'AdventureWorks'
-            ,tableName = 'Geography'
-            ,hierarchyName = 'Geography Hierarchy'
+            dataset = 'AdventureWorks'
+            ,table_name = 'Geography'
+            ,hierarchy_name = 'Geography Hierarchy'
             ,levels = ['Continent', 'Country', 'City']
-            #,workspaceName = '' 
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Name of the semantic model.
 >
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Name of the table in which the hierarchy will reside.
 >
-> **hierarchyName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **hierarchy_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Name of the hierarchy.
 >
@@ -237,7 +241,7 @@ fct.add_hierarchy(
 >
 >> Required; List of columns to be included as levels in the hierarchy.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -249,25 +253,25 @@ fct.add_hierarchy(
 ```python
 import fabric_cat_tools as fct
 fct.add_measure(
-        datasetName = 'AdventureWorks'
-        ,tableName = 'Internet Sales'
-        ,measureName = 'Sales Amount'
+        dataset = 'AdventureWorks'
+        ,table_name = 'Internet Sales'
+        ,measure_name = 'Sales Amount'
         ,expression =  "SUM( 'Internet Sales'[SalesAmount] )"
-        #,displayFolder = ''
-        #,formatString = ''
-        #,workspaceName = '' 
+        #,display_folder = ''
+        #,format_string = ''
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table in which the measure will reside.
 >
-> **measureName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the measure.
 >
@@ -275,15 +279,15 @@ fct.add_measure(
 > 
 >> Required; DAX expression for the measure.
 >
-> **displayFolder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Display folder for the measure.
 >
-> **formatString** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Format string for the measure.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -295,62 +299,62 @@ fct.add_measure(
 ```python
 import fabric_cat_tools as fct
 fct.add_relationship(
-            datasetName = 'AdventureWorks'
-            ,fromTable = 'Internet Sales'
-            ,fromColumn = 'ProductKey'
-            ,toTable = 'Product'
-            ,toColumn = 'ProductKey'
-            ,fromCardinality = 'Many'
-            ,toCardinality = 'One'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,from_table = 'Internet Sales'
+            ,from_column = 'ProductKey'
+            ,to_table = 'Product'
+            ,to_column = 'ProductKey'
+            ,from_cardinality = 'Many'
+            ,to_cardinality = 'One'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **fromTable** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **from_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table on the 'from' side of the relationship
 >
-> **toTable** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **to_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table on the 'to' side of the relationship
 >
-> **fromColumn** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **from_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the column on the 'from' side of the relationship
 >
-> **toColumn** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **to_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the column on the 'to' side of the relationship
 >
-> **fromCardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **from_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
 >
-> **toCardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **to_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
 >
-> **crossFilteringBehavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **cross_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
 >
-> **securityFilteringBehavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **security_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
 >
-> **isActive** [bool](https://docs.python.org/3/library/functions.html#bool)
+> **is_active** [bool](https://docs.python.org/3/library/functions.html#bool)
 > 
 >> Optional; Setting for whether the relationship is active or not. Default value: True.
 >
-> **relyOnReferentialIntegrity** [bool](https://docs.python.org/3/library/functions.html#bool)
+> **rely_on_referential_integrity** [bool](https://docs.python.org/3/library/functions.html#bool)
 > 
 >> Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -362,26 +366,26 @@ fct.add_relationship(
 ```python
 import fabric_cat_tools as fct
 fct.add_role(
-            datasetName = 'AdventureWorks'
-            ,roleName = 'Reader'
-            ,roleDescription = 'This role is for...'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,role_name = 'Reader'
+            ,role_description = 'This role is for...'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **roleName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the role.
 >
-> **roleDescription** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **role_description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Description of the role.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -393,35 +397,61 @@ fct.add_role(
 ```python
 import fabric_cat_tools as fct
 fct.add_rls(
-            datasetName = 'AdventureWorks'
-            ,roleName = 'Reader'
-            ,tableName = 'UserGeography'
-            ,filterExpression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,role_name = 'Reader'
+            ,table_name = 'UserGeography'
+            ,filter_expression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **roleName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the role to apply row level security.
 >
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table to apply row level security.
 >
-> **filterExpression** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **filter_expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; DAX expression for the row low level security.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
 > A printout stating the success/failure of the operation.
+
+---
+## cancel_dataset_refresh
+#### Cancels the refresh of a semantic model which was executed via the [Enhanced Refresh API](https://learn.microsoft.com/power-bi/connect-data/asynchronous-refresh).
+```python
+import fabric_cat_tools as fct
+fct.cancel_dataset_refresh(
+            dataset = 'MyReport'
+            #,request_id = None
+            #,workspace = None
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **request_id** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The [request id](https://learn.microsoft.com/power-bi/connect-data/asynchronous-refresh#response-properties) of a semantic model refresh. Defaults to finding the latest active refresh of the semantic model.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> Pandas dataframe showing the tables in the semantic model and their fallback reason.
 
 ---
 ## check_fallback_reason
@@ -431,16 +461,16 @@ fct.add_rls(
 ```python
 import fabric_cat_tools as fct
 fct.check_fallback_reason(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -452,16 +482,16 @@ fct.check_fallback_reason(
 ```python
 import fabric_cat_tools as fct
 fct.clear_cache(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -473,31 +503,31 @@ fct.clear_cache(
 ```python
 import fabric_cat_tools as fct
 fct.clone_report(
-            reportName = 'MyReport'
-            ,clonedReportName = 'MyNewReport'
-            #,workspaceName = None
-            #,targetWorkspace = None
-            #,targetDatasetName = None
+            report = 'MyReport'
+            ,cloned_report = 'MyNewReport'
+            #,workspace = None
+            #,target_workspace = None
+            #,target_dataset = None
             )
 ```
 ### Parameters
-> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the report to be cloned.
 >
-> **clonedReportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **cloned_report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the new report.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the original report resides.
 >
-> **targetWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **target_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the new report will reside. Defaults to using the workspace in which the original report resides.
 >
-> **targetDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **target_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The semantic model from which the new report will be connected. Defaults to using the semantic model used by the original report.
 ### Returns
@@ -511,21 +541,21 @@ fct.clone_report(
 ```python
 import fabric_cat_tools as fct
 fct.control_fallback(
-            datasetName = 'AdventureWorks'
-            ,directLakeBehavior = 'DirectLakeOnly'            
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,direct_lake_behavior = 'DirectLakeOnly'            
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **directLakeBehavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **direct_lake_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Setting for Direct Lake Behavior. Options: ('Automatic', 'DirectLakeOnly', 'DirectQueryOnly').
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -537,21 +567,21 @@ fct.control_fallback(
 ```python
 import fabric_cat_tools as fct
 fct.create_blank_semantic_model(
-            datasetName = 'AdventureWorks'
-            #,compatibilityLevel = 1604
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,compatibility_level = 1604
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **compatibilityLevel** [int](https://docs.python.org/3/library/functions.html#int)
+> **compatibility_level** [int](https://docs.python.org/3/library/functions.html#int)
 > 
 >> Optional; Setting for the compatibility level of the semantic model. Default value: 1604.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -563,21 +593,21 @@ fct.create_blank_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.create_pqt_file(
-            datasetName = 'AdventureWorks'
-            #,fileName = 'PowerQueryTemplate'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,file_name = 'PowerQueryTemplate'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the import/DirectQuery semantic model.
 >
-> **fileName** [str](https://docs.python.org/3/library/functions.html#str)
+> **file_name** [str](https://docs.python.org/3/library/functions.html#str)
 > 
 >> Optional; TName of the Power Query Template (.pqt) file to be created.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -589,31 +619,31 @@ fct.create_pqt_file(
 ```python
 import fabric_cat_tools as fct
 fct.create_report_from_reportjson(
-            reportName = 'MyReport'
-            ,datasetName = 'AdventureWorks'
-            ,reportJson = ''
-            #,themeJson = ''
-            #,workspaceName = ''
+            report = 'MyReport'
+            ,dataset = 'AdventureWorks'
+            ,report_json = ''
+            #,theme_json = ''
+            #,workspace = ''
             )
 ```
 ### Parameters
-> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the report.
 >
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model to connect to the report.
 >
-> **reportJson** [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report_json** [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The report.json file to be used to create the report.
 > 
-> **themeJson** [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **theme_json** [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The theme.json file to be used for the theme of the report.
 > 
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -625,21 +655,21 @@ fct.create_report_from_reportjson(
 ```python
 import fabric_cat_tools as fct
 fct.create_semantic_model_from_bim(
-            datasetName = 'AdventureWorks'
-            ,bimFile = ''
-            #,workspaceName = ''
+            dataset = 'AdventureWorks'
+            ,bim_file = ''
+            #,workspace = ''
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **bimFile** [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **bim_file** [Dict](https://docs.python.org/3/library/typing.html#typing.Dict) or [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The model.bim file to be used to create the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -651,36 +681,36 @@ fct.create_semantic_model_from_bim(
 ```python
 import fabric_cat_tools as fct
 fct.create_shortcut_onelake(
-            tableName = 'DimCalendar'
-            ,sourceLakehouseName = 'Lakehouse1'
-            ,sourceWorkspaceName = 'Workspace1'
-            ,destinationLakehouseName = 'Lakehouse2'
-            #,destinationWorkspaceName = ''
-            ,shortcutName = 'Calendar'
+            table_tame = 'DimCalendar'
+            ,source_lakehouse = 'Lakehouse1'
+            ,source_workspace = 'Workspace1'
+            ,destination_lakehouse = 'Lakehouse2'
+            #,destination_workspace = ''
+            ,shortcut_name = 'Calendar'
             )
 ```
 ### Parameters
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The table name for which a shortcut will be created.
 >
-> **sourceLakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **source_lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The lakehouse in which the table resides.
 >
-> **sourceWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **sourceWorkspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The workspace where the source lakehouse resides.
 >
-> **destinationLakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **destination_lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The lakehouse where the shortcut will be created.
 >
-> **destinationWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **destination_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the shortcut will be created. Defaults to the 'sourceWorkspaceName' parameter value.
 >
-> **shortcutName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **shortcut_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name of the shortcut 'table' to be created. This defaults to the 'tableName' parameter value.
 >
@@ -693,21 +723,21 @@ fct.create_shortcut_onelake(
 ```python
 import fabric_cat_tools as fct
 fct.delete_shortcut(
-            shortcutName = 'DimCalendar'
-            ,lakehouseName = 'Lakehouse1'
-            ,workspaceName = 'Workspace1'
+            shortcut_name = 'DimCalendar'
+            ,lakehouse = 'Lakehouse1'
+            ,workspace = 'Workspace1'
             )
 ```
 ### Parameters
-> **shortcutName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **shortcut_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The name of the OneLake shortcut to delete.
 >
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse in which the shortcut resides.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 >
@@ -722,26 +752,26 @@ fct.delete_shortcut(
 ```python
 import fabric_cat_tools as fct
 fct.direct_lake_schema_compare(
-            datasetName = 'AdventureWorks'
-            ,workspaceName = ''
-            #,lakehouseName = ''
-            #,lakehouseWorkspaceName = ''
+            dataset = 'AdventureWorks'
+            ,workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse used by the Direct Lake semantic model.
 >
-> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
 >
@@ -756,31 +786,31 @@ fct.direct_lake_schema_compare(
 ```python
 import fabric_cat_tools as fct
 fct.direct_lake_schema_sync(
-     datasetName = 'AdvWorks'
-    ,addToModel = True
-    #,workspaceName = ''
-    #,lakehouseName = ''
-    #,lakehouseWorkspaceName = ''
+     dataset = 'AdvWorks'
+    ,add_to_model = True
+    #,workspace = ''
+    #,lakehouse = ''
+    #,lakehouse_workspace = ''
     )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **addToModel** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> **add_to_model** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Adds columns which exist in the lakehouse but do not exist in the semantic model. No new tables are added. Default value: False.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse used by the Direct Lake semantic model.
 >
-> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
 >
@@ -799,26 +829,26 @@ fct.direct_lake_schema_sync(
 ```python
 import fabric_cat_tools as fct
 fct.export_model_to_onelake(
-            datasetName = 'AdventureWorks'
-            ,workspaceName = None
-            ,destinationLakehouseName = 'Lakehouse2'            
-            ,destinationWorkspaceName = 'Workspace2'
+            dataset = 'AdventureWorks'
+            ,workspace = None
+            ,destination_lakehouse = 'Lakehouse2'            
+            ,destination_workspace = 'Workspace2'
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **destinationLakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **destination_lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse where shortcuts will be created to access the delta tables created by the export. If the lakehouse specified does not exist, one will be created with that name. If no lakehouse is specified, shortcuts will not be created.
 >
-> **destinationWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **destination_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace in which the lakehouse resides.
 >
@@ -831,53 +861,53 @@ fct.export_model_to_onelake(
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            reportName = 'AdventureWorks'
-            ,exportFormat = 'PDF'
-            #,fileName = None
-            #,bookmarkName = None
-            #,pageName = None
-            #,visualName = None
-            #,workspaceName = None
+            report = 'AdventureWorks'
+            ,export_format = 'PDF'
+            #,file_name = None
+            #,bookmark_name = None
+            #,page_name = None
+            #,visual_name = None
+            #,workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            reportName = 'AdventureWorks'
-            ,exportFormat = 'PDF'
-            #,fileName = 'Exports\MyReport'
-            #,bookmarkName = None
-            #,pageName = 'ReportSection293847182375'
-            #,visualName = None
-            #,workspaceName = None
+            report = 'AdventureWorks'
+            ,export_format = 'PDF'
+            #,file_name = 'Exports\MyReport'
+            #,bookmark_name = None
+            #,page_name = 'ReportSection293847182375'
+            #,visual_name = None
+            #,workspace = None
             )
 ```
 ### Parameters
-> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **exportFormat** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **export_format** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; The format in which to export the report. See this link for valid formats: https://learn.microsoft.com/rest/api/power-bi/reports/export-to-file-in-group#fileformat. For image formats, enter the file extension in this parameter, not 'IMAGE'.
 >
-> **fileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **file_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name of the file to be saved within the lakehouse. Do **not** include the file extension. Defaults ot the reportName parameter value.
 >
-> **bookmarkName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **bookmark_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name (GUID) of a bookmark within the report.
 >
-> **pageName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **page_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name (GUID) of the report page.
 >
-> **visualName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **visual_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name (GUID) of a visual. If you specify this parameter you must also specify the pageName parameter.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
 >
@@ -903,11 +933,11 @@ None
 ```python
 import fabric_cat_tools as fct
 fct.get_directlake_guardrails_for_sku(
-            skuSize = ''
+            sku_size = ''
             )
 ```
 ### Parameters
-> **skuSize** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **sku_size** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Sku size of a workspace/capacity
 ### Returns
@@ -921,26 +951,26 @@ fct.get_directlake_guardrails_for_sku(
 ```python
 import fabric_cat_tools as fct
 fct.get_direct_lake_lakehouse(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = ''
-            #,lakehouseName = ''
-            #,lakehouseWorkspaceName = ''            
+            dataset = 'AdventureWorks'
+            #,workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''            
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Name of the lakehouse used by the semantic model.
 >
-> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 
@@ -952,16 +982,16 @@ fct.get_direct_lake_lakehouse(
 ```python
 import fabric_cat_tools as fct
 fct.get_direct_lake_sql_endpoint(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = ''       
+            dataset = 'AdventureWorks'
+            #,workspace = ''       
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -973,41 +1003,20 @@ fct.get_direct_lake_sql_endpoint(
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_columns(
-            lakehouseName = 'AdventureWorks'
-            #,workspaceName = '' 
+            lakehouse = 'AdventureWorks'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse name.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A pandas dataframe showing the tables/columns within a lakehouse and their properties.
-
----
-## get_lakehouse_details
-#### Shows the properties associated with a lakehouse.
-```python
-import fabric_cat_tools as fct
-fct.get_lakehouse_details(
-            lakehouseName = 'MyLakehouse'
-            #,workspaceName = '' 
-            )
-```
-### Parameters
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The lakehouse name.
->
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the lakehouse resides.
-### Returns
-> A pandas dataframe showing the properties of a given lakehouse.
 
 ---
 ## get_lakehouse_tables
@@ -1015,17 +1024,17 @@ fct.get_lakehouse_details(
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_tables(
-        lakehouseName = 'MyLakehouse'
-        #,workspaceName = ''
+        lakehouse = 'MyLakehouse'
+        #,workspace = ''
         ,extended = True
-        ,countRows = True)
+        ,count_rows = True)
 ```
 ### Parameters
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse name.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 >
@@ -1033,7 +1042,7 @@ fct.get_lakehouse_tables(
 > 
 >> Optional; Adds the following additional table properties \['Files', 'Row Groups', 'Table Size', 'Parquet File Guardrail', 'Row Group Guardrail', 'Row Count Guardrail'\]. Also indicates the SKU for the workspace and whether guardrails are hit. Default value: False.
 >
-> **countRows** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> **count_rows** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Adds an additional column showing the row count of each table. Default value: False.
 ### Returns
@@ -1045,16 +1054,16 @@ fct.get_lakehouse_tables(
 ```python
 import fabric_cat_tools as fct
 fct.get_measure_dependencies(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,workspace = None
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1066,28 +1075,28 @@ fct.get_measure_dependencies(
 ```python
 import fabric_cat_tools as fct
 fct.get_report_json(
-            reportName = 'MyReport'
-            #,workspaceName = None
+            report = 'MyReport'
+            #,workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.get_report_json(
-            reportName = 'MyReport'
-            #,workspaceName = None
-            ,saveToFileName = 'MyFileName'
+            report = 'MyReport'
+            #,workspace = None
+            ,save_to_file_name = 'MyFileName'
             )
 ```
 ### Parameters
-> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the report.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
 >
-> **saveToFileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **save_to_file_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Specifying this parameter will save the report.json file to your lakehouse with the file name of this parameter.
 ### Returns
@@ -1099,28 +1108,28 @@ fct.get_report_json(
 ```python
 import fabric_cat_tools as fct
 fct.get_semantic_model_bim(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = None
+            dataset = 'AdventureWorks'
+            #,workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.get_semantic_model_bim(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = None
-            ,saveToFileName = 'MyFileName'
+            dataset = 'AdventureWorks'
+            #,workspace = None
+            ,save_to_file_name = 'MyFileName'
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **saveToFileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **save_to_file_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Specifying this parameter will save the model.bim file to your lakehouse with the file name of this parameter.
 ### Returns
@@ -1132,16 +1141,16 @@ fct.get_semantic_model_bim(
 ```python
 import fabric_cat_tools as fct
 fct.get_shared_expression(
-            lakehouseName = ''
-            #,workspaceName = '' 
+            lakehouse = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The lakehouse name.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
@@ -1153,11 +1162,11 @@ fct.get_shared_expression(
 ```python
 import fabric_cat_tools as fct
 fct.get_sku_size(
-            workspaceName = '' 
+            workspace = '' 
             )
 ```
 ### Parameters
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1169,18 +1178,37 @@ fct.get_sku_size(
 ```python
 import fabric_cat_tools as fct
 fct.import_vertipaq_analyzer(
-          folderPath = '/lakehouse/default/Files/VertipaqAnalyzer'
-          ,fileName = 'Workspace Name-DatasetName.zip'
+          folder_path = '/lakehouse/default/Files/VertipaqAnalyzer'
+          ,file_name = 'Workspace Name-DatasetName.zip'
           )
 ```
 ### Parameters
-> **folderPath** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **folder_path** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Folder within your lakehouse in which the .zip file containing the vertipaq analyzer info has been saved.
 >
-> **fileName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **file_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; File name of the file which contains the vertipaq analyzer info.
+
+---
+## launch_report
+#### Shows a Power BI report within a Fabric notebook.
+```python
+import fabric_cat_tools as fct
+fct.launch_report(
+          report = 'MyReport
+          #,workspace = None
+          )
+```
+### Parameters
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; The name of the report.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The name of the workspace in which the report resides.
 
 ---
 ## list_dashboards
@@ -1188,11 +1216,11 @@ fct.import_vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.list_dashboards(
-            #workspaceName = '' 
+            #workspace = '' 
             )
 ```
 ### Parameters
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace name.
 ### Returns
@@ -1206,20 +1234,36 @@ fct.list_dashboards(
 ```python
 import fabric_cat_tools as fct
 fct.list_direct_lake_model_calc_tables(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
 > A pandas dataframe showing the calculated tables which were migrated to Direct Lake and whose DAX expressions are stored as model annotations.
+
+---
+## list_lakehouses
+#### Shows the properties associated with lakehouses in a workspace.
+```python
+import fabric_cat_tools as fct
+fct.list_lakehouses(
+            workspace = None
+            )
+```
+### Parameters
+> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
+### Returns
+> A pandas dataframe showing the properties of a all lakehouses in a workspace.
 
 ---
 ## list_shortcuts
@@ -1227,16 +1271,16 @@ fct.list_direct_lake_model_calc_tables(
 ```python
 import fabric_cat_tools as fct
 fct.list_direct_lake_model_calc_tables(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Name of the lakehouse.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
@@ -1248,21 +1292,21 @@ fct.list_direct_lake_model_calc_tables(
 ```python
 import fabric_cat_tools as fct
 fct.measure_dependency_tree(
-            datasetName = 'AdventureWorks'
-            ,measureName = 'Sales Amount'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,measure_name = 'Sales Amount'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **measureName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the measure to use for building a dependency tree.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1276,21 +1320,21 @@ fct.measure_dependency_tree(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_lakehouse(
-            datasetName = 'AdventureWorks'
-            ,newDatasetName = ''
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,new_dataset = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the import/DirectQuery semantic model.
 >
-> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the Direct Lake semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1304,21 +1348,21 @@ fct.migrate_calc_tables_to_lakehouse(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_semantic_model(
-            datasetName = 'AdventureWorks'
-            ,newDatasetName = ''
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,new_dataset = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the import/DirectQuery semantic model.
 >
-> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the Direct Lake semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1332,21 +1376,21 @@ fct.migrate_calc_tables_to_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_field_parameters(
-            datasetName = 'AdventureWorks'
-            ,newDatasetName = ''
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,new_dataset = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the import/DirectQuery semantic model.
 >
-> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the Direct Lake semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1360,21 +1404,21 @@ fct.migrate_field_parameters(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_model_objects_to_semantic_model(
-            datasetName = 'AdventureWorks'
-            ,newDatasetName = ''
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,new_dataset = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the import/DirectQuery semantic model.
 >
-> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the Direct Lake semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1388,23 +1432,67 @@ fct.migrate_model_objects_to_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_tables_columns_to_semantic_model(
-            datasetName = 'AdventureWorks'
-            ,newDatasetName = ''
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,new_dataset = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the import/DirectQuery semantic model.
 >
-> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the Direct Lake semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## model_bpa_rules
+#### Shows the default Best Practice Rules for the semantic model used by the [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) function
+```python
+import fabric_cat_tools as fct
+fct.model_bpa_rules()
+```
+### Returns
+> A pandas dataframe showing the default semantic model best practice rules.
+
+---
+## optimize_lakehouse_tables
+#### Runs the OPTIMIZE function over the specified lakehouse tables.
+```python
+import fabric_cat_tools as fct
+fct.optimize_lakehouse_tables(
+            tables = ['Sales', 'Calendar']
+            #,lakehouse = None
+            #,workspace = None
+        )
+```
+```python
+import fabric_cat_tools as fct
+fct.optimize_lakehouse_tables(
+            tables = None
+            #,lakehouse = 'MyLakehouse'
+            #,workspace = 'MyNewWorkspace'
+        )
+```
+### Parameters
+> **tables** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name(s) of the lakehouse delta table(s) to optimize.
+>
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the lakehouse.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -1416,16 +1504,16 @@ fct.migrate_tables_columns_to_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.refresh_calc_tables(
-            datasetName = 'AdventureWorks'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1437,21 +1525,21 @@ fct.refresh_calc_tables(
 ```python
 import fabric_cat_tools as fct
 fct.refresh_semantic_model(
-            datasetName = 'AdventureWorks'
-            ,refreshType = 'full'
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,refresh_type = 'full'
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **refreshType** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **refresh_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Type of processing to perform. Options: ('full', 'automatic', 'dataOnly', 'calculate', 'clearValues', 'defragment'). Default value: 'full'.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1463,26 +1551,26 @@ fct.refresh_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.remove_column(
-            datasetName = 'AdventureWorks'
-            ,tableName = ['Internet Sales', 'Geography']
-            ,columnName = ['SalesAmount', 'GeographyKey']
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,table_name = ['Internet Sales', 'Geography']
+            ,column_name = ['SalesAmount', 'GeographyKey']
+            #,workspace = None
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the column's table(s).
 >
-> **columnName** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the column(s).
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1494,21 +1582,21 @@ fct.remove_column(
 ```python
 import fabric_cat_tools as fct
 fct.remove_measure(
-            datasetName = 'AdventureWorks'
-            ,measureName = ['Sales Amount', 'Order Quantity']
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,measure_name = ['Sales Amount', 'Order Quantity']
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **measureName** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the measure(s).
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1520,21 +1608,21 @@ fct.remove_measure(
 ```python
 import fabric_cat_tools as fct
 fct.remove_table(
-            datasetName = 'AdventureWorks'
-            ,tableName = ['Internet Sales', 'Geography']
-            #,workspaceName = '' 
+            dataset = 'AdventureWorks'
+            ,table_name = ['Internet Sales', 'Geography']
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table(s).
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1546,21 +1634,21 @@ fct.remove_table(
 ```python
 import fabric_cat_tools as fct
 fct.report_rebind(
-            reportName = ''
-            ,datasetName = ''
-            #,workspaceName = '' 
+            report = ''
+            ,dataset = ''
+            #,workspace = ''
             )
 ```
 ### Parameters
-> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the report.
 >
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model to rebind to the report.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model and report reside.
 ### Returns
@@ -1572,21 +1660,21 @@ fct.report_rebind(
 ```python
 import fabric_cat_tools as fct
 fct.report_rebind_all(
-            datasetName = ''
-            ,newDatasetName = ''
-            #,workspaceName = '' 
+            dataset = ''
+            ,new_dataset = ''
+            #,workspace = '' 
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model currently binded to the reports.
 >
-> **newDatasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model to rebind to the reports.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic models and reports reside.
 ### Returns
@@ -1598,16 +1686,16 @@ fct.report_rebind_all(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_lakehouse_name(
-        lakehouseId = ''
-        #,workspaceName = '' 
+        lakehouse_id = ''
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **lakehouseId** [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+> **lakehouse_id** [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
 > 
 >> Required; UUID object representing a lakehouse.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
@@ -1619,16 +1707,16 @@ fct.resolve_lakehouse_name(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_lakehouse_id(
-        lakehouseName = 'MyLakehouse'
-        #,workspaceName = '' 
+        lakehouse = 'MyLakehouse'
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the lakehouse.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
@@ -1640,8 +1728,8 @@ fct.resolve_lakehouse_id(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_dataset_id(
-        datasetName = 'MyReport'
-        #,workspaceName = '' 
+        dataset = 'MyReport'
+        #,workspace = '' 
         )
 ```
 ### Parameters
@@ -1661,16 +1749,16 @@ fct.resolve_dataset_id(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_dataset_name(
-        datasetId = ''
-        #,workspaceName = '' 
+        dataset_id = ''
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **datasetId** [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+> **dataset_id** [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
 > 
 >> Required; UUID object representing a semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1682,16 +1770,16 @@ fct.resolve_dataset_name(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_report_id(
-        reportName = 'MyReport'
-        #,workspaceName = '' 
+        report = 'MyReport'
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **reportName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the report.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
 ### Returns
@@ -1703,16 +1791,16 @@ fct.resolve_report_id(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_report_name(
-        reportId = ''
-        #,workspaceName = '' 
+        report_id = ''
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **reportId** [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+> **report_id** [UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
 > 
 >> Required; UUID object representing a report.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the report resides.
 ### Returns
@@ -1724,27 +1812,22 @@ fct.resolve_report_name(
 ```python
 import fabric_cat_tools as fct
 fct.run_model_bpa(
-        datasetName = 'AdventureWorks'
-        #,workspaceName = ''
-        ,extend = True
+        dataset = 'AdventureWorks'
+        #,workspace = ''
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **rulesDataFrame**
+> **rules_dataframe**
 > 
 >> Optional; A pandas dataframe including rules to be analyzed.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
->
-> **extend** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
-> 
->> Optional; Extends the best practice rules to run advanced rules which leverage DMVs.
 ### Returns
 > A visualization showing objects which violate each [Best Practice Rule](https://github.com/microsoft/Analysis-Services/tree/master/BestPracticeRules) by rule category.
 
@@ -1754,16 +1837,16 @@ fct.run_model_bpa(
 ```python
 import fabric_cat_tools as fct
 fct.show_unsupported_direct_lake_objects(
-        datasetName = 'AdventureWorks'
-        #,workspaceName = '' 
+        dataset = 'AdventureWorks'
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1777,25 +1860,25 @@ fct.show_unsupported_direct_lake_objects(
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_model_lakehouse_connection(
-            datasetName = ''
-            #,lakehouseName = ''
-            #,workspaceName = ''
+            dataset = ''
+            #,lakehouse = ''
+            #,workspace = ''
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Name of the lakehouse.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
@@ -1809,36 +1892,36 @@ fct.update_direct_lake_model_lakehouse_connection(
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_partition_entity(
-            datasetName = 'AdventureWorks'
-            ,tableName = 'Internet Sales'
-            ,entityName = 'FACT_InternetSales'
-            #,workspaceName = ''
-            #,lakehouseName = ''
-            #,lakehouseWorkspaceName = ''            
+            dataset = 'AdventureWorks'
+            ,table_name = 'Internet Sales'
+            ,entity_name = 'FACT_InternetSales'
+            #,workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''            
             )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **tableName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table in the semantic model.
 >
-> **entityName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **entity_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the lakehouse table to be mapped to the semantic model table.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
-> **lakehouseName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Name of the lakehouse.
 >
-> **lakehouseWorkspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
@@ -1850,8 +1933,8 @@ fct.update_direct_lake_partition_entity(
 ```python
 import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
-        datasetName = 'AdventureWorks'
-        #,workspaceName = ''
+        dataset = 'AdventureWorks'
+        #,workspace = ''
         ,export = None
         )
 ```
@@ -1859,8 +1942,8 @@ fct.vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
-        datasetName = 'AdventureWorks'
-        #,workspaceName = ''
+        dataset = 'AdventureWorks'
+        #,workspace = ''
         ,export = 'zip'
         )
 ```
@@ -1868,17 +1951,17 @@ fct.vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
-        datasetName = 'AdventureWorks'
-        #,workspaceName = ''
+        dataset = 'AdventureWorks'
+        #,workspace = ''
         ,export = 'table'
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 >
@@ -1896,14 +1979,14 @@ fct.vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.warm_direct_lake_cache_perspective(
-        datasetName = 'AdventureWorks'
+        dataset = 'AdventureWorks'
         ,perspective = 'WarmCache'
-        ,addDependencies = True
-        #,workspaceName = '' 
+        ,add_dependencies = True
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
@@ -1911,11 +1994,11 @@ fct.warm_direct_lake_cache_perspective(
 > 
 >> Required; Name of the perspective which contains objects to be used for warming the cache.
 >
-> **addDependencies** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> **add_dependencies** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Includes object dependencies in the cache warming process.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
@@ -1929,16 +2012,16 @@ fct.warm_direct_lake_cache_perspective(
 ```python
 import fabric_cat_tools as fct
 fct.warm_direct_lake_cache_isresident(
-        datasetName = 'AdventureWorks'
-        #,workspaceName = '' 
+        dataset = 'AdventureWorks'
+        #,workspace = '' 
         )
 ```
 ### Parameters
-> **datasetName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **workspaceName** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
