@@ -568,8 +568,7 @@ fct.control_fallback(
 import fabric_cat_tools as fct
 fct.create_blank_semantic_model(
             dataset = 'AdventureWorks'
-            #,compatibility_level = 1604
-            #,workspace = '' 
+            #,workspace = None
             )
 ```
 ### Parameters
@@ -579,7 +578,7 @@ fct.create_blank_semantic_model(
 >
 > **compatibility_level** [int](https://docs.python.org/3/library/functions.html#int)
 > 
->> Optional; Setting for the compatibility level of the semantic model. Default value: 1604.
+>> Optional; Setting for the compatibility level of the semantic model. Default value: 1605.
 >
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -1970,16 +1969,27 @@ fct.update_direct_lake_partition_entity(
             #,lakehouse_workspace = ''            
             )
 ```
+```python
+import fabric_cat_tools as fct
+fct.update_direct_lake_partition_entity(
+            dataset = 'AdventureWorks'
+            ,table_name = ['Internet Sales', 'Geography']
+            ,entity_name = ['FACT_InternetSales', 'DimGeography']
+            #,workspace = ''
+            #,lakehouse = ''
+            #,lakehouse_workspace = ''            
+            )
+```
 ### Parameters
 > **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the semantic model.
 >
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the table in the semantic model.
 >
-> **entity_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **entity_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; Name of the lakehouse table to be mapped to the semantic model table.
 >
