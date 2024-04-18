@@ -1538,7 +1538,7 @@ fct.optimize_lakehouse_tables(
 ### Parameters
 > **tables** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Required; Name(s) of the lakehouse delta table(s) to optimize.
+>> Required; Name(s) of the lakehouse delta table(s) to optimize. If 'None' is entered, all of the delta tables in the lakehouse will be queued to be optimized.
 >
 > **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
