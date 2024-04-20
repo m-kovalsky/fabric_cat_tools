@@ -451,7 +451,7 @@ fct.cancel_dataset_refresh(
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
-> Pandas dataframe showing the tables in the semantic model and their fallback reason.
+> A printout stating the success/failure of the operation.
 
 ---
 ## check_fallback_reason
