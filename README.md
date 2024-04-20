@@ -814,7 +814,7 @@ fct.direct_lake_schema_sync(
 >> Optional; The workspace in which the lakehouse resides.
 >
 ### Returns
-> A list of columns which exist in the lakehouse but not in the Direct Lake semantic model. If lakehouseName is specified, a printout stating the success/failure of the operation is returned.
+> A list of columns which exist in the lakehouse but not in the Direct Lake semantic model. If 'add_to_model' is set to True, a printout stating the success/failure of the operation is returned.
 
 ---
 ## export_model_to_onelake
