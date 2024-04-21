@@ -9,7 +9,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 
 ## Install the .whl file in a Fabric notebook
 ```python
-%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.3.0-py3-none-any.whl"
+%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.3.1-py3-none-any.whl"
 ```
 
 ## Once installed, run this code to import the library into your notebook
@@ -27,7 +27,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 4. Name your environment, click 'Create'
 
 #### Add fabric_cat_tools as a library to the environment
-1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.3.0-py3-none-any.whl) fabric_cat_tools library
+1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.3.1-py3-none-any.whl) fabric_cat_tools library
 2. Within 'Custom Libraries', click 'upload'
 3. Upload the .whl file which was downloaded in step 1
 4. Click 'Save' at the top right of the screen
@@ -103,6 +103,8 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [delete_shortcut](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#delete_shortcut)
 * [list_shortcuts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_shortcuts)
 * [optimize_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#optimize_lakehouse_tables)
+* [create_warehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_warehouse)
+* [update_item](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_item)
 
 ### Add/remove objects from a semantic model
 * [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
@@ -680,7 +682,7 @@ fct.create_semantic_model_from_bim(
 ```python
 import fabric_cat_tools as fct
 fct.create_shortcut_onelake(
-            table_tame = 'DimCalendar'
+            table_name = 'DimCalendar'
             ,source_lakehouse = 'Lakehouse1'
             ,source_workspace = 'Workspace1'
             ,destination_lakehouse = 'Lakehouse2'
@@ -713,6 +715,31 @@ fct.create_shortcut_onelake(
 > 
 >> Optional; The name of the shortcut 'table' to be created. This defaults to the 'tableName' parameter value.
 >
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## create_warehouse
+#### Creates a warehouse in Fabric.
+```python
+import fabric_cat_tools as fct
+fct.create_warehouse(
+            warehouse = 'MyWarehouse'
+            ,workspace = None
+            )
+```
+### Parameters
+> **warehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the warehouse.
+>
+> **description** [str](https://docs.python.org/3/library/functions.html#str)
+> 
+>> Optional; Description of the warehouse.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the warehouse will reside.
 ### Returns
 > A printout stating the success/failure of the operation.
 
@@ -881,6 +908,16 @@ fct.export_report(
             #,workspace = None
             )
 ```
+```python
+import fabric_cat_tools as fct
+fct.export_report(
+            report = 'AdventureWorks'
+            ,export_format = 'PDF'
+            #,page_name = 'ReportSection293847182375'
+            #,report_filter = "'Product Category'[Color] in ('Blue', 'Orange') and 'Calendar'[CalendarYear] <= 2020"
+            #,workspace = None
+            )
+```
 ### Parameters
 > **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -905,6 +942,10 @@ fct.export_report(
 > **visual_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name (GUID) of a visual. If you specify this parameter you must also specify the pageName parameter.
+>
+> **report_filter** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; A report filter to be applied when exporting the report. Syntax is user-friendly. See above for examples.
 >
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -1897,6 +1938,14 @@ fct.run_model_bpa(
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the semantic model resides.
+>
+> **return_dataframe** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Returns a pandas dataframe instead of the visualization.
+>
+> **export** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Exports the results to a delta table in the lakehouse.
 ### Returns
 > A visualization showing objects which violate each [Best Practice Rule](https://github.com/microsoft/Analysis-Services/tree/master/BestPracticeRules) by rule category.
 
@@ -2004,6 +2053,39 @@ fct.update_direct_lake_partition_entity(
 > **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The workspace where the lakehouse resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## update_item
+#### Creates a warehouse in Fabric.
+```python
+import fabric_cat_tools as fct
+fct.create_warehouse(
+            warehouse = 'MyWarehouse'
+            ,workspace = None
+            )
+```
+### Parameters
+> **item_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Type of item to update. Valid options: 'DataPipeline', 'Eventstream', 'KQLDatabase', 'KQLQueryset', 'Lakehouse', 'MLExperiment', 'MLModel', 'Notebook', 'Warehouse'.
+>
+> **current_name** [str](https://docs.python.org/3/library/functions.html#str)
+> 
+>> Required; Current name of the item.
+>
+> **current_name** [str](https://docs.python.org/3/library/functions.html#str)
+> 
+>> Required; New name of the item.
+>
+> **description** [str](https://docs.python.org/3/library/functions.html#str)
+> 
+>> Optional; New description of the item.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the item resides.
 ### Returns
 > A printout stating the success/failure of the operation.
 
