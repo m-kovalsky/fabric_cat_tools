@@ -2061,9 +2061,12 @@ fct.update_direct_lake_partition_entity(
 #### Creates a warehouse in Fabric.
 ```python
 import fabric_cat_tools as fct
-fct.create_warehouse(
-            warehouse = 'MyWarehouse'
-            ,workspace = None
+fct.update_item(
+            item_type = 'Lakehouse'
+            ,current_name = 'MyLakehouse'
+            ,new_name = 'MyNewLakehouse'
+            #,description = 'This is my new lakehouse'
+            #,workspace = None
             )
 ```
 ### Parameters
@@ -2075,7 +2078,7 @@ fct.create_warehouse(
 > 
 >> Required; Current name of the item.
 >
-> **current_name** [str](https://docs.python.org/3/library/functions.html#str)
+> **new_name** [str](https://docs.python.org/3/library/functions.html#str)
 > 
 >> Required; New name of the item.
 >
