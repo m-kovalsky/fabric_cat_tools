@@ -1310,8 +1310,8 @@ fct.list_lakehouses(
 #### Shows the shortcuts within a lakehouse
 ```python
 import fabric_cat_tools as fct
-fct.list_direct_lake_model_calc_tables(
-            dataset = 'AdventureWorks'
+fct.list_shortcuts(
+            lakehouse = 'MyLakehouse'
             #,workspace = '' 
             )
 ```
