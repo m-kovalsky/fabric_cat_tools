@@ -918,6 +918,25 @@ fct.export_report(
             #,workspace = None
             )
 ```
+```python
+import fabric_cat_tools as fct
+fct.export_report(
+            report = 'AdventureWorks'
+            ,export_format = 'PDF'
+            #,page_name = ['ReportSection293847182375', 'ReportSection4818372483347']
+            #,workspace = None
+            )
+```
+```python
+import fabric_cat_tools as fct
+fct.export_report(
+            report = 'AdventureWorks'
+            ,export_format = 'PDF'
+            #,page_name = ['ReportSection293847182375', 'ReportSection4818372483347']
+            #,visual_name = ['d84793724739', 'v834729234723847']
+            #,workspace = None
+            )
+```
 ### Parameters
 > **report** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -935,13 +954,13 @@ fct.export_report(
 > 
 >> Optional; The name (GUID) of a bookmark within the report.
 >
-> **page_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **page_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; The name (GUID) of the report page.
 >
-> **visual_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **visual_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Optional; The name (GUID) of a visual. If you specify this parameter you must also specify the pageName parameter.
+>> Optional; The name (GUID) of a visual. If you specify this parameter you must also specify the page_name parameter.
 >
 > **report_filter** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -1085,6 +1104,10 @@ fct.get_lakehouse_tables(
 > **count_rows** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 > 
 >> Optional; Adds an additional column showing the row count of each table. Default value: False.
+>
+> **export** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; If specified as True, the resulting dataframe will be exported to a delta table in your lakehouse.
 ### Returns
 > A pandas dataframe showing the delta tables within a lakehouse and their properties.
 
@@ -2133,6 +2156,14 @@ fct.vertipaq_analyzer(
 > **export** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Specifying 'zip' will export the results to a zip file in your lakehouse (which can be imported using the [import_vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#import_vertipaq_analyzer) function. Specifying 'table' will export the results to delta tables (appended) in your lakehouse. Default value: None.
+>
+> **lakehouse_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace in which the lakehouse used by a Direct Lake semantic model resides.
+>
+> **read_stats_from_data** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+> 
+>> Optional; Setting this parameter to true has the function get Column Cardinality and Missing Rows using DAX (Direct Lake semantic models achieve this using a Spark query to the lakehouse).
 ### Returns
 > A visualization of the Vertipaq Analyzer statistics.
 
