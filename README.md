@@ -1606,7 +1606,7 @@ fct.optimize_lakehouse_tables(
 >
 > **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Required; Name of the lakehouse.
+>> Optional; Name of the lakehouse.
 >
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
