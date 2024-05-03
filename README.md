@@ -9,7 +9,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 
 ## Install the .whl file in a Fabric notebook
 ```python
-%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.3.2-py3-none-any.whl"
+%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.3.3-py3-none-any.whl"
 ```
 
 ## Once installed, run this code to import the library into your notebook
@@ -27,7 +27,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 4. Name your environment, click 'Create'
 
 #### Add fabric_cat_tools as a library to the environment
-1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.3.2-py3-none-any.whl) fabric_cat_tools library
+1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.3.3-py3-none-any.whl) fabric_cat_tools library
 2. Within 'Custom Libraries', click 'upload'
 3. Upload the .whl file which was downloaded in step 1
 4. Click 'Save' at the top right of the screen
@@ -48,6 +48,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [measure_dependency_tree](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#measure_dependency_tree)
 * [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
 * [cancel_dataset_refresh](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#cancel_dataset_refresh)
+* [run_dax](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_dax)
 
 ### Report
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
@@ -58,13 +59,13 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [clone_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clone_report)
 * [list_dashboards](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dashboards)
 * [launch_report](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#launch_report)
+* [generate_embedded_filter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#generate_embedded_filter)
 
 ### Model Optimization
 * [vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer)
 * [import_vertipaq_analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#import_vertipaq_analyzer)
 * [run_model_bpa](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa)
 * [model_bpa_rules](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#model_bpa_rules)
-
 
 ### Direct Lake Migration
 * [create_pqt_file](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_pqt_file)
@@ -117,6 +118,10 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [remove_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_column)
 * [remove_measure](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_measure)
 * [remove_table](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_table)
+
+### Misc
+* [list_dataflow_storage_accounts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dataflow_storage_accounts)
+* [get_object_level_security](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_object_level_security)
 
 ### Helper Functions
 * [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_dataset_id)
@@ -974,6 +979,20 @@ fct.export_report(
 > A printout stating the success/failure of the operation.
 
 ---
+## generate_embedded_filter
+#### Runs a DAX query against a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.generate_embedded_filter(
+            filter = "'Product'[Product Category] = 'Bikes' and 'Geography'[Country Code] in (3, 6, 10)"       
+            )
+```
+### Parameters
+> **filter** [str](https://docs.python.org/3/library/stdtypes.html#str)
+### Returns
+> A string converting the filter into an [embedded filter](https://learn.microsoft.com/power-bi/collaborate-share/service-url-filters)
+
+---
 ## get_direct_lake_guardrails
 #### Shows the guardrails for when Direct Lake semantic models will fallback to Direct Query based on Microsoft's online documentation.
 ```python
@@ -1133,8 +1152,28 @@ fct.get_measure_dependencies(
 > A pandas dataframe showing all dependencies for all measures in the semantic model.
 
 ---
+## get_object_level_security
+#### Shows a list of columns used in object level security.
+```python
+import fabric_cat_tools as fct
+fct.get_object_level_security(
+        dataset = 'AdventureWorks'
+        ,workspace = '')
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The semantic model name.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A pandas dataframe showing the columns used in object level security within a semantic model.
+
+---
 ## get_report_json
-#### Gets the report.json file content of a Power BI report
+#### Gets the report.json file content of a Power BI report.
 ```python
 import fabric_cat_tools as fct
 fct.get_report_json(
@@ -1289,6 +1328,18 @@ fct.list_dashboards(
 ### Returns
 > A pandas dataframe showing the dashboards which exist in the workspace.
 
+---
+## list_dataflow_storage_accounts
+#### Shows the dataflow storage accounts.
+```python
+import fabric_cat_tools as fct
+fct.list_dataflow_storage_accounts()
+```
+### Parameters
+None
+### Returns
+> A pandas dataframe showing the accessible dataflow storage accounts.
+> 
 ---
 ## list_direct_lake_model_calc_tables
 #### Shows the calculated tables and their respective DAX expression for a Direct Lake model (which has been migrated from import/DirectQuery.
@@ -1938,6 +1989,37 @@ fct.resolve_report_name(
 >> Optional; The workspace where the report resides.
 ### Returns
 > A string containing the report name.
+
+---
+## run_dax
+#### Runs a DAX query against a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.run_dax(
+            dataset = 'AdventureWorks'
+            ,dax_query = 'Internet Sales'
+            ,user_name = 'FACT_InternetSales'
+            #,workspace = ''          
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **dax_query** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; The DAX query to be executed.
+>
+> **user_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A pandas dataframe with the results of the DAX query.
 
 ---
 ## run_model_bpa
