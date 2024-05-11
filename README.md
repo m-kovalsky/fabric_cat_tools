@@ -2307,7 +2307,11 @@ fct.warm_direct_lake_cache_isresident(
 ---
 
 # fabric_cat_tools.TOM Functions
+## remove_object
 
+## set_rls
+
+## set_ols
 
 
 ---
