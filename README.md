@@ -2305,6 +2305,11 @@ fct.warm_direct_lake_cache_isresident(
 ### Returns
 > A printout stating the success/failure of the operation.
 ---
+
+# fabric_cat_tools.TOM Functions
+
+
+
 ---
 ## Direct Lake migration
 
