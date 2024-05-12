@@ -214,14 +214,14 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 ```python
 import fabric_cat_tools as fct
 fct.add_data_column(
-        dataset = 'AdventureWorks'
-        ,table_name = 'Internet Sales'
-        ,column_name = 'SalesAmount'
-        ,source_column = 'SalesAmount'
-        ,data_type =  'Int64'
-        #,format_string = ''
-        #,display_folder = ''
-        #,workspace = '' 
+        dataset = 'AdventureWorks',
+        table_name = 'Internet Sales',
+        column_name = 'SalesAmount',
+        source_column = 'SalesAmount',
+        data_type =  'Int64',
+        #format_string = '',
+        #display_folder = '',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -545,8 +545,8 @@ fct.cancel_dataset_refresh(
 ```python
 import fabric_cat_tools as fct
 fct.check_fallback_reason(
-            dataset = 'AdventureWorks'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            #workspace = '' 
             )
 ```
 ### Parameters
@@ -566,8 +566,8 @@ fct.check_fallback_reason(
 ```python
 import fabric_cat_tools as fct
 fct.clear_cache(
-            dataset = 'AdventureWorks'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            #workspace = '' 
             )
 ```
 ### Parameters
@@ -587,11 +587,11 @@ fct.clear_cache(
 ```python
 import fabric_cat_tools as fct
 fct.clone_report(
-            report = 'MyReport'
-            ,cloned_report = 'MyNewReport'
-            #,workspace = None
-            #,target_workspace = None
-            #,target_dataset = None
+            report = 'MyReport',
+            cloned_report = 'MyNewReport',
+            #workspace = None,
+            #target_workspace = None,
+            #target_dataset = None
             )
 ```
 ### Parameters
@@ -625,9 +625,9 @@ fct.clone_report(
 ```python
 import fabric_cat_tools as fct
 fct.control_fallback(
-            dataset = 'AdventureWorks'
-            ,direct_lake_behavior = 'DirectLakeOnly'            
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            direct_lake_behavior = 'DirectLakeOnly',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -651,8 +651,8 @@ fct.control_fallback(
 ```python
 import fabric_cat_tools as fct
 fct.create_blank_semantic_model(
-            dataset = 'AdventureWorks'
-            #,workspace = None
+            dataset = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -676,9 +676,9 @@ fct.create_blank_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.create_pqt_file(
-            dataset = 'AdventureWorks'
-            #,file_name = 'PowerQueryTemplate'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            #file_name = 'PowerQueryTemplate',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -702,11 +702,11 @@ fct.create_pqt_file(
 ```python
 import fabric_cat_tools as fct
 fct.create_report_from_reportjson(
-            report = 'MyReport'
-            ,dataset = 'AdventureWorks'
-            ,report_json = ''
-            #,theme_json = ''
-            #,workspace = ''
+            report = 'MyReport',
+            dataset = 'AdventureWorks',
+            report_json = '',
+            #theme_json = '',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -738,9 +738,9 @@ fct.create_report_from_reportjson(
 ```python
 import fabric_cat_tools as fct
 fct.create_semantic_model_from_bim(
-            dataset = 'AdventureWorks'
-            ,bim_file = ''
-            #,workspace = ''
+            dataset = 'AdventureWorks',
+            bim_file = '',
+            #workspace = ''
             )
 ```
 ### Parameters
@@ -764,12 +764,12 @@ fct.create_semantic_model_from_bim(
 ```python
 import fabric_cat_tools as fct
 fct.create_shortcut_onelake(
-            table_name = 'DimCalendar'
-            ,source_lakehouse = 'Lakehouse1'
-            ,source_workspace = 'Workspace1'
-            ,destination_lakehouse = 'Lakehouse2'
-            #,destination_workspace = ''
-            ,shortcut_name = 'Calendar'
+            table_name = 'DimCalendar',
+            source_lakehouse = 'Lakehouse1',
+            source_workspace = 'Workspace1',
+            destination_lakehouse = 'Lakehouse2',
+            #destination_workspace = '',
+            shortcut_name = 'Calendar'
             )
 ```
 ### Parameters
@@ -806,8 +806,8 @@ fct.create_shortcut_onelake(
 ```python
 import fabric_cat_tools as fct
 fct.create_warehouse(
-            warehouse = 'MyWarehouse'
-            ,workspace = None
+            warehouse = 'MyWarehouse',
+            workspace = None
             )
 ```
 ### Parameters
@@ -831,9 +831,9 @@ fct.create_warehouse(
 ```python
 import fabric_cat_tools as fct
 fct.delete_shortcut(
-            shortcut_name = 'DimCalendar'
-            ,lakehouse = 'Lakehouse1'
-            ,workspace = 'Workspace1'
+            shortcut_name = 'DimCalendar',
+            lakehouse = 'Lakehouse1',
+            workspace = 'Workspace1'
             )
 ```
 ### Parameters
@@ -860,10 +860,10 @@ fct.delete_shortcut(
 ```python
 import fabric_cat_tools as fct
 fct.direct_lake_schema_compare(
-            dataset = 'AdventureWorks'
-            ,workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''
+            dataset = 'AdventureWorks',
+            workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -894,11 +894,11 @@ fct.direct_lake_schema_compare(
 ```python
 import fabric_cat_tools as fct
 fct.direct_lake_schema_sync(
-     dataset = 'AdvWorks'
-    ,add_to_model = True
-    #,workspace = ''
-    #,lakehouse = ''
-    #,lakehouse_workspace = ''
+     dataset = 'AdvWorks',
+     add_to_model = True,
+    #workspace = '',
+    #lakehouse = '',
+    #lakehouse_workspace = ''
     )
 ```
 ### Parameters
@@ -937,10 +937,10 @@ fct.direct_lake_schema_sync(
 ```python
 import fabric_cat_tools as fct
 fct.export_model_to_onelake(
-            dataset = 'AdventureWorks'
-            ,workspace = None
-            ,destination_lakehouse = 'Lakehouse2'            
-            ,destination_workspace = 'Workspace2'
+            dataset = 'AdventureWorks',
+            workspace = None,
+            destination_lakehouse = 'Lakehouse2',
+            destination_workspace = 'Workspace2'
             )
 ```
 ### Parameters
@@ -969,54 +969,54 @@ fct.export_model_to_onelake(
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            report = 'AdventureWorks'
-            ,export_format = 'PDF'
-            #,file_name = None
-            #,bookmark_name = None
-            #,page_name = None
-            #,visual_name = None
-            #,workspace = None
+            report = 'AdventureWorks',
+            export_format = 'PDF',
+            #file_name = None,
+            #bookmark_name = None,
+            #page_name = None,
+            #visual_name = None,
+            #workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            report = 'AdventureWorks'
-            ,export_format = 'PDF'
-            #,file_name = 'Exports\MyReport'
-            #,bookmark_name = None
-            #,page_name = 'ReportSection293847182375'
-            #,visual_name = None
-            #,workspace = None
+            report = 'AdventureWorks',
+            export_format = 'PDF',
+            #file_name = 'Exports\MyReport',
+            #bookmark_name = None,
+            #page_name = 'ReportSection293847182375',
+            #visual_name = None,
+            #workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            report = 'AdventureWorks'
-            ,export_format = 'PDF'
-            #,page_name = 'ReportSection293847182375'
-            #,report_filter = "'Product Category'[Color] in ('Blue', 'Orange') and 'Calendar'[CalendarYear] <= 2020"
-            #,workspace = None
+            report = 'AdventureWorks',
+            export_format = 'PDF',
+            #page_name = 'ReportSection293847182375',
+            #report_filter = "'Product Category'[Color] in ('Blue', 'Orange') and 'Calendar'[CalendarYear] <= 2020",
+            #workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            report = 'AdventureWorks'
-            ,export_format = 'PDF'
-            #,page_name = ['ReportSection293847182375', 'ReportSection4818372483347']
-            #,workspace = None
+            report = 'AdventureWorks',
+            export_format = 'PDF',
+            #page_name = ['ReportSection293847182375', 'ReportSection4818372483347'],
+            #workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.export_report(
-            report = 'AdventureWorks'
-            ,export_format = 'PDF'
-            #,page_name = ['ReportSection293847182375', 'ReportSection4818372483347']
-            #,visual_name = ['d84793724739', 'v834729234723847']
-            #,workspace = None
+            report = 'AdventureWorks',
+            export_format = 'PDF',
+            #page_name = ['ReportSection293847182375', 'ReportSection4818372483347'],
+            #visual_name = ['d84793724739', 'v834729234723847'],
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1106,10 +1106,10 @@ fct.get_directlake_guardrails_for_sku(
 ```python
 import fabric_cat_tools as fct
 fct.get_direct_lake_lakehouse(
-            dataset = 'AdventureWorks'
-            #,workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''            
+            dataset = 'AdventureWorks',
+            #workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''            
             )
 ```
 ### Parameters
@@ -1137,8 +1137,8 @@ fct.get_direct_lake_lakehouse(
 ```python
 import fabric_cat_tools as fct
 fct.get_direct_lake_sql_endpoint(
-            dataset = 'AdventureWorks'
-            #,workspace = ''       
+            dataset = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1158,8 +1158,8 @@ fct.get_direct_lake_sql_endpoint(
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_columns(
-            lakehouse = 'AdventureWorks'
-            #,workspace = '' 
+            lakehouse = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1179,10 +1179,10 @@ fct.get_lakehouse_columns(
 ```python
 import fabric_cat_tools as fct
 fct.get_lakehouse_tables(
-        lakehouse = 'MyLakehouse'
-        #,workspace = ''
-        ,extended = True
-        ,count_rows = True)
+        lakehouse = 'MyLakehouse',
+        ,workspace = '',
+        extended = True,
+        count_rows = True)
 ```
 ### Parameters
 > **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -1213,8 +1213,8 @@ fct.get_lakehouse_tables(
 ```python
 import fabric_cat_tools as fct
 fct.get_measure_dependencies(
-            dataset = 'AdventureWorks'
-            #,workspace = None
+            dataset = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1234,8 +1234,8 @@ fct.get_measure_dependencies(
 ```python
 import fabric_cat_tools as fct
 fct.get_model_calc_dependencies(
-            dataset = 'AdventureWorks'
-            #,workspace = None
+            dataset = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1255,8 +1255,8 @@ fct.get_model_calc_dependencies(
 ```python
 import fabric_cat_tools as fct
 fct.get_object_level_security(
-        dataset = 'AdventureWorks'
-        ,workspace = '')
+        dataset = 'AdventureWorks',
+        workspace = '')
 ```
 ### Parameters
 > **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -1275,16 +1275,16 @@ fct.get_object_level_security(
 ```python
 import fabric_cat_tools as fct
 fct.get_report_json(
-            report = 'MyReport'
-            #,workspace = None
+            report = 'MyReport',
+            #workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.get_report_json(
-            report = 'MyReport'
-            #,workspace = None
-            ,save_to_file_name = 'MyFileName'
+            report = 'MyReport',
+            #workspace = None,
+            save_to_file_name = 'MyFileName'
             )
 ```
 ### Parameters
@@ -1308,16 +1308,16 @@ fct.get_report_json(
 ```python
 import fabric_cat_tools as fct
 fct.get_semantic_model_bim(
-            dataset = 'AdventureWorks'
-            #,workspace = None
+            dataset = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.get_semantic_model_bim(
-            dataset = 'AdventureWorks'
-            #,workspace = None
-            ,save_to_file_name = 'MyFileName'
+            dataset = 'AdventureWorks',
+            #workspace = None,
+            save_to_file_name = 'MyFileName'
             )
 ```
 ### Parameters
@@ -1341,8 +1341,8 @@ fct.get_semantic_model_bim(
 ```python
 import fabric_cat_tools as fct
 fct.get_shared_expression(
-            lakehouse = ''
-            #,workspace = '' 
+            lakehouse = '',
+            #workspace = '' 
             )
 ```
 ### Parameters
@@ -1378,8 +1378,8 @@ fct.get_sku_size(
 ```python
 import fabric_cat_tools as fct
 fct.import_vertipaq_analyzer(
-          folder_path = '/lakehouse/default/Files/VertipaqAnalyzer'
-          ,file_name = 'Workspace Name-DatasetName.zip'
+          folder_path = '/lakehouse/default/Files/VertipaqAnalyzer',
+          file_name = 'Workspace Name-DatasetName.zip'
           )
 ```
 ### Parameters
@@ -1397,8 +1397,8 @@ fct.import_vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.launch_report(
-          report = 'MyReport'
-          #,workspace = None
+          report = 'MyReport',
+          #workspace = None
           )
 ```
 ### Parameters
@@ -1446,8 +1446,8 @@ None
 ```python
 import fabric_cat_tools as fct
 fct.list_direct_lake_model_calc_tables(
-            dataset = 'AdventureWorks'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            #workspace = '' 
             )
 ```
 ### Parameters
@@ -1483,8 +1483,8 @@ fct.list_lakehouses(
 ```python
 import fabric_cat_tools as fct
 fct.list_shortcuts(
-            lakehouse = 'MyLakehouse'
-            #,workspace = '' 
+            lakehouse = 'MyLakehouse',
+            #workspace = '' 
             )
 ```
 ### Parameters
@@ -1504,7 +1504,7 @@ fct.list_shortcuts(
 ```python
 import fabric_cat_tools as fct
 fct.list_warehouses(
-            #,workspace = None
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1520,9 +1520,9 @@ fct.list_warehouses(
 ```python
 import fabric_cat_tools as fct
 fct.measure_dependency_tree(
-            dataset = 'AdventureWorks'
-            ,measure_name = 'Sales Amount'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            measure_name = 'Sales Amount',
+            #workspace = '' 
             )
 ```
 ### Parameters
@@ -1548,12 +1548,12 @@ fct.measure_dependency_tree(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_lakehouse(
-            dataset = 'AdventureWorks'
-            ,new_dataset = 'AdventureWorksDL'
-            #,workspace = ''
-            #,new_dataset_workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''
+            dataset = 'AdventureWorks',
+            new_dataset = 'AdventureWorksDL',
+            #workspace = '',
+            #new_dataset_workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -1591,12 +1591,12 @@ fct.migrate_calc_tables_to_lakehouse(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_calc_tables_to_semantic_model(
-            dataset = 'AdventureWorks'
-            ,new_dataset = 'AdventureWorksDL'
-            #,workspace = ''
-            #,new_dataset_workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''
+            dataset = 'AdventureWorks',
+            new_dataset = 'AdventureWorksDL',
+            #workspace = '',
+            #new_dataset_workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -1634,10 +1634,10 @@ fct.migrate_calc_tables_to_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_field_parameters(
-            dataset = 'AdventureWorks'
-            ,new_dataset = ''
-            #,workspace = ''
-            #,new_dataset_workspace = ''
+            dataset = 'AdventureWorks',
+            new_dataset = '',
+            #workspace = '',
+            #new_dataset_workspace = ''
             )
 ```
 ### Parameters
@@ -1667,10 +1667,10 @@ fct.migrate_field_parameters(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_model_objects_to_semantic_model(
-            dataset = 'AdventureWorks'
-            ,new_dataset = ''
-            #,workspace = ''
-            #,new_dataset_workspace = ''
+            dataset = 'AdventureWorks',
+            new_dataset = '',
+            #workspace = '',
+            #new_dataset_workspace = ''
             )
 ```
 ### Parameters
@@ -1700,12 +1700,12 @@ fct.migrate_model_objects_to_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.migrate_tables_columns_to_semantic_model(
-            dataset = 'AdventureWorks'
-            ,new_dataset = 'AdventureWorksDL'
-            #,workspace = ''
-            #,new_dataset_workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''
+            dataset = 'AdventureWorks',
+            new_dataset = 'AdventureWorksDL',
+            #workspace = '',
+            #new_dataset_workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''
             )
 ```
 ### Parameters
@@ -1751,17 +1751,17 @@ fct.model_bpa_rules()
 ```python
 import fabric_cat_tools as fct
 fct.optimize_lakehouse_tables(
-            tables = ['Sales', 'Calendar']
-            #,lakehouse = None
-            #,workspace = None
+            tables = ['Sales', 'Calendar'],
+            #lakehouse = None,
+            #workspace = None
         )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.optimize_lakehouse_tables(
-            tables = None
-            #,lakehouse = 'MyLakehouse'
-            #,workspace = 'MyNewWorkspace'
+            tables = None,
+            #lakehouse = 'MyLakehouse',
+            #workspace = None
         )
 ```
 ### Parameters
@@ -1787,8 +1787,8 @@ fct.optimize_lakehouse_tables(
 ```python
 import fabric_cat_tools as fct
 fct.refresh_calc_tables(
-            dataset = 'AdventureWorks'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1808,9 +1808,9 @@ fct.refresh_calc_tables(
 ```python
 import fabric_cat_tools as fct
 fct.refresh_semantic_model(
-            dataset = 'AdventureWorks'
-            ,refresh_type = 'full'
-            #,workspace = '' 
+            dataset = 'AdventureWorks',
+            refresh_type = 'full',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -1829,98 +1829,15 @@ fct.refresh_semantic_model(
 > A printout stating the success/failure of the operation.
 
 ---
-## remove_column
-#### Removes a column (or multiple columns) in a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.remove_column(
-            dataset = 'AdventureWorks'
-            ,table_name = ['Internet Sales', 'Geography']
-            ,column_name = ['SalesAmount', 'GeographyKey']
-            #,workspace = None
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the column's table(s).
->
-> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the column(s).
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## remove_measure
-#### Removes a measure (or multiple measures) in a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.remove_measure(
-            dataset = 'AdventureWorks'
-            ,measure_name = ['Sales Amount', 'Order Quantity']
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the measure(s).
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## remove_table
-#### Removes a table (or multiple tables) in a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.remove_table(
-            dataset = 'AdventureWorks'
-            ,table_name = ['Internet Sales', 'Geography']
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table(s).
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
 ## report_rebind
 #### Rebinds a report to a semantic model.
 ```python
 import fabric_cat_tools as fct
 fct.report_rebind(
-            report = ''
-            ,dataset = ''
-            #,report_workspace = ''
-            #,dataset_workspace = ''
+            report = '',
+            dataset = '',
+            #report_workspace = '',
+            #dataset_workspace = ''
             )
 ```
 ### Parameters
@@ -1948,11 +1865,11 @@ fct.report_rebind(
 ```python
 import fabric_cat_tools as fct
 fct.report_rebind_all(
-            dataset = ''
-            ,new_dataset = ''
-            #,dataset_workspace = '' 
-            #,new_dataset_workspace = '' 
-            #,report_workspace = '' 
+            dataset = '',
+            new_dataset = '',
+            #dataset_workspace = '' ,
+            #new_dataset_workspace = '' ,
+            #report_workspace = '' 
             )
 ```
 ### Parameters
@@ -1984,8 +1901,8 @@ fct.report_rebind_all(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_lakehouse_name(
-        lakehouse_id = ''
-        #,workspace = '' 
+        lakehouse_id = '',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -2005,8 +1922,8 @@ fct.resolve_lakehouse_name(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_lakehouse_id(
-        lakehouse = 'MyLakehouse'
-        #,workspace = '' 
+        lakehouse = 'MyLakehouse',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -2026,8 +1943,8 @@ fct.resolve_lakehouse_id(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_dataset_id(
-        dataset = 'MyReport'
-        #,workspace = '' 
+        dataset = 'MyReport',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -2047,8 +1964,8 @@ fct.resolve_dataset_id(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_dataset_name(
-        dataset_id = ''
-        #,workspace = '' 
+        dataset_id = '',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -2068,8 +1985,8 @@ fct.resolve_dataset_name(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_report_id(
-        report = 'MyReport'
-        #,workspace = '' 
+        report = 'MyReport',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -2089,8 +2006,8 @@ fct.resolve_report_id(
 ```python
 import fabric_cat_tools as fct
 fct.resolve_report_name(
-        report_id = ''
-        #,workspace = '' 
+        report_id = '',
+        #workspace = '' 
         )
 ```
 ### Parameters
@@ -2110,10 +2027,10 @@ fct.resolve_report_name(
 ```python
 import fabric_cat_tools as fct
 fct.run_dax(
-            dataset = 'AdventureWorks'
-            ,dax_query = 'Internet Sales'
-            ,user_name = 'FACT_InternetSales'
-            #,workspace = ''          
+            dataset = 'AdventureWorks',
+            dax_query = 'Internet Sales',
+            user_name = 'FACT_InternetSales',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -2141,8 +2058,8 @@ fct.run_dax(
 ```python
 import fabric_cat_tools as fct
 fct.run_model_bpa(
-        dataset = 'AdventureWorks'
-        #,workspace = ''
+        dataset = 'AdventureWorks',
+        #workspace = None
         )
 ```
 ### Parameters
@@ -2174,8 +2091,8 @@ fct.run_model_bpa(
 ```python
 import fabric_cat_tools as fct
 fct.show_unsupported_direct_lake_objects(
-        dataset = 'AdventureWorks'
-        #,workspace = '' 
+        dataset = 'AdventureWorks',
+        #workspace = None
         )
 ```
 ### Parameters
@@ -2195,9 +2112,9 @@ fct.show_unsupported_direct_lake_objects(
 ```python
 import fabric_cat_tools as fct
 fct.translate_semantic_model(
-            dataset = 'AdventureWorks'
-            ,languages = ['it_IT', 'fr-FR']
-            #,workspace = None
+            dataset = 'AdventureWorks',
+            languages = ['it_IT', 'fr-FR'],
+            #workspace = None
             )
 ```
 ### Parameters
@@ -2223,9 +2140,9 @@ fct.translate_semantic_model(
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_model_lakehouse_connection(
-            dataset = ''
-            #,lakehouse = ''
-            #,workspace = ''
+            dataset = '',
+            #lakehouse = '',
+            #workspace = ''
             )
 ```
 ### Parameters
@@ -2255,23 +2172,23 @@ fct.update_direct_lake_model_lakehouse_connection(
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_partition_entity(
-            dataset = 'AdventureWorks'
-            ,table_name = 'Internet Sales'
-            ,entity_name = 'FACT_InternetSales'
-            #,workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''            
+            dataset = 'AdventureWorks',
+            table_name = 'Internet Sales',
+            entity_name = 'FACT_InternetSales',
+            #workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''            
             )
 ```
 ```python
 import fabric_cat_tools as fct
 fct.update_direct_lake_partition_entity(
-            dataset = 'AdventureWorks'
-            ,table_name = ['Internet Sales', 'Geography']
-            ,entity_name = ['FACT_InternetSales', 'DimGeography']
-            #,workspace = ''
-            #,lakehouse = ''
-            #,lakehouse_workspace = ''            
+            dataset = 'AdventureWorks',
+            table_name = ['Internet Sales', 'Geography'],
+            entity_name = ['FACT_InternetSales', 'DimGeography'],
+            #workspace = '',
+            #lakehouse = '',
+            #lakehouse_workspace = ''            
             )
 ```
 ### Parameters
@@ -2307,11 +2224,11 @@ fct.update_direct_lake_partition_entity(
 ```python
 import fabric_cat_tools as fct
 fct.update_item(
-            item_type = 'Lakehouse'
-            ,current_name = 'MyLakehouse'
-            ,new_name = 'MyNewLakehouse'
-            #,description = 'This is my new lakehouse'
-            #,workspace = None
+            item_type = 'Lakehouse',
+            current_name = 'MyLakehouse',
+            new_name = 'MyNewLakehouse',
+            #description = 'This is my new lakehouse',
+            #workspace = None
             )
 ```
 ### Parameters
@@ -2343,27 +2260,27 @@ fct.update_item(
 ```python
 import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
-        dataset = 'AdventureWorks'
-        #,workspace = ''
-        ,export = None
+        dataset = 'AdventureWorks',
+        #workspace = '',
+        export = None
         )
 ```
 
 ```python
 import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
-        dataset = 'AdventureWorks'
-        #,workspace = ''
-        ,export = 'zip'
+        dataset = 'AdventureWorks',
+        #workspace = '',
+        export = 'zip'
         )
 ```
 
 ```python
 import fabric_cat_tools as fct
 fct.vertipaq_analyzer(
-        dataset = 'AdventureWorks'
-        #,workspace = ''
-        ,export = 'table'
+        dataset = 'AdventureWorks',
+        #workspace = '',
+        export = 'table'
         )
 ```
 ### Parameters
@@ -2397,10 +2314,10 @@ fct.vertipaq_analyzer(
 ```python
 import fabric_cat_tools as fct
 fct.warm_direct_lake_cache_perspective(
-        dataset = 'AdventureWorks'
-        ,perspective = 'WarmCache'
-        ,add_dependencies = True
-        #,workspace = '' 
+        dataset = 'AdventureWorks',
+        perspective = 'WarmCache',
+        add_dependencies = True,
+        #workspace = None
         )
 ```
 ### Parameters
@@ -2430,8 +2347,8 @@ fct.warm_direct_lake_cache_perspective(
 ```python
 import fabric_cat_tools as fct
 fct.warm_direct_lake_cache_isresident(
-        dataset = 'AdventureWorks'
-        #,workspace = '' 
+        dataset = 'AdventureWorks',
+        #workspace = None
         )
 ```
 ### Parameters
