@@ -2195,7 +2195,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; Sets the table to be hidden if True. Default value: False.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_calculated_table_column
@@ -2258,7 +2258,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; Sets the value for the Summarize By property of the column.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_calculation_group
@@ -2396,7 +2396,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; Sets the value for the Summarize By property of the column.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_entity_partition
@@ -2458,7 +2458,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; The description of the expression.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_field_parameter
@@ -2564,7 +2564,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; The description of the partition.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_measure
@@ -2611,7 +2611,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; The display folder for the measure.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_perspective
@@ -2693,7 +2693,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; ; Setting for the rely on referential integrity of the relationship. Default value: False.
 >
 ### Returns
-> A printout...
+>
 
 ---
 ## add_role
@@ -2721,7 +2721,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Optional; The description of the role.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_table
@@ -2780,7 +2780,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Required; The name of the perspective.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_translation
@@ -2800,7 +2800,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >> Required; The [language code](https://learn.microsoft.com/azure/ai-services/translator/language-support) to add to the semantic model.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## all_calculation_items
@@ -2816,7 +2816,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## all_columns
@@ -2848,7 +2848,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## all_levels
@@ -2864,7 +2864,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 None
 ### Returns
-> A printout...
+>
 
 ---
 ## all_measures
@@ -2880,7 +2880,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 None
 ### Returns
-> A printout...
+>
 
 ---
 ## all_partitions
@@ -2896,7 +2896,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## all_rls
@@ -2912,7 +2912,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## cardinality
@@ -2921,8 +2921,8 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.cardinality(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.cardinality(object = tom.model.Tables['Product'].Columns['Color'])
 ```
 ### Parameters
 > **column**
@@ -2930,7 +2930,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+>
 
 ---
 ## clear_annotations
@@ -2939,8 +2939,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.clear_annotations(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.clear_annotations(object = tom.model.Tables['Product'].Columns['Color'])
+```
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.clear_annotations(object = tom.model.Tables['Product'])
 ```
 ### Parameters
 > **object**
@@ -2948,7 +2955,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## clear_extended_properties
@@ -2957,8 +2964,8 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.clear_extended_properties(
+with connect_smantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.clear_extened_properties(object = tom.model.Tables['Product'].Columns['Color'])
 ```
 ### Parameters
 > **object**
@@ -2966,7 +2973,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## data_size
@@ -2975,8 +2982,8 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.data_size(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.data_size(column = tom.model.Tables['Product'].Columns['Color'])
 ```
 ### Parameters
 > **column**
@@ -2984,7 +2991,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## depends_on
@@ -3006,7 +3013,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## dictionary_size
@@ -3015,8 +3022,8 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.dictionary_size(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.dictionary_size(column = tom.model.Tables['Product'].Columns['Color'])
 ```
 ### Parameters
 > **column**
@@ -3024,7 +3031,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## fully_qualified_measures
@@ -3046,7 +3053,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## get_annotation_value
@@ -3055,8 +3062,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.get_annotation_value(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.get_annotation_value(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        name = 'MyAnnotation'
+    )
 ```
 ### Parameters
 > **object**
@@ -3068,7 +3078,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The name of the annotation.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## get_annotations
@@ -3077,8 +3087,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.get_annotations(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.get_annotations(
+        object = tom.model.Tables['Product'].Columns['Color']
+    )
 ```
 ### Parameters
 > **object**
@@ -3086,7 +3098,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## get_extended_properties
@@ -3095,8 +3107,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.get_extended_properties(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.get_extended_properties(
+        object = tom.model.Tables['Product'].Columns['Color']
+    )
 ```
 ### Parameters
 > **object**
@@ -3104,7 +3118,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## get_extended_property_value
@@ -3113,8 +3127,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.get_extended_property_value(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.get_extended_property_value(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        name = 'MyExtendedProperty'
+    )
 ```
 ### Parameters
 > **object**
@@ -3126,7 +3143,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The name of the extended property.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## in_perspective
@@ -3135,8 +3152,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.in_perspective(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.in_perspective(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        perspective_name = 'Marketing'
+    )
 ```
 ### Parameters
 > **object**
@@ -3148,7 +3168,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## is_direct_lake
@@ -3157,8 +3177,8 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.is_direct_lake(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    print(tom.is_direct_lake())
 ```
 ### Parameters
 None
@@ -3172,8 +3192,10 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.is_field_parameter(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    print(tom.is_field_parameter(
+        table_name = 'Parameter'
+    ))
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -3190,8 +3212,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.records_per_segment(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.records_per_segment(
+        object = tom.model.Tables['Sales'].Partitions['Sales - 2024']
+    )
 ```
 ### Parameters
 > **object**
@@ -3199,7 +3223,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## referenced_by
@@ -3221,7 +3245,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+>
 
 ---
 ## remove_annotation
@@ -3230,8 +3254,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.remove_annotation(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.remove_annotation(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        name = 'MyAnnotation'
+    )
 ```
 ### Parameters
 > **object**
@@ -3243,7 +3270,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The name of the annotation.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## remove_extended_property
@@ -3252,8 +3279,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.remove_extended_property(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.remove_extended_property(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        name = 'MyExtendedProperty'
+    )
 ```
 ### Parameters
 > **object**
@@ -3265,7 +3295,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The name of the extended property.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## remove_from_perspective
@@ -3274,8 +3304,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.remove_from_perspective(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.remove_from_perspective(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        perspective_name = 'Marketing'
+    )
 ```
 ### Parameters
 > **object**
@@ -3287,7 +3320,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## remove_object
@@ -3296,8 +3329,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.remove_object(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.remove_object(
+        object = tom.model.Tables['Product'].Columns['Color']
+    )
 ```
 ### Parameters
 > **object**
@@ -3305,7 +3340,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## remove_translation
@@ -3314,8 +3349,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.remove_translation(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.remove_translation(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        language = 'it-IT'
+    )
 ```
 ### Parameters
 > **object**
@@ -3327,7 +3365,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The [language code](https://learn.microsoft.com/azure/ai-services/translator/language-support).
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## remove_vertipaq_annotations
@@ -3336,13 +3374,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.remove_vertipaq_annotations(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.remove_vertipaq_annotations()
 ```
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## row_count
@@ -3351,8 +3389,10 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.row_count(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.row_count(
+        object = tom.model.Tables['Product']
+    )
 ```
 ### Parameters
 > **object**
@@ -3360,7 +3400,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The TOM object to obtain the row count.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_annotation
@@ -3369,8 +3409,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_annotation(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_annotation(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        name = 'MyAnnotation',
+        value = '1'
+    )
 ```
 ### Parameters
 > **object**
@@ -3386,17 +3430,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The annotation value.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_direct_lake_behavior
-#### Sets the 'DirectLakeBehavior' property for a Direct Lake semantic model.
+#### Sets the [DirectLakeBehavior](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.directlakebehavior?view=analysisservices-dotnet) property for a Direct Lake semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_direct_lake_behavior(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_direct_lake_behavior(
+        direct_lake_behavior = 'DirectLakeOnly'
+    )
 ```
 ### Parameters
 > **direct_lake_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -3404,7 +3450,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The [DirectLakeBehavior](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.directlakebehavior?view=analysisservices-dotnet) value.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_extended_property
@@ -3413,8 +3459,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_extended_property(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_extended_property(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        type = 'Json',
+        name = 'MyExtendedProperty',
+        value = '{...}'
+    )
 ```
 ### Parameters
 > **object**
@@ -3434,7 +3485,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The value of the extended property.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_is_available_in_mdx
@@ -3443,8 +3494,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_is_available_in_mdx(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_is_available_in_mdx(
+        table_name = 'Sales',
+        column_name = 'SalesAmount',
+        value = False
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -3460,7 +3515,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The value to set for the [IsAvailableInMDX](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.column.isavailableinmdx?view=analysisservices-dotnet#microsoft-analysisservices-tabular-column-isavailableinmdx) property.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_ols
@@ -3469,8 +3524,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_ols(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_ols(
+        role_name = 'Reader'
+        table_name = 'Geography',
+        column_name = 'Country',
+        permission = 'None'
+    )
 ```
 ### Parameters
 > **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -3490,7 +3550,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The permission for a given column. Options: ['Read', 'None', 'Default'].
 >
 ### Returns
-> A printout...
+>
 
 ---
 ## set_rls
@@ -3499,8 +3559,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_rls(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_rls(
+        role_name = 'Reader'
+        table_name = 'UserGeography',
+        filter_expression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
+    )
 ```
 ### Parameters
 > **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -3516,7 +3580,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The DAX expression containing the row level security logic.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_summarize_by
@@ -3525,8 +3589,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_summarize_by(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_summarize_by(
+        table_name = 'Geography',
+        column_name = 'Country',
+        value = 'None'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -3542,7 +3610,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The [summarize by](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.column.summarizeby?view=analysisservices-dotnet#microsoft-analysisservices-tabular-column-summarizeby) property of the column.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_translation
@@ -3551,8 +3619,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_translation(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_translation(
+        object = tom.model.Tables['Geography']
+        language = 'it-IT'
+        property = 'Name'
+        value = 'Geografia'
+    )
 ```
 ### Parameters
 > **object**
@@ -3572,7 +3645,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The translation value.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## set_vertipaq_annotations
@@ -3581,13 +3654,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.set_vertipaq_annotations(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.set_vertipaq_annotations()
 ```
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## total_size
@@ -3596,8 +3669,10 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.total_size(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.total_size(
+        object = tom.model.Tables['Sales'].Columns['SalesAmount']
+    )
 ```
 ### Parameters
 > **object**
@@ -3627,7 +3702,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+>
 
 ---
 ## used_in_calc_item
@@ -3649,7 +3724,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## used_in_hierarchies
@@ -3658,8 +3733,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_in_hierarchies(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.used_in_hierarchies(
+        column = tom.model.Tables['Geography'].Columns['City']
+    )
 ```
 ### Parameters
 > **column**
@@ -3667,7 +3744,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## used_in_levels
@@ -3676,8 +3753,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_in_levels(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.used_in_levels(
+        column = tom.model.Tables['Geography'].Columns['City']
+    )
 ```
 ### Parameters
 > **column**
@@ -3685,7 +3764,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## used_in_relationships
@@ -3694,8 +3773,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_in_relationships(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.used_in_relatioships(
+        object = tom.model.Tables['Geography'].Columns['GeographyID']
+    )
+```
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.used_in_relatioships(
+        object = tom.model.Tables['Geography']
+    )
 ```
 ### Parameters
 > **object**
@@ -3725,7 +3815,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## used_in_sort_by
@@ -3734,8 +3824,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_in_sort_by(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.used_in_sort_by(
+        column = tom.model.Tables['Geography'].Columns['City']
+    )
 ```
 ### Parameters
 > **column**
@@ -3752,8 +3844,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_size(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    tom.used_size(
+        object = tom.model.Tables['Geography'].Hierarchies['Geo Hierarchy']
+    )
 ```
 ### Parameters
 > **object**
@@ -3761,7 +3855,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> 
 
 
 
