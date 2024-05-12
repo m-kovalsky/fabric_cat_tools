@@ -1849,7 +1849,7 @@ fct.refresh_semantic_model(
 >
 > **partitions** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Optional; Partitions to refresh.
+>> Optional; Partitions to refresh. Must be in "'Table'[Partition]" format.
 >
 > **refresh_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
