@@ -49,6 +49,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
 * [cancel_dataset_refresh](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#cancel_dataset_refresh)
 * [run_dax](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_dax)
+* [get_object_level_security](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_object_level_security)
 
 ### Report
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
@@ -106,22 +107,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [optimize_lakehouse_tables](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#optimize_lakehouse_tables)
 * [create_warehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_warehouse)
 * [update_item](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_item)
-
-### Add/remove objects from a semantic model
-* [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
-* [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter)
-* [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_hierarchy)
-* [add_measure](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_measure)
-* [add_relationship](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_relationship)
-* [add_rls](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_rls)
-* [add_role](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_role)
-* [remove_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_column)
-* [remove_measure](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_measure)
-* [remove_table](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_table)
-
-### Misc
 * [list_dataflow_storage_accounts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dataflow_storage_accounts)
-* [get_object_level_security](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_object_level_security)
 
 ### Helper Functions
 * [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_dataset_id)
@@ -130,6 +116,93 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [resolve_lakehouse_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_lakehouse_name)
 * [resolve_report_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_report_id)
 * [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-files#resolve_report_name)
+
+### Tabular Object Model (TOM)
+#### 'All' functions for non-parent objects within TOM
+* [all_columns](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_columns)
+* [all_measures](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_measures)
+* [all_partitions](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_partitions)
+* [all_hierarchies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_hierarchies)
+* [all_levels](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_levels)
+* [all_calculation_items](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_calculation_items)
+* [all_rls](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_rls)
+
+#### 'Add' functions
+* [add_calculated_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_calculated_column)
+* [add_calculated_table](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_calculated_table)
+* [add_calculated_table_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_calculated_table_column)
+* [add_calculation_group](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_calculation_group)
+* [add_calculation_item](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_calculation_item)
+* [add_data_column](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_data_column)
+* [add_entity_partition](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_entity_partition)
+* [add_expression](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_expression)
+* [add_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_field_parameter)
+* [add_hierarchy](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_hierarchy)
+* [add_m_partition](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_m_partition)
+* [add_measure](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_measure)
+* [add_perspective](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_perspective)
+* [add_relationship](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_relationship)
+* [add_role](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_role)
+* [add_table](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_table)
+* [add_translation](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_translation)
+
+#### 'Set' functions
+* [set_direct_lake_behavior](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_direct_lake_behavior)
+* [set_is_available_in_mdx](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_is_available_in_mdx)
+* [set_ols](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_ols)
+* [set_rls](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_rls)
+* [set_summarize_by](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_summarize_by)
+* [set_translation](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_translation)
+
+#### 'Remove' functions
+* [remove_object](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_object)
+* [remove_translation](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_translation)
+
+#### 'Used-in' and dependency functions
+* [used_in_relationships](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_in_relationships)
+* [used_in_hierarchies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_in_hierarchies)
+* [used_in_levels](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_in_levels)
+* [used_in_sort_by](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_in_sort_by)
+* [used_in_rls](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_in_rls)
+* [used_in_calc_item](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_in_calc_item)
+* [depends_on](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#depends_on)
+* [referenced_by](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#referenced_by)
+* [fully_qualified_measures](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#fully_qualified_measures)
+* [unqualified_columns](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#unqualified_columns)
+
+#### Vertipaq Analyzer data functions
+* [remove_vertipaq_annotations](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_vertipaq_annotations)
+* [set_vertipaq_annotations](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_vertipaq_annotations)
+* [row_count](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#row_count)
+* [used_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#used_size)
+* [data_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#data_size)
+* [dictionary_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#dictionary_size)
+* [total_size](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#total_size)
+* [cardinality](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#cardinality)
+
+#### Perspectives
+* [in_perspective](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#in_perspective)
+* [add_to_perspective](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#add_to_perspective)
+* [remove_from_perspective](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_from_perspective)
+  
+#### Annotations
+* [get_annotations](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_annotations)
+* [set_annotation](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_annotation)
+* [get_annotation_value](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_annotation_value)
+* [remove_annotation](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_annotation)
+* [clear_annotations](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clear_annotations)
+
+#### Extended Properties
+* [get_extended_properties](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_extended_properties)
+* [set_extended_property](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#set_extended_property)
+* [get_extended_property_value](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_extended_property_value)
+* [remove_extended_property](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#remove_extended_property)
+* [clear_extended_properties](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#clear_extended_properties)
+
+#### Misc
+* [is_direct_lake](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#is_direct_lake)
+* [is_field_parameter](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#is_field_parameter)
+
 
 # Functions
 ## add_data_column
