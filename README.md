@@ -2158,7 +2158,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_calculated_table
-####
+#### Adds a calculated table to a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2192,7 +2192,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_calculated_table_column
-####
+#### Adds a calculated table column to a calculated table within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2250,7 +2250,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_calculation_group
-####
+#### Adds a calculation group to a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2280,7 +2280,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_calculation_item
-####
+#### Adds a calculation item to a calculation group within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2318,7 +2318,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_data_column
-####
+#### Adds a data column to a table within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2376,7 +2376,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_entity_partition
-####
+#### Adds an entity partition to a table in a semantic model. Entity partitions are used for tables within Direct Lake semantic models.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2406,7 +2406,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_expression
-####
+#### Adds an expression to a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2432,7 +2432,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_field_parameter
-####
+#### Adds a field parameter to a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2454,7 +2454,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_hierarchy
-####
+#### Adds a hierarchy to a table within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2492,7 +2492,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_m_partition
-####
+#### Adds an M-partition to a table within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2526,7 +2526,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_measure
-####
+#### Adds a measure to the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2568,7 +2568,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_perspective
-####
+#### Adds a perspective to the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2586,7 +2586,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_relationship
-####
+#### Adds a relationship to the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2640,7 +2640,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_role
-####
+#### Adds a role to the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2666,7 +2666,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_table
-####
+#### Adds a table to the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2696,7 +2696,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_to_perspective
-####
+#### Adds an object to a perspective.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2718,7 +2718,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## add_translation
-####
+#### Adds a translation language to the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2736,7 +2736,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## all_calculation_items
-####
+#### Outputs a list of all calculation items within all calculation groups in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2751,7 +2751,7 @@ None
 
 ---
 ## all_columns
-####
+#### Outputs a list of all columns within all tables in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2766,7 +2766,7 @@ None
 
 ---
 ## all_hierarchies
-####
+#### Outputs a list of all hierarchies within all tables in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2781,7 +2781,7 @@ None
 
 ---
 ## all_levels
-####
+#### Outputs a list of all levels within all hierarchies within all tables in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2796,7 +2796,7 @@ None
 
 ---
 ## all_measures
-####
+#### Outputs a list of all measures within all tables in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2811,7 +2811,7 @@ None
 
 ---
 ## all_partitions
-####
+#### Outputs a list of all partitions within all tables in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2826,7 +2826,7 @@ None
 
 ---
 ## all_rls
-####
+#### Outputs a list of all row level security objects within all roles of the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2841,7 +2841,7 @@ None
 
 ---
 ## cardinality
-####
+#### Obtains the cardinality of a column within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2859,7 +2859,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## clear_annotations
-####
+#### Removes all annotations on a given object within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2877,7 +2877,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## clear_extended_properties
-####
+#### Removes all extended properties on a given object witihn a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2895,7 +2895,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## data_size
-####
+#### Obtains the data size of a column within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3445,7 +3445,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## set_summarize_by
-####
+#### Sets the [Summarize By](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.column.summarizeby?view=analysisservices-dotnet#microsoft-analysisservices-tabular-column-summarizeby) property on a column in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3464,14 +3464,14 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **value** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required; The summarize by property of the column.
+>> Required; The [summarize by](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.column.summarizeby?view=analysisservices-dotnet#microsoft-analysisservices-tabular-column-summarizeby) property of the column.
 >
 ### Returns
 > A printout...
 
 ---
 ## set_translation
-####
+#### Sets the translation value for an object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3501,7 +3501,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## set_vertipaq_annotations
-####
+#### Saves Vertipaq Analyzer statistics as annotations on objects in the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3516,7 +3516,7 @@ None
 
 ---
 ## total_size
-####
+#### Obtains the total size (in bytes) of a table or column within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3525,12 +3525,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.total_size(
 ```
 ### Parameters
-> **column**
+> **object**
 >
 >> Required;
 >
 ### Returns
-> A printout...
+> The total size (in bytes) of the object.
 
 ---
 ## unqualified_columns
@@ -3578,7 +3578,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_hierarchies
-####
+#### 
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
