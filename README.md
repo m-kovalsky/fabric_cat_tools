@@ -1808,19 +1808,56 @@ fct.refresh_calc_tables(
 ```python
 import fabric_cat_tools as fct
 fct.refresh_semantic_model(
-            dataset = 'AdventureWorks',
-            refresh_type = 'full',
-            #workspace = None
-            )
+    dataset = 'AdventureWorks',
+    refresh_type = 'full',
+    workspace = None
+)
+```
+```python
+import fabric_cat_tools as fct
+fct.refresh_semantic_model(
+    dataset = 'AdventureWorks',
+    tables = ['Sales', 'Geography'],
+    workspace = None
+)
+```
+```python
+import fabric_cat_tools as fct
+fct.refresh_semantic_model(
+    dataset = 'AdventureWorks',
+    partitions = ["'Sales'[Sales - 2024]", "'Sales'[Sales - 2023]"],
+    workspace = None
+)
+```
+```python
+import fabric_cat_tools as fct
+fct.refresh_semantic_model(
+    dataset = 'AdventureWorks',
+    tables = ['Geography'],
+    partitions = ["'Sales'[Sales - 2024]", "'Sales'[Sales - 2023]"],
+    workspace = None
+)
 ```
 ### Parameters
 > **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
->> Required; Name of the semantic model.
+>> Required; Name of the semantic model. If no tables/partitions are specified, the entire semantic model is refreshed.
+>
+> **tables** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Tables to refresh.
+>
+> **partitions** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Partitions to refresh.
 >
 > **refresh_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Optional; Type of processing to perform. Options: ('full', 'automatic', 'dataOnly', 'calculate', 'clearValues', 'defragment'). Default value: 'full'.
+>
+> **retry_count** [int](https://docs.python.org/3/library/stdtypes.html#int)
+> 
+>> Optional; Number of retry attempts. Default is 0.
 >
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
