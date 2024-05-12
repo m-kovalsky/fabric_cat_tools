@@ -121,7 +121,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [resolve_report_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_report_id)
 * [resolve_report_name](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-files#resolve_report_name)
 
-### Tabular Object Model (TOM)
+### [Tabular Object Model](https://learn.microsoft.com/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo?view=asallproducts-allversions) ([TOM](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.model?view=analysisservices-dotnet))
 #### 'All' functions for non-parent objects within TOM
 * [all_columns](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_columns)
 * [all_measures](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#all_measures)
@@ -2147,7 +2147,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional; Marks the column as the primary key of the table.
+>> Optional; Marks the column as the primary key of the table. Default value: False.
 >
 > **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -2177,11 +2177,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the table.
 >
 > **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The data category of the table.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
@@ -2203,47 +2203,47 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the column will reside.
 >
 > **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column.
 >
 > **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The source column for the column.
 >
 > **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The data type of the column.
 >
 > **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The format string of the column.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Sets the column to be hidden if True. Default value: False.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the column.
 >
 > **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The display folder for the column.
 >
 > **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The data category of the column.
 >
 > **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Marks the column as the primary key of the table. Default value: False.
 >
 > **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; Sets the value for the Summarize By property of the column.
 >
 ### Returns
 > A printout...
@@ -2273,7 +2273,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Sets the calculation group to be hidden if True. Default value: False.
 >
 ### Returns
 > A printout...
@@ -2329,47 +2329,47 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the column will exist.
 >
 > **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column.
 >
 > **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column in the source.
 >
 > **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The data type of the column.
 >
 > **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The format string of the column.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Sets the column to be hidden if True. Default value: False.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the column.
 >
 > **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The display folder for the column.
 >
 > **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The data category of the column.
 >
 > **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Marks the column as the primary key of the table. Default value: False.
 >
 > **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; Sets the value for the Summarize By property of the column.
 >
 ### Returns
 > A printout...
@@ -2387,19 +2387,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which to place the entity partition.
 >
 > **entity_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the lakehouse table.
 >
 > **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The expression to use for the partition. This defaults to using the existing 'DatabaseQuery' expression within the Direct Lake semantic model.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the partition.
 >
 ### Returns
 > A printout...
@@ -2417,15 +2417,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the expression.
 >
 > **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The M-code encapsulating the logic for the expression.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the expression.
 >
 ### Returns
 > A printout...
@@ -2443,11 +2443,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the field parameter.
 >
 > **objects** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; A list of columns/tables to place in the field parameter. Columns must be fully qualified (i.e. "'Table Name'[Column Name]" and measures must be unqualified (i.e. "[Measure Name]").
 >
 ### Returns
 > A printout...
@@ -2465,27 +2465,27 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the hierarchy will reside.
 >
 > **hierarchy_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the hierarchy.
 >
 > **columns** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; A list of columns to use in the hierarchy. Must be ordered from the top of the hierarchy down (i.e. ["Continent", "Country", "City"]).
 >
 > **levels** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; A list of levels to use in the hierarchy. These will be the displayed name (instead of the column names). If omitted, the levels will default to showing the column names.
 >
 > **hierarchy_description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the hierarchy.
 >
 > **hierarchy_hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Sets the hierarchy to be hidden if True. Default value: False.
 >
 ### Returns
 > A printout...
@@ -2503,23 +2503,23 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the partition will reside.
 >
 > **partition_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the M partition.
 >
 > **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The M-code encapsulating the logic of the partition.
 >
 > **mode** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The storage mode for the partition. Default value: 'Import'.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the partition.
 >
 ### Returns
 > A printout...
@@ -2553,7 +2553,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Sets the measure to be hidden if True. Default value: False.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -2677,19 +2677,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The descrition of the table.
 >
 > **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The data category of the table.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional;  Sets the table to be hidden if True. Default value: False.
 >
 ### Returns
 > A printout...
@@ -2711,7 +2711,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **perspective_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the perspective.
 >
 ### Returns
 > A printout...
@@ -2729,7 +2729,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The [language code](https://learn.microsoft.com/azure/ai-services/translator/language-support) to add to the semantic model.
 >
 ### Returns
 > A printout...
@@ -2926,7 +2926,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies**
+> **dependencies** Pandas dataframe
 >
 >> Required;
 >
@@ -2990,7 +2990,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the annotation.
 >
 ### Returns
 > A printout...
@@ -3048,7 +3048,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the extended property.
 >
 ### Returns
 > A printout...
@@ -3165,7 +3165,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the annotation.
 >
 ### Returns
 > A printout...
@@ -3187,7 +3187,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the extended property.
 >
 ### Returns
 > A printout...
@@ -3348,15 +3348,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **extended_property_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The type of extended property to set. Options: ['Json', 'String'].
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the extended property.
 >
 > **value** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The value of the extended property.
 >
 ### Returns
 > A printout...
@@ -3374,22 +3374,22 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the column resides.
 >
 > **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column.
 >
 > **value** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Required;
+>> Required; The value to set for the IsAvailableInMDX property.
 >
 ### Returns
 > A printout...
 
 ---
 ## set_ols
-####
+#### Sets object level security for a given role/column within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3400,15 +3400,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the role.
 >
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table.
 >
 > **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column.
 >
 > **permission** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3419,7 +3419,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## set_rls
-####
+#### Sets the row level security expression for a given role/table within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3430,15 +3430,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the role.
 >
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table to place row level security.
 >
 > **filter_expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The DAX expression containing the row level security logic.
 >
 ### Returns
 > A printout...
@@ -3456,15 +3456,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the column resides.
 >
 > **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column.
 >
 > **value** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The summarize by property of the column.
 >
 ### Returns
 > A printout...
@@ -3486,15 +3486,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The language code in which to translate the object property.
 >
 > **property** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The property to translate. One of the following values: ['Name', 'Description', 'Display Folder'].
 >
 > **value** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The translation value.
 >
 ### Returns
 > A printout...
