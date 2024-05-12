@@ -2537,19 +2537,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table in which the measure will reside.
 >
 > **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the measure.
 >
 > **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The DAX expression encapsulating the logic of the measure.
 >
 > **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The format string of the measure.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
@@ -2557,11 +2557,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the measure.
 >
 > **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The display folder for the measure.
 >
 ### Returns
 > A printout...
@@ -2579,7 +2579,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **perspective_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the perspective.
 >
 ### Returns
 > A printout...
@@ -2597,43 +2597,43 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **from_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table on the 'from' side of the relationship.
 >
 > **from_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column on the 'from' side of the relationship.
 >
 > **to_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table on the 'to' side of the relationship.
 >
 > **to_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the column on the 'to' side of the relationship.
 >
 > **from_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The cardinality of the 'from' side of the relationship. Options: ['Many', 'One', 'None'].
 >
 > **to_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The cardinality of the 'to' side of the relationship. Options: ['Many', 'One', 'None'].
 >
 > **cross_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
 >
 > **is_active** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Setting for whether the relationship is active or not. Default value: True.
 >
 > **security_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
 >
 > **rely_on_referential_integrity** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; ; Setting for the rely on referential integrity of the relationship. Default value: False.
 >
 ### Returns
 > A printout...
@@ -2651,15 +2651,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the role.
 >
 > **model_permission** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The [model permission](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.modelpermission?view=analysisservices-dotnet) of the role. Default value: 'Reader'.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the role.
 >
 ### Returns
 > A printout...
@@ -2935,7 +2935,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## dictionary_size
-####
+#### Obtains the 
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2953,7 +2953,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## fully_qualified_measures
-####
+#### Shows all fully-qualified measures referenced by a given measure's DAX expression.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2975,7 +2975,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## get_annotation_value
-####
+#### Obtains the annotation value for a given object's annotation in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -2997,7 +2997,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## get_annotations
-####
+#### Obtains all of the annotations for a given object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3015,7 +3015,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## get_extended_properties
-####
+#### Obtains all of the extended properties for a given object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3033,7 +3033,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## get_extended_property_value
-####
+#### Obtains the extended property value for an object's extended property.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3055,7 +3055,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## in_perspective
-####
+#### Identifies whether an object is in a given perspective.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3077,7 +3077,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## is_direct_lake
-####
+#### Identifies whether a semantic model is in Direct Lake mode.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3088,11 +3088,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 None
 ### Returns
-> A printout...
+> True/False
 
 ---
 ## is_field_parameter
-####
+#### Identifies whether a table is a field parameter.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3106,11 +3106,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required;
 >
 ### Returns
-> A printout...
+> True/False
 
 ---
 ## records_per_segment
-####
+#### Obtains the records per segment of a partition within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3128,7 +3128,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## referenced_by
-####
+#### Shows the objects referenced by a given object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3150,7 +3150,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## remove_annotation
-####
+#### Removes the annotation from an object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3172,7 +3172,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## remove_extended_property
-####
+#### Removes the extended property from an object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3194,7 +3194,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## remove_from_perspective
-####
+#### Removes an object (table, column, measure or hierarchy) from a perspective.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3216,7 +3216,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## remove_object
-####
+#### Removes an object from a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3234,7 +3234,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## remove_translation
-####
+#### Removes a translation for an object in a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3249,14 +3249,14 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The [language code](https://learn.microsoft.com/azure/ai-services/translator/language-support).
 >
 ### Returns
 > A printout...
 
 ---
 ## remove_vertipaq_annotations
-####
+#### Removes the annotations set using the [set_vertipaq_annotations] function.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3271,7 +3271,7 @@ None
 
 ---
 ## row_count
-####
+#### Obtains the row count of a table or partition within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3289,7 +3289,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## set_annotation
-####
+#### Sets an annotation on an object within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3304,18 +3304,18 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The annotation name.
 >
 > **value** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The annotation value.
 >
 ### Returns
 > A printout...
 
 ---
 ## set_direct_lake_behavior
-####
+#### Sets the 'DirectLakeBehavior' property for a Direct Lake semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3326,14 +3326,14 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **direct_lake_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The [DirectLakeBehavior](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.directlakebehavior?view=analysisservices-dotnet) value.
 >
 ### Returns
 > A printout...
 
 ---
 ## set_extended_property
-####
+#### Sets an extended property on an object within the semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3382,7 +3382,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **value** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Required; The value to set for the IsAvailableInMDX property.
+>> Required; The value to set for the [IsAvailableInMDX](https://learn.microsoft.com/dotnet/api/microsoft.analysisservices.tabular.column.isavailableinmdx?view=analysisservices-dotnet#microsoft-analysisservices-tabular-column-isavailableinmdx) property.
 >
 ### Returns
 > A printout...
@@ -3486,7 +3486,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required; The language code in which to translate the object property.
+>> Required; The [language code](https://learn.microsoft.com/azure/ai-services/translator/language-support) in which to translate the object property.
 >
 > **property** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
