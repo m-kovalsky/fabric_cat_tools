@@ -2098,312 +2098,1597 @@ fct.warm_direct_lake_cache_isresident(
 ---
 
 # fabric_cat_tools.TOM Functions
-## add_data_column
-#### Adds a data column to a semantic model.
+## add_calculated_column
+#### Adds a calculated column to a table within a semantic model.
 ```python
 import fabric_cat_tools as fct
-fct.add_data_column(
-        dataset = 'AdventureWorks',
-        table_name = 'Internet Sales',
-        column_name = 'SalesAmount',
-        source_column = 'SalesAmount',
-        data_type =  'Int64',
-        #format_string = '',
-        #display_folder = '',
-        #workspace = '' 
-        )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_calculated_column(
+)
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+> **table_name** [str]
 >
->> Required; Name of the semantic model.
-> 
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>> Required; The name of the table.
 >
->> Required; Name of the table in which the column will reside.
+> **column_name** [str]
 >
-> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Required; The name of the calculated column.
 >
->> Required; Name of the column.
+> **expression** [str]
 >
-> **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Required; The DAX expression for the calculated column.
 >
->> Required; Name of the column in the source system.
+> **data_type** [str]
 >
-> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Required; The data type of the calculated column.
 >
->> Required; Data type of the column. Options: 'Int64', 'String', 'Double', 'Decimal', 'DateTime', 'Boolean'.
+> **format_string** [str]
 >
-> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Optional;
 >
->> Optional; Format string of the column.
+> **hidden** [bool]
 >
-> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Optional; A
 >
->> Optional; Description of the column.
+> **description** [str]
 >
-> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Optional;
 >
->> Optional; Display folder of the column.
+> **display_folder** [str]
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>> Optional;
 >
->> Optional; The workspace where the semantic model resides.
+> **data_category** [str]
+>
+>> Optional;
+>
+> **key** [bool]
+>
+>> Optional;
+>
+> **summarize_by** [str]
+>
+>> Optional;
+>
 ### Returns
-> A printout stating the success/failure of the operation.
+> 
+
+---
+## add_calculated_table
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_calculated_table(
+```
+### Parameters
+> **name** [str]
+>
+>> Required;
+>
+> **expression** [str]
+>
+>> Required;
+>
+> **description** [str]
+>
+>> Optional;
+>
+> **data_category** [str]
+>
+>> Optional;
+>
+> **hidden** [bool]
+>
+>> Optional;
+>
+### Returns
+> A printout...
+
+---
+## add_calculated_table_column
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_calculated_table_column(
+```
+### Parameters
+> **table_name** [str]
+>
+>> Required;
+>
+> **column_name** [str]
+>
+>> Required;
+>
+> **source_column** [str]
+>
+>> Required;
+>
+> **data_type** [str]
+>
+>> Required;
+>
+> **format_string** [str]
+>
+>> Optional;
+>
+> **hidden** [bool]
+>
+>> Optional;
+>
+> **description** [str]
+>
+>> Optional;
+>
+> **display_folder** [str]
+>
+>> Optional;
+>
+> **data_category** [str]
+>
+>> Optional;
+>
+> **key** [bool]
+>
+>> Optional;
+>
+> **summarize_by** [str]
+>
+>> Optional;
+>
+### Returns
+> A printout...
+
+---
+## add_calculation_group
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_calculation_group(
+```
+### Parameters
+> **name** [str]
+>
+>> Required;
+>
+> **precedence** [int]
+>
+>> Optional;
+>
+> **description** [str]
+>
+>> Optional;
+>
+> **hidden** [bool]
+>
+>> Optional;
+>
+### Returns
+> A printout...
+
+---
+## add_calculation_item
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_calculation_item(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+> **calculation_item_name**
+>
+>> Required;
+>
+> **expression**
+>
+>> Required;
+>
+> **ordinal**
+>
+>> Optional;
+>
+> **format_string_expression**
+>
+>> Optional;
+>
+> **description**
+>
+>> Optional;
+>
+### Returns
+> A printout...
+
+---
+## add_data_column
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_data_column(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+> **column_name**
+>
+>> Required;
+>
+> **source_column**
+>
+>> Required;
+>
+> **data_type**
+>
+>> Required;
+>
+> **format_string**
+>
+>> Optional;
+>
+> **hidden**
+>
+>> Optional;
+>
+> **description**
+>
+>> Optional;
+>
+> **display_folder**
+>
+>> Optional;
+>
+> **data_category**
+>
+>> Optional;
+>
+> **key**
+>
+>> Optional;
+>
+> **summarize_by**
+>
+>> Optional;
+>
+### Returns
+> A printout...
+
+---
+## add_entity_partition
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_entity_partition(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+> **entity_name**
+>
+>> Required;
+>
+> **expression**
+>
+>> Optional;
+>
+> **description**
+>
+>> Optional;
+>
+### Returns
+> A printout...
+
+---
+## add_expression
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_expression(
+```
+### Parameters
+> **name**
+>
+>> Required;
+>
+> **expression**
+>
+>> Required;
+>
+> **description**
+>
+>> Optional;
+>
+### Returns
+> A printout...
 
 ---
 ## add_field_parameter
-#### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
+####
 ```python
 import fabric_cat_tools as fct
-fct.add_field_parameter(
-            dataset = 'AdventureWorks'
-            ,table_name = 'Parameter'
-            ,objects = ["[Sales Amount]", "[Order Qty]", "'Internet Sales'[Color]"]
-            #,workspace = '' 
-            )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_field_parameter(
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+> **table_name**
 >
->> Required; Name of the semantic model.
-> 
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>> Required;
 >
->> Required; Name of the field parameter table.
+> **objects**
 >
-> **objects** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; List of columns/measures to be included in the field parameter. Columns are fully qualified 'TableName'[ColumnName] and measures are in square brackets [MeasureName].
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; The workspace where the semantic model resides.
+>> Required;
 >
 ### Returns
-> A printout stating the success/failure of the operation.
+> A printout...
 
 ---
 ## add_hierarchy
-#### Adds a hierarchy to a semantic model.
+####
 ```python
 import fabric_cat_tools as fct
-fct.add_hierarchy(
-            dataset = 'AdventureWorks'
-            ,table_name = 'Geography'
-            ,hierarchy_name = 'Geography Hierarchy'
-            ,levels = ['Continent', 'Country', 'City']
-            #,workspace = '' 
-            )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_hierarchy(
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **table_name**
 >
->> Required; Name of the semantic model.
+>> Required;
 >
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **hierarchy_name**
 >
->> Required; Name of the table in which the hierarchy will reside.
+>> Required;
 >
-> **hierarchy_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **columns**
 >
->> Required; Name of the hierarchy.
+>> Required;
 >
-> **levels** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **levels**
 >
->> Required; List of columns to be included as levels in the hierarchy.
+>> Optional;
 >
-> **workspace_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> **hierarchy_description**
 >
->> Optional; The workspace where the semantic model resides.
+>> Optional;
+>
+> **hierarchy_hidden**
+>
+>> Optional;
+>
 ### Returns
-> A printout stating the success/failure of the operation.
+> A printout...
+
+---
+## add_m_partition
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_m_partition(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+> **partition_name**
+>
+>> Required;
+>
+> **expression**
+>
+>> Required;
+>
+> **mode**
+>
+>> Optional;
+>
+> **description**
+>
+>> Optional;
+>
+### Returns
+> A printout...
 
 ---
 ## add_measure
-#### Adds a measure to a semantic model.
+####
 ```python
 import fabric_cat_tools as fct
-fct.add_measure(
-        dataset = 'AdventureWorks'
-        ,table_name = 'Internet Sales'
-        ,measure_name = 'Sales Amount'
-        ,expression =  "SUM( 'Internet Sales'[SalesAmount] )"
-        #,display_folder = ''
-        #,format_string = ''
-        #,workspace = '' 
-        )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_measure(
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
+> **table_name**
 >
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table in which the measure will reside.
+>> Required;
 >
-> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the measure.
+> **measure_name**
 >
-> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; DAX expression for the measure.
+>> Required;
 >
-> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Display folder for the measure.
+> **expression**
 >
-> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Format string for the measure.
+>> Required;
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
+> **format_string**
+>
+>> Optional;
+>
+> **hidden**
+>
+>> Optional;
+>
+> **description**
+>
+>> Optional;
+>
+> **display_folder**
+>
+>> Optional;
+>
 ### Returns
-> A printout stating the success/failure of the operation.
+> A printout...
+
+---
+## add_perspective
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_perspective(
+```
+### Parameters
+> **perspective_name**
+>
+>> Required;
+>
+### Returns
+> A printout...
 
 ---
 ## add_relationship
-#### Adds a relationship to a semantic model.
+####
 ```python
 import fabric_cat_tools as fct
-fct.add_relationship(
-            dataset = 'AdventureWorks'
-            ,from_table = 'Internet Sales'
-            ,from_column = 'ProductKey'
-            ,to_table = 'Product'
-            ,to_column = 'ProductKey'
-            ,from_cardinality = 'Many'
-            ,to_cardinality = 'One'
-            #,workspace = '' 
-            )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_relationship(
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
+> **from_table**
 >
-> **from_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table on the 'from' side of the relationship
+>> Required;
 >
-> **to_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table on the 'to' side of the relationship
+> **from_column**
 >
-> **from_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the column on the 'from' side of the relationship
+>> Required;
 >
-> **to_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the column on the 'to' side of the relationship
+> **to_table**
 >
-> **from_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
+>> Required;
 >
-> **to_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
+> **to_column**
 >
-> **cross_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
+>> Required;
 >
-> **security_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
+> **from_cardinality**
 >
-> **is_active** [bool](https://docs.python.org/3/library/functions.html#bool)
-> 
->> Optional; Setting for whether the relationship is active or not. Default value: True.
+>> Required;
 >
-> **rely_on_referential_integrity** [bool](https://docs.python.org/3/library/functions.html#bool)
-> 
->> Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
+> **to_cardinality**
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
+>> Required;
+>
+> **cross_filtering_behavior**
+>
+>> Optional;
+>
+> **is_active**
+>
+>> Optional;
+>
+> **security_filtering_behavior**
+>
+>> Optional;
+>
+> **rely_on_referential_integrity**
+>
+>> Optional;
+>
 ### Returns
-> A printout stating the success/failure of the operation.
+> A printout...
 
 ---
 ## add_role
-#### Adds a role to a semantic model.
+####
 ```python
 import fabric_cat_tools as fct
-fct.add_role(
-            dataset = 'AdventureWorks'
-            ,role_name = 'Reader'
-            ,role_description = 'This role is for...'
-            #,workspace = '' 
-            )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_role(
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
+> **role_name**
 >
-> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the role.
+>> Required;
 >
-> **role_description** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Description of the role.
+> **model_permission**
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
+>> Optional;
+>
+> **description**
+>
+>> Optional;
+>
 ### Returns
-> A printout stating the success/failure of the operation.
+> A printout...
 
 ---
-## add_rls
-#### Adds row level security to a table within a role to a semantic model.
+## add_table
+####
 ```python
 import fabric_cat_tools as fct
-fct.add_rls(
-            dataset = 'AdventureWorks'
-            ,role_name = 'Reader'
-            ,table_name = 'UserGeography'
-            ,filter_expression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
-            #,workspace = '' 
-            )
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_table(
 ```
 ### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
+> **name**
 >
-> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the role to apply row level security.
+>> Required;
 >
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table to apply row level security.
+> **description**
 >
-> **filter_expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; DAX expression for the row low level security.
+>> Optional;
 >
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
+> **data_category**
+>
+>> Optional;
+>
+> **hidden**
+>
+>> Optional;
+>
 ### Returns
-> A printout stating the success/failure of the operation.
+> A printout...
+
+---
+## add_to_perspective
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_to_perspective(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **perspective_name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## add_translation
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.add_translation(
+```
+### Parameters
+> **language**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## all_calculation_items
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_calculation_items(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## all_columns
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_columns(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## all_hierarchies
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_hierarchies(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## all_levels
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_levels(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## all_measures
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_measures(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## all_partitions
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_partitions(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## all_rls
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.all_rls(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## cardinality
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.cardinality(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## clear_annotations
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.clear_annotations(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## clear_extended_properties
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.clear_extended_properties(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## data_size
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.data_size(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## depends_on
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.depends_on(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **dependencies**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## dictionary_size
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.dictionary_size(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## fully_qualified_measures
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.fully_qualified_measures(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **dependencies**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## get_annotation_value
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.get_annotation_value(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## get_annotations
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.get_annotations(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## get_extended_properties
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.get_extended_properties(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## get_extended_property_value
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.get_extended_property_value(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## in_perspective
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.in_perspective(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **perspective_name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## is_direct_lake
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.is_direct_lake(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## is_field_parameter
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.is_field_parameter(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## records_per_segment
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.records_per_segment(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## referenced_by
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.referenced_by(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **dependencies**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## remove_annotation
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.remove_annotation(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## remove_extended_property
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.remove_extended_property(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## remove_from_perspective
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.remove_from_perspective(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **perspective_name**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
 ## remove_object
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
 
-## set_rls
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.remove_object(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
 
+---
+## remove_translation
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.remove_translation(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **language**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## remove_vertipaq_annotations
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.remove_vertipaq_annotations(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## row_count
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.row_count(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_annotation
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_annotation(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **name**
+>
+>> Required;
+>
+> **value**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_direct_lake_behavior
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_direct_lake_behavior(
+```
+### Parameters
+> **direct_lake_behavior**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_extended_property
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_extended_property(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **extended_property_type**
+>
+>> Required;
+>
+> **name**
+>
+>> Required;
+>
+> **value**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_is_available_in_mdx
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_is_available_in_mdx(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+> **column_name**
+>
+>> Required;
+>
+> **value**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
 ## set_ols
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_ols(
+```
+### Parameters
+> **role_name**
+>
+>> Required;
+>
+> **table_name**
+>
+>> Required;
+>
+> **column_name**
+>
+>> Required;
+>
+> **permission**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_rls
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_rls(
+```
+### Parameters
+> **role_name**
+>
+>> Required;
+>
+> **table_name**
+>
+>> Required;
+>
+> **filter_expression**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_summarize_by
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_summarize_by(
+```
+### Parameters
+> **table_name**
+>
+>> Required;
+>
+> **column_name**
+>
+>> Required;
+>
+> **value**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_translation
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_translation(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **language**
+>
+>> Required;
+>
+> **property**
+>
+>> Required;
+>
+> **value**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## set_vertipaq_annotations
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.set_vertipaq_annotations(
+```
+### Parameters
+None
+### Returns
+> A printout...
+
+---
+## total_size
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.total_size(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## unqualified_columns
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.unqualified_columns(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **dependencies**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_in_calc_item
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_in_calc_item(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **dependencies**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_in_hierarchies
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_in_hierarchies(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_in_levels
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_in_levels(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_in_relationships
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_in_relationships(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_in_rls
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_in_rls(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+> **dependencies**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_in_sort_by
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_in_sort_by(
+```
+### Parameters
+> **column**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+---
+## used_size
+####
+```python
+import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
+
+with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
+	tom.used_size(
+```
+### Parameters
+> **object**
+>
+>> Required;
+>
+### Returns
+> A printout...
+
+
 
 
 ---
