@@ -2183,7 +2183,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hidden** [bool]
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2221,7 +2221,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hidden** [bool]
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2237,7 +2237,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **key** [bool]
+> **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2263,7 +2263,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **precedence** [int]
+> **precedence** [int](https://docs.python.org/3/library/stdtypes.html#int)
 >
 >> Optional;
 >
@@ -2271,7 +2271,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hidden** [bool]
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2301,7 +2301,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **ordinal** [int]
+> **ordinal** [int](https://docs.python.org/3/library/stdtypes.html#int)
 >
 >> Optional;
 >
@@ -2347,7 +2347,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hidden** [bool]
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2363,7 +2363,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **key**
+> **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2483,7 +2483,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hierarchy_hidden**
+> **hierarchy_hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2551,7 +2551,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hidden**
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2623,7 +2623,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **is_active**
+> **is_active** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2631,7 +2631,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **rely_on_referential_integrity**
+> **rely_on_referential_integrity** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -2687,7 +2687,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **hidden**
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
@@ -3380,7 +3380,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **value** 
+> **value** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Required;
 >
