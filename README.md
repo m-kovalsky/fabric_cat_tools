@@ -2104,9 +2104,13 @@ fct.warm_direct_lake_cache_isresident(
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_calculated_column(
-)
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_calculated_column(
+        table_name = 'Segment',
+        column_name = 'Business Segment',
+        expression = '',
+        data_type = 'String'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2163,8 +2167,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_calculated_table(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_calculated_table(
+        name = 'Segment',
+        expression = ''
+    )
 ```
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2197,8 +2204,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_calculated_table_column(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_calculated_table_column(
+        table_name = 'Segment',
+        column_name = 'Business Segment',
+        source_column = '',
+        data_type = 'String'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2255,13 +2267,16 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_calculation_group(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_calculation_group(
+        name = 'Segment',
+        precedence = 1
+    )
 ```
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the calculation group.
 >
 > **precedence** [int](https://docs.python.org/3/library/stdtypes.html#int)
 >
@@ -2269,14 +2284,14 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the calculation group.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional; Sets the calculation group to be hidden if True. Default value: False.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_calculation_item
@@ -2285,21 +2300,25 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_calculation_item(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_calculation_item(
+        table_name = 'Segment',
+        calculation_item_name = 'YTD'
+        expression = "CALCULATE(SELECTEDMEASURE(), DATESYTD('Date'[Date]))"
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table.
 >
 > **calculation_item_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the calculation item.
 >
 > **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The DAX expression encapsulating the logic of the calculation item.
 >
 > **ordinal** [int](https://docs.python.org/3/library/stdtypes.html#int)
 >
@@ -2311,10 +2330,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the calculation item.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_data_column
@@ -2323,8 +2342,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_data_column(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_data_column(
+        table_name = 'Segment',
+        column_name = 'Business Segment',
+        source_column = '',
+        data_type = 'String'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2381,8 +2405,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_entity_partition(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_entity_partition(
+        table_name = 'Sales',
+        entity_name = 'Fact_Sales'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2402,7 +2429,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Optional; The description of the partition.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_expression
@@ -2411,8 +2438,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_expression(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_expression(
+        name = 'DatabaseQuery',
+        expression = 'let...'
+    )
 ```
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2437,8 +2467,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_field_parameter(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_field_parameter(
+        table_name = 'Segment',
+        objects = ["'Product'[Product Category]", "[Sales Amount]", "'Geography'[Country]"]
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2450,7 +2483,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; A list of columns/tables to place in the field parameter. Columns must be fully qualified (i.e. "'Table Name'[Column Name]" and measures must be unqualified (i.e. "[Measure Name]").
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_hierarchy
@@ -2459,8 +2492,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_hierarchy(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_hierarchy(
+        table_name = 'Geography',
+        hierarchy_name = 'Geo Hierarchy',
+        columns = ['Continent', 'Country', 'City']
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2488,7 +2525,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Optional; Sets the hierarchy to be hidden if True. Default value: False.
 >
 ### Returns
-> A printout...
+>
 
 ---
 ## add_m_partition
@@ -2497,8 +2534,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_m_partition(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_m_partiiton(
+        table_name = 'Segment',
+        partition_name = 'Segment',
+        expression = 'let...',
+        mode = 'Import'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2531,8 +2573,13 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_measure(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_measure(
+        table_name = 'Sales',
+        measure_name = 'Sales Amount',
+        expression = "SUM('Sales'[SalesAmount])",
+        format_string = '$,00'
+    )
 ```
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2573,8 +2620,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_perspective(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_perspective(
+        perspective_name = 'Marketing'
+    )
 ```
 ### Parameters
 > **perspective_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2582,7 +2631,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Required; The name of the perspective.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_relationship
@@ -2591,8 +2640,16 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_relationship(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_relationship(
+        from_table = 'Sales',
+        from_column = 'ProductKey',
+        to_table = 'Product',
+        to_column = 'ProductKey',
+        from_cardinality = 'Many',
+        to_cardinality = 'One',
+        is_active = True
+    )
 ```
 ### Parameters
 > **from_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2645,8 +2702,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_role(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_role(
+        role_name = 'Reader'
+    )
 ```
 ### Parameters
 > **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2671,8 +2730,12 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_table(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_table(
+        name = 'Sales',
+        description = 'This is the sales table.',
+        hidden = False
+    )
 ```
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2692,7 +2755,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >> Optional;  Sets the table to be hidden if True. Default value: False.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## add_to_perspective
@@ -2701,8 +2764,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_to_perspective(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_to_perspective(
+        object = tom.model.Tables['Sales'].Measures['Sales Amount'],
+        perspective_name = 'Marketing'
+    )
 ```
 ### Parameters
 > **object**
@@ -2723,8 +2789,10 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.add_translation(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = False) as tom:
+    tom.add_translation(
+       language = 'it-IT'
+    )
 ```
 ### Parameters
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
@@ -2741,8 +2809,9 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_calculation_items(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for c in tom.all_calculation_items():
+        print(c.Name)
 ```
 ### Parameters
 None
@@ -2756,13 +2825,14 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_columns(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for c in tom.all_columns():
+        print(c.Name)
 ```
 ### Parameters
 None
 ### Returns
-> A printout...
+> 
 
 ---
 ## all_hierarchies
@@ -2771,8 +2841,9 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_hierarchies(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for h in tom.all_hierarchies():
+        print(h.Name)
 ```
 ### Parameters
 None
@@ -2786,8 +2857,9 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_levels(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for l in tom.all_levels():
+        print(l.Name)
 ```
 ### Parameters
 None
@@ -2801,8 +2873,9 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_measures(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for m in tom.all_measures():
+        print(m.Name)
 ```
 ### Parameters
 None
@@ -2816,8 +2889,9 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_partitions(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for p in tom.all_partitions():
+        print(p.Name)
 ```
 ### Parameters
 None
@@ -2831,8 +2905,9 @@ None
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.all_rls(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+    for r in tom.all_rls():
+        print(r.Name)
 ```
 ### Parameters
 None
