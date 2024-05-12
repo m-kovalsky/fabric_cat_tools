@@ -2926,7 +2926,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies** Pandas dataframe
+> **dependencies** A dataframe showing the model's calculaiton dependencies.
 >
 >> Required;
 >
@@ -2966,7 +2966,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies**
+> **dependencies** A dataframe showing the model's calculaiton dependencies.
 >
 >> Required;
 >
@@ -3141,7 +3141,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies**
+> **dependencies** A dataframe showing the model's calculaiton dependencies.
 >
 >> Required;
 >
@@ -3282,7 +3282,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object to obtain the row count.
 >
 ### Returns
 > A printout...
@@ -3300,7 +3300,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object to set the annotation.
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3344,7 +3344,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object to set the extended property.
 >
 > **extended_property_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3412,7 +3412,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **permission** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The permission for a given column. Options: ['Read', 'None', 'Default'].
 >
 ### Returns
 > A printout...
@@ -3482,7 +3482,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object to set the translation value.
 >
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3527,14 +3527,14 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object to obtain the total size.
 >
 ### Returns
 > The total size (in bytes) of the object.
 
 ---
 ## unqualified_columns
-####
+#### Shows all unqalified columns referenced by a given measure's DAX expression.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3543,11 +3543,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.unqualified_columns(
 ```
 ### Parameters
-> **object**
+> **object** The TOM object to obtain the unqualified columns.
 >
 >> Required;
 >
-> **dependencies**
+> **dependencies** A dataframe showing the model's calculaiton dependencies.
 >
 >> Required;
 >
@@ -3556,7 +3556,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_calc_item
-####
+#### Identifies the calculation items which reference a given object.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3569,7 +3569,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies**
+> **dependencies** A dataframe showing the model's calculaiton dependencies.
 >
 >> Required;
 >
@@ -3578,7 +3578,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_hierarchies
-#### 
+#### Identifies the hierarchies which reference a given column.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3596,7 +3596,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_levels
-####
+#### Identifies the levels which reference a given column.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3614,7 +3614,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_relationships
-####
+#### Identifies the relationships which use a given table/column.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3632,7 +3632,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_rls
-####
+#### Identifies the filter expressions which reference a given object.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3645,7 +3645,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies**
+> **dependencies** A dataframe showing the model's calculaiton dependencies.
 >
 >> Required;
 >
@@ -3654,7 +3654,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_in_sort_by
-####
+#### Identifies the column used for sorting a given column.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
@@ -3672,7 +3672,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 
 ---
 ## used_size
-####
+#### Obtains the used of a hierarchy or relationship within a semantic model.
 ```python
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
