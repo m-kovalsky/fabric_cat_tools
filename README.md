@@ -209,309 +209,6 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 
 
 # Functions
-## add_data_column
-#### Adds a data column to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_data_column(
-        dataset = 'AdventureWorks',
-        table_name = 'Internet Sales',
-        column_name = 'SalesAmount',
-        source_column = 'SalesAmount',
-        data_type =  'Int64',
-        #format_string = '',
-        #display_folder = '',
-        #workspace = '' 
-        )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
->
->> Required; Name of the semantic model.
-> 
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
->
->> Required; Name of the table in which the column will reside.
->
-> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; Name of the column.
->
-> **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; Name of the column in the source system.
->
-> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; Data type of the column. Options: 'Int64', 'String', 'Double', 'Decimal', 'DateTime', 'Boolean'.
->
-> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; Format string of the column.
->
-> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; Description of the column.
->
-> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; Display folder of the column.
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## add_field_parameter
-#### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_field_parameter(
-            dataset = 'AdventureWorks'
-            ,table_name = 'Parameter'
-            ,objects = ["[Sales Amount]", "[Order Qty]", "'Internet Sales'[Color]"]
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
->
->> Required; Name of the semantic model.
-> 
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
->
->> Required; Name of the field parameter table.
->
-> **objects** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; List of columns/measures to be included in the field parameter. Columns are fully qualified 'TableName'[ColumnName] and measures are in square brackets [MeasureName].
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; The workspace where the semantic model resides.
->
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## add_hierarchy
-#### Adds a hierarchy to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_hierarchy(
-            dataset = 'AdventureWorks'
-            ,table_name = 'Geography'
-            ,hierarchy_name = 'Geography Hierarchy'
-            ,levels = ['Continent', 'Country', 'City']
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; Name of the semantic model.
->
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; Name of the table in which the hierarchy will reside.
->
-> **hierarchy_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; Name of the hierarchy.
->
-> **levels** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Required; List of columns to be included as levels in the hierarchy.
->
-> **workspace_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
->
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## add_measure
-#### Adds a measure to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_measure(
-        dataset = 'AdventureWorks'
-        ,table_name = 'Internet Sales'
-        ,measure_name = 'Sales Amount'
-        ,expression =  "SUM( 'Internet Sales'[SalesAmount] )"
-        #,display_folder = ''
-        #,format_string = ''
-        #,workspace = '' 
-        )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table in which the measure will reside.
->
-> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the measure.
->
-> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; DAX expression for the measure.
->
-> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Display folder for the measure.
->
-> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Format string for the measure.
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## add_relationship
-#### Adds a relationship to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_relationship(
-            dataset = 'AdventureWorks'
-            ,from_table = 'Internet Sales'
-            ,from_column = 'ProductKey'
-            ,to_table = 'Product'
-            ,to_column = 'ProductKey'
-            ,from_cardinality = 'Many'
-            ,to_cardinality = 'One'
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **from_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table on the 'from' side of the relationship
->
-> **to_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table on the 'to' side of the relationship
->
-> **from_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the column on the 'from' side of the relationship
->
-> **to_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the column on the 'to' side of the relationship
->
-> **from_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
->
-> **to_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
->
-> **cross_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
->
-> **security_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
->
-> **is_active** [bool](https://docs.python.org/3/library/functions.html#bool)
-> 
->> Optional; Setting for whether the relationship is active or not. Default value: True.
->
-> **rely_on_referential_integrity** [bool](https://docs.python.org/3/library/functions.html#bool)
-> 
->> Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## add_role
-#### Adds a role to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_role(
-            dataset = 'AdventureWorks'
-            ,role_name = 'Reader'
-            ,role_description = 'This role is for...'
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the role.
->
-> **role_description** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; Description of the role.
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
-## add_rls
-#### Adds row level security to a table within a role to a semantic model.
-```python
-import fabric_cat_tools as fct
-fct.add_rls(
-            dataset = 'AdventureWorks'
-            ,role_name = 'Reader'
-            ,table_name = 'UserGeography'
-            ,filter_expression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
-            #,workspace = '' 
-            )
-```
-### Parameters
-> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the semantic model.
->
-> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the role to apply row level security.
->
-> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; Name of the table to apply row level security.
->
-> **filter_expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Required; DAX expression for the row low level security.
->
-> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
-> 
->> Optional; The workspace where the semantic model resides.
-### Returns
-> A printout stating the success/failure of the operation.
-
----
 ## cancel_dataset_refresh
 #### Cancels the refresh of a semantic model which was executed via the [Enhanced Refresh API](https://learn.microsoft.com/power-bi/connect-data/asynchronous-refresh).
 ```python
@@ -2401,6 +2098,307 @@ fct.warm_direct_lake_cache_isresident(
 ---
 
 # fabric_cat_tools.TOM Functions
+## add_data_column
+#### Adds a data column to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_data_column(
+        dataset = 'AdventureWorks',
+        table_name = 'Internet Sales',
+        column_name = 'SalesAmount',
+        source_column = 'SalesAmount',
+        data_type =  'Int64',
+        #format_string = '',
+        #display_folder = '',
+        #workspace = '' 
+        )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>
+>> Required; Name of the semantic model.
+> 
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>
+>> Required; Name of the table in which the column will reside.
+>
+> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the column.
+>
+> **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the column in the source system.
+>
+> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Data type of the column. Options: 'Int64', 'String', 'Double', 'Decimal', 'DateTime', 'Boolean'.
+>
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Format string of the column.
+>
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Description of the column.
+>
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Display folder of the column.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## add_field_parameter
+#### Adds a [field parameter](https://learn.microsoft.com/power-bi/create-reports/power-bi-field-parameters) to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_field_parameter(
+            dataset = 'AdventureWorks'
+            ,table_name = 'Parameter'
+            ,objects = ["[Sales Amount]", "[Order Qty]", "'Internet Sales'[Color]"]
+            #,workspace = '' 
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>
+>> Required; Name of the semantic model.
+> 
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str) 
+>
+>> Required; Name of the field parameter table.
+>
+> **objects** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; List of columns/measures to be included in the field parameter. Columns are fully qualified 'TableName'[ColumnName] and measures are in square brackets [MeasureName].
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The workspace where the semantic model resides.
+>
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## add_hierarchy
+#### Adds a hierarchy to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_hierarchy(
+            dataset = 'AdventureWorks'
+            ,table_name = 'Geography'
+            ,hierarchy_name = 'Geography Hierarchy'
+            ,levels = ['Continent', 'Country', 'City']
+            #,workspace = '' 
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the semantic model.
+>
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the table in which the hierarchy will reside.
+>
+> **hierarchy_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Name of the hierarchy.
+>
+> **levels** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; List of columns to be included as levels in the hierarchy.
+>
+> **workspace_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## add_measure
+#### Adds a measure to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_measure(
+        dataset = 'AdventureWorks'
+        ,table_name = 'Internet Sales'
+        ,measure_name = 'Sales Amount'
+        ,expression =  "SUM( 'Internet Sales'[SalesAmount] )"
+        #,display_folder = ''
+        #,format_string = ''
+        #,workspace = '' 
+        )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table in which the measure will reside.
+>
+> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the measure.
+>
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; DAX expression for the measure.
+>
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Display folder for the measure.
+>
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Format string for the measure.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## add_relationship
+#### Adds a relationship to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_relationship(
+            dataset = 'AdventureWorks'
+            ,from_table = 'Internet Sales'
+            ,from_column = 'ProductKey'
+            ,to_table = 'Product'
+            ,to_column = 'ProductKey'
+            ,from_cardinality = 'Many'
+            ,to_cardinality = 'One'
+            #,workspace = '' 
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **from_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table on the 'from' side of the relationship
+>
+> **to_table** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table on the 'to' side of the relationship
+>
+> **from_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the column on the 'from' side of the relationship
+>
+> **to_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the column on the 'to' side of the relationship
+>
+> **from_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Cardinality on the 'from' side of the relationship. Options: ('Many', 'One', None').
+>
+> **to_cardinality** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Cardinality on the 'to' side of the relationship. Options: ('Many', 'One', None').
+>
+> **cross_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Setting for the cross filtering behavior of the relationship. Options: ('Automatic', 'OneDirection', 'BothDirections'). Default value: 'Automatic'.
+>
+> **security_filtering_behavior** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Setting for the security filtering behavior of the relationship. Options: ('None', 'OneDirection', 'BothDirections'). Default value: 'OneDirection'.
+>
+> **is_active** [bool](https://docs.python.org/3/library/functions.html#bool)
+> 
+>> Optional; Setting for whether the relationship is active or not. Default value: True.
+>
+> **rely_on_referential_integrity** [bool](https://docs.python.org/3/library/functions.html#bool)
+> 
+>> Optional; Setting for the rely on referential integrity of the relationship. Default value: True.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## add_role
+#### Adds a role to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_role(
+            dataset = 'AdventureWorks'
+            ,role_name = 'Reader'
+            ,role_description = 'This role is for...'
+            #,workspace = '' 
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the role.
+>
+> **role_description** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; Description of the role.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
+## add_rls
+#### Adds row level security to a table within a role to a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.add_rls(
+            dataset = 'AdventureWorks'
+            ,role_name = 'Reader'
+            ,table_name = 'UserGeography'
+            ,filter_expression = "'UserGeography'[UserEmail] = USERPRINCIPALNAME()"
+            #,workspace = '' 
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **role_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the role to apply row level security.
+>
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the table to apply row level security.
+>
+> **filter_expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; DAX expression for the row low level security.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 ## remove_object
 
 ## set_rls
