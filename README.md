@@ -517,9 +517,9 @@ fct.add_rls(
 ```python
 import fabric_cat_tools as fct
 fct.cancel_dataset_refresh(
-            dataset = 'MyReport'
-            #,request_id = None
-            #,workspace = None
+            dataset = 'MyReport',
+            #request_id = None,
+            #workspace = None
             )
 ```
 ### Parameters
@@ -546,7 +546,7 @@ fct.cancel_dataset_refresh(
 import fabric_cat_tools as fct
 fct.check_fallback_reason(
             dataset = 'AdventureWorks',
-            #workspace = '' 
+            #workspace = None
             )
 ```
 ### Parameters
