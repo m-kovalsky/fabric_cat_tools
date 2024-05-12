@@ -2109,47 +2109,47 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 )
 ```
 ### Parameters
-> **table_name** [str]
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; The name of the table.
 >
-> **column_name** [str]
+> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; The name of the calculated column.
 >
-> **expression** [str]
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; The DAX expression for the calculated column.
 >
-> **data_type** [str]
+> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required; The data type of the calculated column.
 >
-> **format_string** [str]
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **hidden** [bool]
+> **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional; A
 >
-> **description** [str]
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **display_folder** [str]
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **data_category** [str]
+> **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **key** [bool]
+> **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
 >> Optional;
 >
-> **summarize_by** [str]
+> **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2167,19 +2167,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_calculated_table(
 ```
 ### Parameters
-> **name** [str]
+> **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **expression** [str]
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **description** [str]
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **data_category** [str]
+> **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2201,23 +2201,23 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_calculated_table_column(
 ```
 ### Parameters
-> **table_name** [str]
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **column_name** [str]
+> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **source_column** [str]
+> **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **data_type** [str]
+> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **format_string** [str]
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2225,15 +2225,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **description** [str]
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **display_folder** [str]
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **data_category** [str]
+> **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2241,7 +2241,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **summarize_by** [str]
+> **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2259,7 +2259,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_calculation_group(
 ```
 ### Parameters
-> **name** [str]
+> **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
@@ -2267,7 +2267,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **description** [str]
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2289,27 +2289,27 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_calculation_item(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **calculation_item_name**
+> **calculation_item_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **expression**
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **ordinal**
+> **ordinal** [int]
 >
 >> Optional;
 >
-> **format_string_expression**
+> **format_string_expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **description**
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2327,39 +2327,39 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_data_column(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **column_name**
+> **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **source_column**
+> **source_column** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **data_type**
+> **data_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **format_string**
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **hidden**
+> **hidden** [bool]
 >
 >> Optional;
 >
-> **description**
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **display_folder**
+> **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **data_category**
+> **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2367,7 +2367,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **summarize_by**
+> **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2385,19 +2385,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_entity_partition(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **entity_name**
+> **entity_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **expression**
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **description**
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2415,15 +2415,15 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_expression(
 ```
 ### Parameters
-> **name**
+> **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **expression**
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **description**
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2441,11 +2441,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_field_parameter(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **objects**
+> **objects** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
@@ -2463,23 +2463,23 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_hierarchy(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **hierarchy_name**
+> **hierarchy_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **columns**
+> **columns** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **levels**
+> **levels** [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **hierarchy_description**
+> **hierarchy_description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2501,23 +2501,23 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_m_partition(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **partition_name**
+> **partition_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **expression**
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **mode**
+> **mode** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
-> **description**
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2535,19 +2535,19 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 	tom.add_measure(
 ```
 ### Parameters
-> **table_name**
+> **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **measure_name**
+> **measure_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **expression**
+> **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Required;
 >
-> **format_string**
+> **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
@@ -2555,7 +2555,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Optional;
 >
-> **description**
+> **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
 >> Optional;
 >
