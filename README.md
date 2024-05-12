@@ -2111,7 +2111,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required; The name of the table.
+>> Required; The name of the table where the column will be added.
 >
 > **column_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -2127,31 +2127,31 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **format_string** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The formats strinf for the column.
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional; A
+>> Optional; Sets the column to be hidden if True. Default value: False.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The description of the column.
 >
 > **display_folder** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The display folder for the column.
 >
 > **data_category** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; The data category of the column.
 >
 > **key** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Marks the column as the primary key of the table.
 >
 > **summarize_by** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Optional;
+>> Optional; Sets the value for the Summarize By property of the column.
 >
 ### Returns
 > 
@@ -2169,11 +2169,11 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table.
 >
 > **expression** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The DAX expression for the table.
 >
 > **description** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -2185,7 +2185,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 > **hidden** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional;
+>> Optional; Sets the table to be hidden if True. Default value: False.
 >
 ### Returns
 > A printout...
