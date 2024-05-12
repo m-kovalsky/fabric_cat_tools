@@ -45,11 +45,13 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [create_semantic_model_from_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_semantic_model_from_bim)
 * [get_semantic_model_bim](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_semantic_model_bim)
 * [get_measure_dependencies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_measure_dependencies)
+* [get_model_calc_dependencies](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_model_calc_dependencies)
 * [measure_dependency_tree](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#measure_dependency_tree)
 * [refresh_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#refresh_semantic_model)
 * [cancel_dataset_refresh](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#cancel_dataset_refresh)
 * [run_dax](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_dax)
 * [get_object_level_security](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_object_level_security)
+* [translate_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#translate_semantic_model)
 
 ### Report
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
@@ -108,6 +110,8 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [create_warehouse](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#create_warehouse)
 * [update_item](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_item)
 * [list_dataflow_storage_accounts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dataflow_storage_accounts)
+* [list_warehouses](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_warehouses)
+
 
 ### Helper Functions
 * [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_dataset_id)
@@ -1225,6 +1229,27 @@ fct.get_measure_dependencies(
 > A pandas dataframe showing all dependencies for all measures in the semantic model.
 
 ---
+## get_model_calc_dependencies
+#### Shows all dependencies for all objects in a semantic model
+```python
+import fabric_cat_tools as fct
+fct.get_model_calc_dependencies(
+            dataset = 'AdventureWorks'
+            #,workspace = None
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A pandas dataframe showing all dependencies for all objects in the semantic model.
+
+---
 ## get_object_level_security
 #### Shows a list of columns used in object level security.
 ```python
@@ -1472,6 +1497,22 @@ fct.list_shortcuts(
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A pandas dataframe showing the shortcuts which exist in a given lakehouse and their properties.
+
+---
+## list_warehouses
+#### Shows the warehouss within a workspace.
+```python
+import fabric_cat_tools as fct
+fct.list_warehouses(
+            #,workspace = None
+            )
+```
+### Parameters
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace name.
+### Returns
+> A pandas dataframe showing the warehouses which exist in a given workspace and their properties.
 
 ---
 ## measure_dependency_tree
@@ -2147,6 +2188,32 @@ fct.show_unsupported_direct_lake_objects(
 >> Optional; The workspace where the semantic model resides.
 ### Returns
 > A list of objects (tables/columns/relationships) within the semantic model which are currently not supported by Direct Lake mode.
+
+---
+## translate_semantic_model
+#### Translates names, descriptions, display folders for all objects in a semantic model.
+```python
+import fabric_cat_tools as fct
+fct.translate_semantic_model(
+            dataset = 'AdventureWorks'
+            ,languages = ['it_IT', 'fr-FR']
+            #,workspace = None
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the semantic model.
+>
+> **languages** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; [Language code(s)](https://learn.microsoft.com/azure/ai-services/translator/language-support) to translate.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A printout stating the success/failure of the operation.
 
 ---
 ## update_direct_lake_model_lakehouse_connection
