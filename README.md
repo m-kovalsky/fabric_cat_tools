@@ -2773,7 +2773,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **perspective_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -2927,7 +2927,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **column**
 >
->> Required;
+>> Required; The TOM column object.
 >
 ### Returns
 >
@@ -2952,7 +2952,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -2970,7 +2970,7 @@ with connect_smantic_model(dataset = 'AdventureWorks', workspace = None, readonl
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -2988,7 +2988,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **column**
 >
->> Required;
+>> Required; The TOM column object.
 >
 ### Returns
 > 
@@ -3006,9 +3006,9 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculaiton dependencies.
+> **dependencies** A dataframe showing the model's calculation dependencies.
 >
 >> Required;
 >
@@ -3048,7 +3048,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies** A dataframe showing the model's calculaiton dependencies.
+> **dependencies** A dataframe showing the model's calculation dependencies.
 >
 >> Required;
 >
@@ -3240,7 +3240,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies** A dataframe showing the model's calculaiton dependencies.
+> **dependencies** A dataframe showing the model's calculation dependencies.
 >
 >> Required;
 >
@@ -3697,7 +3697,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies** A dataframe showing the model's calculaiton dependencies.
+> **dependencies** A dataframe showing the model's calculation dependencies.
 >
 >> Required;
 >
@@ -3719,7 +3719,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies** A dataframe showing the model's calculaiton dependencies.
+> **dependencies** A dataframe showing the model's calculation dependencies.
 >
 >> Required;
 >
@@ -3810,7 +3810,7 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 >
 >> Required;
 >
-> **dependencies** A dataframe showing the model's calculaiton dependencies.
+> **dependencies** A dataframe showing the model's calculation dependencies.
 >
 >> Required;
 >
