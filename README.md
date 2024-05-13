@@ -15,6 +15,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 ## Once installed, run this code to import the library into your notebook
 ```python
 import fabric_cat_tools as fct
+from fabric_cat_tools.TOM import connect_semantic_model
 ```
 
 ## Load fabric_cat_tools into a custom [Fabric environment](https://learn.microsoft.com/fabric/data-engineering/create-and-use-environment)
