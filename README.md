@@ -3013,9 +3013,9 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >
 >> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculation dependencies.
+> **dependencies** 
 >
->> Required;
+>> Required; A dataframe showing the model's calculation dependencies.
 >
 ### Returns
 > 
@@ -3033,7 +3033,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **column**
 >
->> Required;
+>> Required; The TOM column object.
 >
 ### Returns
 > 
@@ -3056,11 +3056,11 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculation dependencies.
+> **dependencies** 
 >
->> Required;
+>> Required; A dataframe showing the model's calculation dependencies.
 >
 ### Returns
 > 
@@ -3081,7 +3081,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3105,7 +3105,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -3125,7 +3125,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -3146,7 +3146,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3171,11 +3171,11 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **perspective_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the perspective.
 >
 ### Returns
 > 
@@ -3210,7 +3210,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the table.
 >
 ### Returns
 > True/False
@@ -3255,9 +3255,9 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >
 >> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculation dependencies.
+> **dependencies** 
 >
->> Required;
+>> Required; A dataframe showing the model's calculation dependencies.
 >
 ### Returns
 >
@@ -3278,7 +3278,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3303,7 +3303,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3328,11 +3328,11 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **perspective_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
->> Required;
+>> Required; The name of the perspective.
 >
 ### Returns
 > 
@@ -3352,7 +3352,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -3373,7 +3373,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3412,7 +3412,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required; The TOM object to obtain the row count.
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -3434,7 +3434,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required; The TOM object to set the annotation.
+>> Required; The TOM object.
 >
 > **name** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3485,7 +3485,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required; The TOM object to set the extended property.
+>> Required; The TOM object.
 >
 > **extended_property_type** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3645,7 +3645,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required; The TOM object to set the translation value.
+>> Required; The TOM object.
 >
 > **language** [str](https://docs.python.org/3/library/stdtypes.html#str)
 >
@@ -3717,9 +3717,9 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >
 >> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculation dependencies.
+> **dependencies** 
 >
->> Required;
+>> Required; A dataframe showing the model's calculation dependencies.
 >
 ### Returns
 >
@@ -3744,9 +3744,9 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >
 >> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculation dependencies.
+> **dependencies** 
 >
->> Required;
+>> Required; A dataframe showing the model's calculation dependencies.
 >
 ### Returns
 > 
@@ -3840,9 +3840,9 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 >
 >> Required; The TOM object.
 >
-> **dependencies** A dataframe showing the model's calculation dependencies.
+> **dependencies** 
 >
->> Required;
+>> Required; A dataframe showing the model's calculation dependencies.
 >
 ### Returns
 > 
