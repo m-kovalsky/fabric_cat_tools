@@ -3000,8 +3000,13 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.depends_on(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+
+    dep = fct.get_model_calc_dependencies(dataset = 'AdventureWorks', workspace = None)
+    tom.depends_on(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        dependencies = dep
+    )
 ```
 ### Parameters
 > **object**
@@ -3040,8 +3045,13 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.fully_qualified_measures(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+
+    dep = fct.get_model_calc_dependencies(dataset = 'AdventureWorks', workspace = None)
+    tom.fully_qualified_measuress(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        dependencies = dep
+    )
 ```
 ### Parameters
 > **object**
@@ -3220,7 +3230,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
@@ -3232,13 +3242,18 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.referenced_by(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+
+    dep = fct.get_model_calc_dependencies(dataset = 'AdventureWorks', workspace = None)
+    tom.referenced_by(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        dependencies = dep
+    )
 ```
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **dependencies** A dataframe showing the model's calculation dependencies.
 >
@@ -3677,7 +3692,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **object**
 >
->> Required; The TOM object to obtain the total size.
+>> Required; The TOM object.
 >
 ### Returns
 > The total size (in bytes) of the object.
@@ -3689,13 +3704,18 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.unqualified_columns(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+
+    dep = fct.get_model_calc_dependencies(dataset = 'AdventureWorks', workspace = None)
+    tom.unqualified_columns(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        dependencies = dep
+    )
 ```
 ### Parameters
-> **object** The TOM object to obtain the unqualified columns.
+> **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **dependencies** A dataframe showing the model's calculation dependencies.
 >
@@ -3711,13 +3731,18 @@ with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_in_calc_item(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+
+    dep = fct.get_model_calc_dependencies(dataset = 'AdventureWorks', workspace = None)
+    tom.used_in_calc_item(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        dependencies = dep
+    )
 ```
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **dependencies** A dataframe showing the model's calculation dependencies.
 >
@@ -3741,7 +3766,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **column**
 >
->> Required;
+>> Required; The TOM column object.
 >
 ### Returns
 > 
@@ -3761,7 +3786,7 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **column**
 >
->> Required;
+>> Required; The TOM column object.
 >
 ### Returns
 > 
@@ -3774,7 +3799,7 @@ import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
 with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
-    tom.used_in_relatioships(
+    tom.used_in_relationships(
         object = tom.model.Tables['Geography'].Columns['GeographyID']
     )
 ```
@@ -3783,17 +3808,17 @@ import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
 with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
-    tom.used_in_relatioships(
+    tom.used_in_relationships(
         object = tom.model.Tables['Geography']
     )
 ```
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## used_in_rls
@@ -3802,13 +3827,18 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 import fabric_cat_tools as fct
 from fabric_cat_tools.TOM import connect_semantic_model
 
-with connect_semantic_model(dataset='', workspace=None, readonly=False) as tom:
-	tom.used_in_rls(
+with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readonly = True) as tom:
+
+    dep = fct.get_model_calc_dependencies(dataset = 'AdventureWorks', workspace = None)
+    tom.used_in_rls(
+        object = tom.model.Tables['Product'].Columns['Color'],
+        dependencies = dep
+    )
 ```
 ### Parameters
 > **object**
 >
->> Required;
+>> Required; The TOM object.
 >
 > **dependencies** A dataframe showing the model's calculation dependencies.
 >
@@ -3832,10 +3862,10 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
 ### Parameters
 > **column**
 >
->> Required;
+>> Required; The TOM column object.
 >
 ### Returns
-> A printout...
+> 
 
 ---
 ## used_size
@@ -3850,9 +3880,9 @@ with connect_semantic_model(dataset = 'AdventureWorks', workspace = None, readon
     )
 ```
 ### Parameters
-> **object**
+> **object** 
 >
->> Required;
+>> Required; The TOM object.
 >
 ### Returns
 > 
