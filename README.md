@@ -878,7 +878,7 @@ fct.get_lakehouse_columns(
 import fabric_cat_tools as fct
 fct.get_lakehouse_tables(
         lakehouse = 'MyLakehouse',
-        ,workspace = '',
+        workspace = 'NewWorkspace',
         extended = True,
         count_rows = True)
 ```
