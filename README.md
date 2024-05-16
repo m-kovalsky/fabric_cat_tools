@@ -2103,10 +2103,10 @@ fct.warm_direct_lake_cache_isresident(
 ## connect_semantic_model
 #### Forms the connection to the Tabular Object Model (TOM) for a semantic model
 ```python
-with connect_semantic_model(dataset='AdventureWorks', workspace= None, readonly=True) as tom:
+with connect_semantic_model(dataset ='AdventureWorks', workspace = None, readonly = True) as tom:
 ```
 ```python
-with connect_semantic_model(dataset='AdventureWorks', workspace= None, readonly=False) as tom:
+with connect_semantic_model(dataset ='AdventureWorks', workspace = None, readonly = False) as tom:
 ```
 ### Parameters
 > **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
