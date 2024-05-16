@@ -2119,7 +2119,7 @@ with connect_semantic_model(dataset ='AdventureWorks', workspace = None, readonl
 >
 > **readonly** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
 >
->> Optional; Setting this to true uses a read only mode of TOM. Setting this to false enables read/write and saves any changes made to the semantic model.
+>> Optional; Setting this to true uses a read only mode of TOM. Setting this to false enables read/write and saves any changes made to the semantic model. Default value: True.
 
 ## add_calculated_column
 #### Adds a calculated column to a table within a semantic model.
