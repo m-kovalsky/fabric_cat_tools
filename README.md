@@ -2099,6 +2099,28 @@ fct.warm_direct_lake_cache_isresident(
 ---
 
 # fabric_cat_tools.TOM Functions
+
+## connect_semantic_model
+#### Forms the connection to the Tabular Object Model (TOM) for a semantic model
+```python
+with connect_semantic_model(dataset='AdventureWorks', workspace= None, readonly=True) as tom:
+``
+```python
+with connect_semantic_model(dataset='AdventureWorks', workspace= None, readonly=False) as tom:
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; The name of the semantic model.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The name of the workspace in which the semantic model resides. Defaults to the workspace in which the notebook resides.
+>
+> **readonly** [bool](https://docs.python.org/3/library/stdtypes.html#bool)
+>
+>> Optional; Setting this to true uses a read only mode of TOM. Setting this to false enables read/write and saves any changes made to the semantic model.
+
 ## add_calculated_column
 #### Adds a calculated column to a table within a semantic model.
 ```python
