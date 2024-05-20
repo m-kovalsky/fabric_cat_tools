@@ -1177,7 +1177,7 @@ fct.list_lakehouses(
 
 ---
 ## list_shortcuts
-#### Shows the shortcuts within a lakehouse
+#### Shows the shortcuts within a lakehouse (*note: the API behind this function is not yet available. The function will work as expected once the API is officially released*)
 ```python
 import fabric_cat_tools as fct
 fct.list_shortcuts(
