@@ -9,7 +9,7 @@ If you have ideas for new features/functions, please [request a feature](https:/
 
 ## Install the .whl file in a Fabric notebook
 ```python
-%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.4.0-py3-none-any.whl"
+%pip install "https://raw.githubusercontent.com/m-kovalsky/fabric_cat_tools/main/fabric_cat_tools-0.4.1-py3-none-any.whl"
 ```
 
 ## Once installed, run this code to import the library into your notebook
@@ -28,7 +28,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 4. Name your environment, click 'Create'
 
 #### Add fabric_cat_tools as a library to the environment
-1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.4.0-py3-none-any.whl) fabric_cat_tools library
+1. Download the [latest](https://github.com/m-kovalsky/fabric_cat_tools/raw/main/fabric_cat_tools-0.4.1-py3-none-any.whl) fabric_cat_tools library
 2. Within 'Custom Libraries', click 'upload'
 3. Upload the .whl file which was downloaded in step 1
 4. Click 'Save' at the top right of the screen
