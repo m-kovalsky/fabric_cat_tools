@@ -53,6 +53,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [run_dax](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_dax)
 * [get_object_level_security](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_object_level_security)
 * [translate_semantic_model](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#translate_semantic_model)
+* [list_semantic_model_objects](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_semantic_model_objects)
 
 ### Report
 * [report_rebind](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#report_rebind)
@@ -83,6 +84,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [show_unsupported_direct_lake_objects](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#show_unsupported_direct_lake_objects)
 * [update_direct_lake_partition_entity](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_partition_entity)
 * [update_direct_lake_model_lakehouse_connection](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_direct_lake_model_lakehouse_connection)
+* [migration_validation](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#migration_validation)
 
 ### Direct Lake
 * [check_fallback_reason](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#check_fallback_reason)
@@ -112,7 +114,7 @@ An even better way to ensure the fabric_cat_tools library is available in your w
 * [update_item](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#update_item)
 * [list_dataflow_storage_accounts](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_dataflow_storage_accounts)
 * [list_warehouses](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#list_warehouses)
-
+* [save_as_delta_table](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#save_as_delta_table)
 
 ### Helper Functions
 * [resolve_dataset_id](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#resolve_dataset_id)
@@ -1176,6 +1178,27 @@ fct.list_lakehouses(
 > A pandas dataframe showing the properties of a all lakehouses in a workspace.
 
 ---
+## list_semantic_model_objects
+#### Shows a list of semantic model objects.
+```python
+import fabric_cat_tools as fct
+fct.list_semantic_model_objects(
+            dataset = 'AdvWorks',
+            workspace = None
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+### Returns
+> A dataframe showing a list of objects in the semantic model
+
+---
 ## list_shortcuts
 #### Shows the shortcuts within a lakehouse (*note: the API behind this function is not yet available. The function will work as expected once the API is officially released*)
 ```python
@@ -1432,6 +1455,37 @@ fct.migrate_tables_columns_to_semantic_model(
 >> Optional; The workspace where the lakehouse resides.
 ### Returns
 > A printout stating the success/failure of the operation.
+
+---
+## migration_validation
+#### Shows the objects in the original semantic model and whether then were migrated successfully or not.
+```python
+import fabric_cat_tools as fct
+fct.migration_validation(
+            dataset = 'AdvWorks',
+            new_dataset = 'AdvWorksDL',
+            workspace = None,
+            new_dataset_workspace = None
+            )
+```
+### Parameters
+> **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the import/DirectQuery semantic model.
+>
+> **new_dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Required; Name of the Direct Lake semantic model.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace where the semantic model resides.
+>
+> **new_dataset_workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+> 
+>> Optional; The workspace to be used by the Direct Lake semantic model.
+### Returns
+> A dataframe showing a list of objects and whether they were successfully migrated. Also shows the % of objects which were migrated successfully.
 
 ---
 ## model_bpa_rules
@@ -1821,6 +1875,52 @@ fct.run_model_bpa(
 > A visualization showing objects which violate each [Best Practice Rule](https://github.com/microsoft/Analysis-Services/tree/master/BestPracticeRules) by rule category.
 
 ---
+## save_as_delta_table
+#### Saves a dataframe as a delta table in the lakehouse
+```python
+import fabric_cat_tools as fct
+fct.save_as_delta_table(
+            dataframe = df,
+            delta_table_name = 'MyNewTable',
+            write_mode = 'overwrite',
+            lakehouse = None,
+            workspace = None
+            )
+```
+```python
+import fabric_cat_tools as fct
+fct.save_as_delta_table(
+            dataframe = df,
+            delta_table_name = 'MyNewTable',
+            write_mode = 'append',
+            lakehouse = None,
+            workspace = None
+            )
+```
+### Parameters
+> **dataframe** [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
+> 
+>> Required; The dataframe to save as a delta table.
+>
+> **delta_table_name** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; The name of the delta table to save the dataframe.
+>
+> **write_mode** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Required; Options: 'append' or 'overwrite'.
+>
+> **lakehouse** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional: The name of the lakehouse in which the delta table will be saved. Defaults to the default lakehouse attached to the notebook.
+>
+> **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; The workspace where the lakehouse resides. Defaults to the workspace in which the notebook resides.
+### Returns
+> A printout stating the success/failure of the operation.
+
+---
 ## show_unsupported_direct_lake_objects
 #### Returns a list of a semantic model's objects which are not supported by Direct Lake based on [official documentation](https://learn.microsoft.com/power-bi/enterprise/directlake-overview#known-issues-and-limitations).
 ```python
@@ -1839,7 +1939,7 @@ fct.show_unsupported_direct_lake_objects(
 > 
 >> Optional; The workspace where the semantic model resides.
 ### Returns
-> A list of objects (tables/columns/relationships) within the semantic model which are currently not supported by Direct Lake mode.
+> 3 [pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) showing objects (tables/columns/relationships) within the semantic model which are currently not supported by Direct Lake mode.
 
 ---
 ## translate_semantic_model
@@ -1852,6 +1952,15 @@ fct.translate_semantic_model(
             #workspace = None
             )
 ```
+```python
+import fabric_cat_tools as fct
+fct.translate_semantic_model(
+            dataset = 'AdventureWorks',
+            languages = ['it_IT', 'fr-FR'],
+            exclude_characters = '_-',
+            #workspace = None
+            )
+```
 ### Parameters
 > **dataset** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
@@ -1860,6 +1969,10 @@ fct.translate_semantic_model(
 > **languages** [str](https://docs.python.org/3/library/stdtypes.html#str) or [list](https://docs.python.org/3/library/stdtypes.html#list) of [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
 >> Required; [Language code(s)](https://learn.microsoft.com/azure/ai-services/translator/language-support) to translate.
+>
+> **exclude_characters** [str](https://docs.python.org/3/library/stdtypes.html#str)
+>
+>> Optional; Any character in this string will be replaced by a space when given to the AI translator.
 >
 > **workspace** [str](https://docs.python.org/3/library/stdtypes.html#str)
 > 
