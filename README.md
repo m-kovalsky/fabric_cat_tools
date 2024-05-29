@@ -1873,6 +1873,7 @@ fct.run_model_bpa(
 >> Optional; Exports the results to a delta table in the lakehouse.
 ### Returns
 > A visualization showing objects which violate each [Best Practice Rule](https://github.com/microsoft/Analysis-Services/tree/master/BestPracticeRules) by rule category.
+
 Severity: Info: ℹ️ Warning: ⚠️ Error: ❌
 
 
