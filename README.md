@@ -1818,7 +1818,7 @@ import fabric_cat_tools as fct
 fct.run_dax(
             dataset = 'AdventureWorks',
             dax_query = 'Internet Sales',
-            user_name = 'FACT_InternetSales',
+            user_name = 'hello@goodbye.com',
             #workspace = None
             )
 ```
