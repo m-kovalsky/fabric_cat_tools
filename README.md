@@ -1,4 +1,11 @@
+> [!IMPORTANT]
+> This library has been archived in favor of [semantic-link-labs](https://github.com/microsoft/semantic-link-labs/). Everything in the fabric_cat_tools library has been moved to the semantic-link-labs library and will be maintained there going forward. Semantic-link-labs is fully open-sourced and is part of Microsoft's official GitHub repositories.
+> 
+
+___
+
 # fabric_cat_tools
+
 This is a python library intended to be used in [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-engineering/how-to-use-notebook). This library was originally intended to contain functions used for [migrating semantic models to Direct Lake mode](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct-lake-migration-1). However, it quickly became apparent that functions within such a library could support many other useful activities in the realm of semantic models, reports, lakehouses and really anything Fabric-related. As such, this library contains a variety of functions ranging from running [Vertipaq Analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#vertipaq_analyzer) or the [Best Practice Analyzer](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#run_model_bpa) against a semantic model to seeing if any [lakehouse tables hit Direct Lake guardrails](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#get_lakehouse_tables) or accessing the [Tabular Object Model](https://github.com/m-kovalsky/fabric_cat_tools/#tabular-object-model-tom) and more!
 
 Instructions for migrating import/DirectQuery semantic models to Direct Lake mode can be found [here](https://github.com/m-kovalsky/fabric_cat_tools?tab=readme-ov-file#direct-lake-migration-1).
